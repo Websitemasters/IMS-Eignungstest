@@ -22,12 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class QuestionController {
     private Logic logic = Logic.getInstance();
 
-    @GetMapping("/question")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public Question question(@RequestParam(value = "question", defaultValue = "Wie gehts dir") String question) {
-        return new Question(1, question);
-    }
-
     @GetMapping("/getAllQuestion")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<Question> questions() {

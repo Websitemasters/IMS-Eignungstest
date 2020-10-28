@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
   Redirect,
+  useHistory,
 } from "react-router-dom";
 import Axios from "axios";
 
@@ -29,6 +30,7 @@ function App() {
   const [data, setData] = useState([]);
   const [auswahl, setAuswahl] = useState(initial);
 
+  var history = useHistory();
   useEffect(() => {
     fetchData();
     Axios.post("http://localhost:8080/addVisit", {
@@ -75,6 +77,7 @@ function App() {
               auswahl={auswahl}
               setAuswahl={setAuswahl}
               initial={initial}
+              history={history}
             />
           </Route>
           {data.map((item) => (

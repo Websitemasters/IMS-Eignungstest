@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Ausgabe({ auswahl, setAuswahl, initial }) {
+export default function Ausgabe({ auswahl, setAuswahl, initial,history }) {
   var sum = "";
   const [res, setRes] = useState("");
   useEffect(() => {
