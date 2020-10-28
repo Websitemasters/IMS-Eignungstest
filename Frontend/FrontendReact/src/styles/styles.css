@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 10%;
+}
+
+header li,
+header a,
+header button,
+header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header .websiteName {
+  cursor: pointer;
+}
+
+header .nav__links {
+  list-style: none;
+}
+
+header .nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+header .nav__links li a {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+header .nav__links li a:hover {
+  color: #0088a9;
+}
+
+header button {
+  padding: 9px 25px;
+  background-color: #0088a9;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.userdata {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userdata p {
+  font-weight: 500;
+  font-size: 24px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.userdata input {
+  color: #edf0f1;
+  font-weight: 500;
+  font-size: 18px;
+  border-style: none;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid;
+  outline: none;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.userdata input:focus {
+  border-bottom: 1px solid #0088a9;
+}
+
+.userdata button {
+  padding: 9px 25px;
+  background-color: #0088a9;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.userdata button:hover {
+  background-color: #edf0f1;
+  color: #0088a9;
+}
+
+.question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.question p {
+  font-weight: 500;
+  font-size: 19px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.question a {
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+.question button {
+  padding: 7px 25px;
+  background-color: #edf0f1;
+  color: #050808;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.question button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+  color: #edf0f1;
+}
+
+.question .questionSelector {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #c5c5c5;
+}
+
+.question .questionSelector li {
+  float: left;
+}
+
+.question .questionSelector li a {
+  display: block;
+  color: #edf0f1;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.question .questionSelector li a:hover {
+  color: rgba(0, 136, 169, 0.8);
+}
+
+.centerContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #24252a;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+}
+
+.staticQuestions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+}
+
+.staticQuestions a {
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.staticQuestions a:hover {
+  color: rgba(0, 136, 169, 0.8);
+}
+/*# sourceMappingURL=styles.css.map */
