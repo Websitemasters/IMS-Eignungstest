@@ -3,6 +3,8 @@ package com.example.Database;
 import java.sql.*;
 
 public class Database {
+
+    //Todo
     private final DatabaseCon jdbc;
 
     public Database() throws SQLException, ClassNotFoundException {

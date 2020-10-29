@@ -26,6 +26,8 @@ public class Logic {
         questions.add(new Question(counter.incrementAndGet(), "Example Question 4"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 5"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 6"));
+
+        //TODO
         try {
             sql = new Database();
         } catch (SQLException throwables) {
