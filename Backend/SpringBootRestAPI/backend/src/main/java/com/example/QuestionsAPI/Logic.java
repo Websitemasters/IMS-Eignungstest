@@ -17,6 +17,7 @@ public class Logic {
     ArrayList<Question> questions = new ArrayList<>();
     private int pageVisited = 0;
     private Database sql;
+
     private Logic() {
         AtomicLong counter = new AtomicLong();
         questions.add(new Question(counter.incrementAndGet(), "Example Question 1"));
@@ -25,10 +26,8 @@ public class Logic {
         questions.add(new Question(counter.incrementAndGet(), "Example Question 4"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 5"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 6"));
-
         try {
             sql = new Database();
-            System.out.println(sql);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -79,5 +78,4 @@ public class Logic {
     public int getVisitors(){
         return pageVisited;
     }
-
 }

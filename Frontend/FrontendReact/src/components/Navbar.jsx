@@ -14,7 +14,7 @@ export default function NavBar() {
             <Link to="/Questions/1">Test</Link>
           </li>
           <li>
-            <Link to="/QuestionStatic">Question Static</Link>
+            <Link to="/QuestionStatic">Alle Fragen Statisch</Link>
           </li>
           <li>
             <Link to="/About">About</Link>
