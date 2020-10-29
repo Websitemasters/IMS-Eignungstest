@@ -8,7 +8,7 @@ public class DatabaseCon {
     private final String USERNAME = "root";
     private final String PASSWORD = "";
     private final String DB_CONNECTION_STRING = "jdbc:mysql://localhost/imseignungstest";
-    private final String DRIVER = "com.mysql.jdbc.Driver";
+    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private java.sql.Connection cn = null;
 
     private DatabaseCon() {

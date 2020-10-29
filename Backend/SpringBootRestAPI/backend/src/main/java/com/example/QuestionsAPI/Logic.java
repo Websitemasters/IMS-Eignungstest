@@ -1,8 +1,11 @@
 package com.example.QuestionsAPI;
 
+import com.example.Database.Database;
 import com.example.Models.AddUser;
 import com.example.Models.Answer;
 import com.example.Models.Question;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -13,7 +16,7 @@ public class Logic {
     private static final String template = "%s?";
     ArrayList<Question> questions = new ArrayList<>();
     private int pageVisited = 0;
-
+    private Database sql;
     private Logic() {
         AtomicLong counter = new AtomicLong();
         questions.add(new Question(counter.incrementAndGet(), "Example Question 1"));
@@ -22,6 +25,15 @@ public class Logic {
         questions.add(new Question(counter.incrementAndGet(), "Example Question 4"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 5"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 6"));
+
+        try {
+            sql = new Database();
+            System.out.println(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static Logic getInstance() {
