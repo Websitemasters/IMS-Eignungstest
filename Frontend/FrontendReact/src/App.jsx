@@ -1,14 +1,5 @@
 //React Imports
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-  useHistory,
-} from "react-router-dom";
-import Axios from "axios";
-
 //Styles and Bootstap
 import "./styles/styles.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,12 +16,19 @@ import Ausgabe from "./pages/questions/Ausgabe";
 import LoginPage from "./auth/LoginPage";
 import PrivateRoute from "./auth/PrivateRoute";
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import Axios from "axios";
+
+export default function App() {
   let initial = [];
   const [data, setData] = useState([]);
   const [auswahl, setAuswahl] = useState(initial);
 
-  var history = useHistory();
   useEffect(() => {
     fetchData();
     Axios.post("http://localhost:8080/addVisit", {
@@ -77,7 +75,6 @@ function App() {
               auswahl={auswahl}
               setAuswahl={setAuswahl}
               initial={initial}
-              history={history}
             />
           </Route>
           {data.map((item) => (
@@ -99,5 +96,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
