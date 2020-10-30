@@ -9,8 +9,6 @@ import NavBar from "./components/Navbar";
 import Home from "./pages/website/Home";
 import NotFoundPage from "./pages/error/404";
 import About from "./pages/website/About";
-import Quesiton from "./pages/questions/static/Questions";
-import OneQuestion from "./pages/questions/static/OneQuestion";
 import Question from "./pages/questions/Question";
 import Ausgabe from "./pages/questions/Ausgabe";
 import LoginPage from "./auth/LoginPage";
@@ -23,6 +21,12 @@ import {
   Redirect,
 } from "react-router-dom";
 import Axios from "axios";
+
+const sendLocation = {
+  sendLocation(url){
+      console.log(url);
+  }
+};
 
 export default function App() {
   let initial = [];
@@ -61,29 +65,22 @@ export default function App() {
         <br />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home sendLocation={sendLocation}/>
           </Route>
           <Route exact path="/Home">
-            <Home />
+            <Home sendLocation={sendLocation}/>
           </Route>
           <Route exact path="/About">
-            <About />
+            <About sendLocation={sendLocation}/>
           </Route>
           <Route path="/Login">
             <LoginPage />
-          </Route>
-          <Route exact path="/QuestionStatic">
-            <Quesiton />
-          </Route>
-          <Route path="/QuestionStatic/:id">
-            <OneQuestion />
           </Route>
           <Route exact path="/Ausgabe">
             <Ausgabe
               auswahl={auswahl}
               setAuswahl={setAuswahl}
               initial={initial} 
-              
             />
           </Route>
           {data.map((item) => (
