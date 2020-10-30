@@ -1,6 +1,10 @@
 import React from "react";
+import sendLocations from "../routes/sendLocations";
 
 export default function Home() {
+  React.useEffect(()=>{
+    sendLocations.sendLocation("/Home");
+  },[]);
   return (
     <div className="centerContent">
       <h1>Home</h1>
