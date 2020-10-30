@@ -8,7 +8,11 @@ export default function Question({
   auswahl,
   setAuswahl,
   data,
+  sendLocation,
 }) {
+  React.useEffect(()=>{
+    sendLocation.sendLocation(`/Questions/${nextPage-1}`);
+  },[]);
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(11, location.pathname.length);
   var intId = parseInt(idOfQuestion);

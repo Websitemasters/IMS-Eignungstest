@@ -3,7 +3,7 @@ import React from "react";
 export default function Home({sendLocation}) {
   React.useEffect(()=>{
     sendLocation.sendLocation("/Home");
-  },[])
+  },[]);
   return (
     <div className="centerContent">
       <h1>Home</h1>

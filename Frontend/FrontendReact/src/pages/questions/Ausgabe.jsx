@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Ausgabe({ auswahl, setAuswahl, initial,history }) {
+export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation }) {
   var sum = "";
   const [res, setRes] = useState("");
   useEffect(() => {
@@ -8,6 +8,7 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,history }) {
       sum = sum.concat(auswahl[i].zahl);
     }
     fetchData();
+    sendLocation.sendLocation("/Ausgabe");
   }, []);
   const fetchData = async () => {
     const data = await fetch(

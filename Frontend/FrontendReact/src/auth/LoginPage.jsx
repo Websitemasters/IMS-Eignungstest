@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
 
-function LoginPage() {
+function LoginPage({sendLocation}) {
+  React.useEffect(()=>{
+    sendLocation.sendLocation("/Login");
+  },[]);
   let history = useHistory();
   let location = useLocation();
   const [name, setName] = useState("");

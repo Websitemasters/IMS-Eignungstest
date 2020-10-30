@@ -3,8 +3,7 @@ import React from "react";
 export default function About({sendLocation}) {
   React.useEffect(()=>{
     sendLocation.sendLocation("/About");
-  },[])
-  return (
+  },[]);  return (
     <div className="centerContent">
       <h1>Kanti Web Project</h1>
       <br />

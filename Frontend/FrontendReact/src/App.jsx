@@ -74,13 +74,14 @@ export default function App() {
             <About sendLocation={sendLocation}/>
           </Route>
           <Route path="/Login">
-            <LoginPage />
+            <LoginPage sendLocation={sendLocation}/>
           </Route>
           <Route exact path="/Ausgabe">
             <Ausgabe
               auswahl={auswahl}
               setAuswahl={setAuswahl}
               initial={initial} 
+              sendLocation={sendLocation}
             />
           </Route>
           {data.map((item) => (
@@ -92,12 +93,12 @@ export default function App() {
                 auswahl={auswahl}
                 setAuswahl={setAuswahl}
                 data={data}
-                
+                sendLocation={sendLocation}
               />
             </PrivateRoute>
           ))}
           <Route exact path="/404">
-            <NotFoundPage />
+            <NotFoundPage sendLocation={sendLocation}/>
           </Route>
           <Redirect to="/404" />
         </Switch>
