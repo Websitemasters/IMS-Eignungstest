@@ -63,18 +63,27 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/Home" component={Home} />
-          <Route exact path="/About" component={About} />
-          <Route path="/login">
+          <Route exact path="/Home">
+            <Home />
+          </Route>
+          <Route exact path="/About">
+            <About />
+          </Route>
+          <Route path="/Login">
             <LoginPage />
           </Route>
-          <Route exact path="/QuestionStatic" component={Quesiton} />
-          <Route path="/QuestionStatic/:id" component={OneQuestion} />
+          <Route exact path="/QuestionStatic">
+            <Quesiton />
+          </Route>
+          <Route path="/QuestionStatic/:id">
+            <OneQuestion />
+          </Route>
           <Route exact path="/Ausgabe">
             <Ausgabe
               auswahl={auswahl}
               setAuswahl={setAuswahl}
-              initial={initial}
+              initial={initial} 
+              
             />
           </Route>
           {data.map((item) => (
@@ -86,10 +95,13 @@ export default function App() {
                 auswahl={auswahl}
                 setAuswahl={setAuswahl}
                 data={data}
+                
               />
             </PrivateRoute>
           ))}
-          <Route exact path="/404" component={NotFoundPage} />
+          <Route exact path="/404">
+            <NotFoundPage />
+          </Route>
           <Redirect to="/404" />
         </Switch>
       </div>
