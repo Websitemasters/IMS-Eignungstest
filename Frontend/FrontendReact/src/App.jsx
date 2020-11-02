@@ -67,9 +67,6 @@ export default function App() {
           <Route exact path="/">
             <Home sendLocation={sendLocation}/>
           </Route>
-          <Route exact path="/Home">
-            <Home sendLocation={sendLocation}/>
-          </Route>
           <Route exact path="/About">
             <About sendLocation={sendLocation}/>
           </Route>

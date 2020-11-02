@@ -14,9 +14,9 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation }) {
     const data = await fetch(
       `http://localhost:8080/calculateRate?answers=${sum}`
     );
-    const respone = await data.json();
-    console.log(respone.procent);
-    setRes(respone.procent);
+    const response = await data.json();
+    console.log(`Rest API ergebniss Data ${response.procent}`);
+    setRes(response.procent);
 
     //Um Daten Initial wieder zu Setzten
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");

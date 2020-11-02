@@ -16,14 +16,10 @@ export default function Question({
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(11, location.pathname.length);
   var intId = parseInt(idOfQuestion);
-  if (intId === 1) {
-    console.log("New Run");
-  }
   function add4() {
     setAuswahl(
       auswahl.map((item) => {
         if (item.id === intId) {
-          console.log(4);
           return {
             ...item,
             zahl: 4,
@@ -37,7 +33,6 @@ export default function Question({
     setAuswahl(
       auswahl.map((item) => {
         if (item.id === intId) {
-          console.log(3);
           return {
             ...item,
             zahl: 3,
@@ -51,7 +46,6 @@ export default function Question({
     setAuswahl(
       auswahl.map((item) => {
         if (item.id === intId) {
-          console.log(2);
           return {
             ...item,
             zahl: 2,
@@ -65,7 +59,6 @@ export default function Question({
     setAuswahl(
       auswahl.map((item) => {
         if (item.id === intId) {
-          console.log(1);
           return {
             ...item,
             zahl: 1,
@@ -79,7 +72,6 @@ export default function Question({
     setAuswahl(
       auswahl.map((item) => {
         if (item.id === intId) {
-          console.log(0);
           return {
             ...item,
             zahl: 0,

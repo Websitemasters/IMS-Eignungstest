@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home({sendLocation}) {
   React.useEffect(()=>{
-    sendLocation.sendLocation("/Home");
+    sendLocation.sendLocation("/");
   },[]);
   return (
     <div className="centerContent">

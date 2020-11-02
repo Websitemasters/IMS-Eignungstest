@@ -8,7 +8,7 @@ export default function NavBar() {
       <nav>
         <ul className="nav__links">
           <li>
-            <Link to="/Home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/Questions/1">Test</Link>
