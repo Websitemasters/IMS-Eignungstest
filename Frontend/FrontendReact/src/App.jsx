@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/styles.css";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
+
 //Components Imports
 import NavBar from "./components/Navbar";
 import Home from "./pages/website/Home";
