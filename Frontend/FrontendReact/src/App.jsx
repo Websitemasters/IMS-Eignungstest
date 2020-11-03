@@ -36,17 +36,6 @@ export default function App({id}) {
 
   useEffect(() => {
     fetchData();
-    Axios.post("http://localhost:8080/addVisit", {
-      id: 1,
-      add: 1,
-    })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    console.log("Post DATA");
   }, []);
 
   const fetchData = async () => {
