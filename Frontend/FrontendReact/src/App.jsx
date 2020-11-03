@@ -32,14 +32,26 @@ const sendLocation = {
   }
 };
 
-export default function App({id}) {
+export default function App() {
   let initial = [];
   const [data, setData] = useState([]);
   const [auswahl, setAuswahl] = useState(initial);
+  const [id, setID] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const getIdFunction = async () => {
+    try {
+      const data = await Axios
+        .get(`http://localhost:8080/addUser`)
+        .then((res) => {
+          console.log(res);
+          setID(res.data);
+        });
+      setLoading(true);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const fetchData = async () => {
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");
@@ -51,12 +63,18 @@ export default function App({id}) {
     }
     setAuswahl(initial);
   };
+
+  useEffect(() => {
+    fetchData();
+    getIdFunction();
+  }, []);
   return (
     <Router>
       <div className="parent">
         <NavBar />
         <br />
-        <Switch>
+        {loading ? (
+          <Switch>
           <Route exact path="/">
             <Home sendLocation={sendLocation} id={id}/>
           </Route>
@@ -94,6 +112,10 @@ export default function App({id}) {
           </Route>
           <Redirect to="/404" />
         </Switch>
+        ):
+        (
+        <div className="centerContent">Loading</div>
+        )}
       </div>
     </Router>
   );

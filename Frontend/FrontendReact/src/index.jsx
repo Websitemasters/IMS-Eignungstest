@@ -17,4 +17,4 @@ function Root(){
     },[]);
     return (<App id={id}/>)
 }
-ReactDOM.render(<Root />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
