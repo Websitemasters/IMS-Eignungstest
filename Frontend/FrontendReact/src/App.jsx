@@ -24,12 +24,12 @@ import {
 import Axios from "axios";
 
 const sendLocation = {
-  sendLocation(url){
-      console.log(url);
+  sendLocation(url,id){
+      console.log(`An das Backend wurde diese Aktivit Log: user: ${id} path: ${url}`);
   }
 };
 
-export default function App() {
+export default function App({id}) {
   let initial = [];
   const [data, setData] = useState([]);
   const [auswahl, setAuswahl] = useState(initial);
@@ -66,13 +66,13 @@ export default function App() {
         <br />
         <Switch>
           <Route exact path="/">
-            <Home sendLocation={sendLocation}/>
+            <Home sendLocation={sendLocation} id={id}/>
           </Route>
           <Route exact path="/About">
-            <About sendLocation={sendLocation}/>
+            <About sendLocation={sendLocation}  id={id}/>
           </Route>
           <Route path="/Login">
-            <LoginPage sendLocation={sendLocation}/>
+            <LoginPage sendLocation={sendLocation}  id={id}/>
           </Route>
           <Route exact path="/Ausgabe">
             <Ausgabe
@@ -80,6 +80,7 @@ export default function App() {
               setAuswahl={setAuswahl}
               initial={initial} 
               sendLocation={sendLocation}
+              id={id}
             />
           </Route>
           {data.map((item) => (
@@ -92,11 +93,12 @@ export default function App() {
                 setAuswahl={setAuswahl}
                 data={data}
                 sendLocation={sendLocation}
+                id={id}
               />
             </PrivateRoute>
           ))}
           <Route exact path="/404">
-            <NotFoundPage sendLocation={sendLocation}/>
+            <NotFoundPage sendLocation={sendLocation}  id={id}/>
           </Route>
           <Redirect to="/404" />
         </Switch>

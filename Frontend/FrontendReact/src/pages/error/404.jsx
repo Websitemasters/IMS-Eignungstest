@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function NotFound({sendLocation}) {
+export default function NotFound({sendLocation,id}) {
   React.useEffect(()=>{
-    sendLocation.sendLocation("/404");
+    sendLocation.sendLocation("/404",id);
   },[]);
   return (
     <div className="centerContent">
