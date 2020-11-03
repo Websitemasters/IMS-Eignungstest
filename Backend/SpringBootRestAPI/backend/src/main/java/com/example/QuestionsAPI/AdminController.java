@@ -23,4 +23,14 @@ public class AdminController {
     public int getNextUser(){
         return repo.nextUser();
     }
+
+    @PostMapping("/logActivity")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
+        if(repo.logActivity(id,url)){
+            return "Ok";
+        }else{
+            return "False";
+        }
+    }
 }

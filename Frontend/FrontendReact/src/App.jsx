@@ -25,6 +25,10 @@ import Axios from "axios";
 const sendLocation = {
   sendLocation(url,id){
     console.log(`user: ${id}, url: ${url}`);
+    Axios.post(`http://localhost:8080/logActivity?id=${id}&url=${url}`)
+    .catch((error)=>{
+      console.log(error);
+    })
   }
 };
 

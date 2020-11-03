@@ -77,4 +77,7 @@ public class Logic {
         return sql.updateAuswahl(prozent,id);
     }
 
+    public boolean logActivity(int id,String url){
+        return sql.logActivity(id,url);
+    }
 }
