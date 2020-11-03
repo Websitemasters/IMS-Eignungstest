@@ -3,7 +3,10 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 function Root(){
-    const id =1;
+    const [id,setId] = React.useState("");
+    React.useEffect(()=>{
+        setId("4");
+    },[])
     return (<App id={id}/>)
 }
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));
