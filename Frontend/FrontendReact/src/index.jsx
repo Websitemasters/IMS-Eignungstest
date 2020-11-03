@@ -6,7 +6,7 @@ function Root(){
     const [id,setId] = React.useState("");
     React.useEffect(()=>{
         setId("4");
-    },[])
+    },[]);
     return (<App id={id}/>)
 }
 ReactDOM.render(<Root />, document.getElementById("root"));
