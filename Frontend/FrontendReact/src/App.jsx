@@ -24,7 +24,7 @@ import Axios from "axios";
 
 const sendLocation = {
   sendLocation(url,id){
-    console.log(`An das Backend wurde diese Aktivit Log: user: ${id} path: ${url}`);
+    console.log(`user: ${id}, url: ${url}`);
   }
 };
 

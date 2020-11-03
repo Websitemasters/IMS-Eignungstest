@@ -1,3 +1,4 @@
+import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
 export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }) {
@@ -17,6 +18,13 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }
     const response = await data.json();
     console.log(`Rest API ergebniss Data ${response.procent}`);
     setRes(response.procent);
+    Axios.get(`http://localhost:8080/sendErgebis?id=${id}&prozent=${response.procent}`)
+    .then((response)=>{
+      console.log(response.data);
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
 
     //Um Daten Initial wieder zu Setzten
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");

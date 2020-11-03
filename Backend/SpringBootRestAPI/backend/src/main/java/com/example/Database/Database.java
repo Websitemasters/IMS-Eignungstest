@@ -43,4 +43,19 @@ public class Database {
         }
         return 0;
     }
+
+    public boolean updateAuswahl(double procent,int user){
+        try {
+            Connection conn = jdbc.createConnection();
+            Statement st = conn.createStatement();
+            st.executeUpdate("update user set resultat =" + procent + " where id = " + user );
+
+            conn.close();
+            jdbc.closeConnection();
+            return true;
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
 }

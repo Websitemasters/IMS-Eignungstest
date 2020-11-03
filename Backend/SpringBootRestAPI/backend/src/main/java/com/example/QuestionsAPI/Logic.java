@@ -69,19 +69,12 @@ public class Logic {
         return new Answer(1, Double.toString(sum));
     }
 
-    public String addVisitor(AddUser add){
-        try{
-            pageVisited+=add.getAdd();
-            return "Ok";
-        }catch (Error e){
-            return "Bad";
-        }
-    }
-    public int getVisitors(){
-        return pageVisited;
-    }
-    
     public int nextUser(){
         return sql.addVisitor();
     }
+
+    public boolean updateAuswahl(double prozent,int id){
+        return sql.updateAuswahl(prozent,id);
+    }
+
 }

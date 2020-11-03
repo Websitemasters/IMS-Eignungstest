@@ -8,17 +8,16 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
     private Logic repo = Logic.getInstance();
 
-    @PostMapping("/sendErgebis")
+    @GetMapping("/sendErgebis")
     @CrossOrigin(origins = "http://localhost:3000")
-    public String addTopic(@RequestBody TestErgebnis test){
-        return "Ok";
+    public String addTopic(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "prozent", defaultValue = "1") double prozent){
+        if(repo.updateAuswahl(prozent,id)){
+            return "Ok";
+        }else{
+            return "False";
+        }
     }
-    @GetMapping("/getAmountVisited")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public int getAmountVisited(){
-        return repo.getVisitors();
-    }
-    
+
     @GetMapping("/addUser")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){

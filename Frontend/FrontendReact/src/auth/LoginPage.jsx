@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
 
-function LoginPage({sendLocation}) {
+function LoginPage({sendLocation,id}) {
   React.useEffect(()=>{
-    sendLocation.sendLocation("/Login");
+    sendLocation.sendLocation("/Login",id);
   },[]);
   let history = useHistory();
   let location = useLocation();
