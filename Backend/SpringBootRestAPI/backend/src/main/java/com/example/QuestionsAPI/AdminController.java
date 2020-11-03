@@ -27,10 +27,15 @@ public class AdminController {
     @PostMapping("/logActivity")
     @CrossOrigin(origins = "http://localhost:3000")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
-        if(repo.logActivity(id,url)){
-            return "Ok";
+        if(id==0){
+            System.out.println("Its fucked");
         }else{
-            return "False";
+            if(repo.logActivity(id,url)){
+                return "Ok";
+            }else{
+                return "False";
+            }
         }
+        return "Fucked";
     }
 }
