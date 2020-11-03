@@ -13,16 +13,15 @@ public class AdminController {
     public String addTopic(@RequestBody TestErgebnis test){
         return "Ok";
     }
-
-    @PostMapping("/addVisit")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public String addSiteVisit(@RequestBody AddUser add){
-        return repo.addVisitor(add);
-    }
-
     @GetMapping("/getAmountVisited")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getAmountVisited(){
         return repo.getVisitors();
+    }
+    
+    @GetMapping("/addUser")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public int getNextUser(){
+        return repo.nextUser();
     }
 }

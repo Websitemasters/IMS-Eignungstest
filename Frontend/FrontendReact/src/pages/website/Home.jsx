@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Home({sendLocation}) {
+export default function Home({sendLocation,id}) {
   React.useEffect(()=>{
-    sendLocation.sendLocation("/");
+    sendLocation.sendLocation("/",id);
   },[]);
   return (
     <div className="centerContent">

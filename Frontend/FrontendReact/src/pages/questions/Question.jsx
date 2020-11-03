@@ -9,9 +9,10 @@ export default function Question({
   setAuswahl,
   data,
   sendLocation,
+  id,
 }) {
   React.useEffect(()=>{
-    sendLocation.sendLocation(`/Questions/${nextPage-1}`);
+    sendLocation.sendLocation(`/Questions/${nextPage-1}`,id);
   },[]);
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(11, location.pathname.length);

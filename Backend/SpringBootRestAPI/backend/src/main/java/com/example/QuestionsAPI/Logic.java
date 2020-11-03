@@ -80,4 +80,8 @@ public class Logic {
     public int getVisitors(){
         return pageVisited;
     }
+    
+    public int nextUser(){
+        return sql.addVisitor();
+    }
 }
