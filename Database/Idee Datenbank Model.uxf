@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
+      <x>340</x>
       <y>90</y>
       <w>200</w>
       <h>100</h>
@@ -25,7 +25,7 @@ resultat- can be null
       <w>280</w>
       <h>210</h>
     </coordinates>
-    <panel_attributes>Act
+    <panel_attributes>Activity
 --
 id - not null auto_increment
 userid - fk
@@ -39,11 +39,11 @@ time - date
     <coordinates>
       <x>230</x>
       <y>110</y>
-      <w>240</w>
+      <w>130</w>
       <h>270</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>220.0;10.0;10.0;10.0;10.0;250.0;80.0;250.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0;10.0;250.0;80.0;250.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
