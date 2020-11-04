@@ -12,19 +12,19 @@ package com.example.Models;
 public class Answer {
 
     private int id;
-    private String procent;
+    private String percent;
 
-    public Answer(int id, String procent) {
+    public Answer(int id, String percent) {
         this.id = id;
-        this.procent = procent;
+        this.percent = percent;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getProcent() {
-        return procent;
+    public String getPercent() {
+        return percent;
     }
 
 }

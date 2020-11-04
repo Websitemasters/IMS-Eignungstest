@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>20</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Datenbank
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>440</y>
+      <w>220</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Item Controller
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>230</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Datenbank Verbindung
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>230</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Admin Controller
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>440</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>500</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Item
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>80</y>
+      <w>340</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Aktivität
+--
+- int id_activity
+- int id_benutzer
+- String besuchteUrl
+- Date besuchteZeit
+--
++ Aktivität (id_activity:int, id_benutzer:int 
+, besuchteUrl:String, besuchteZeit:Date)
++ getter (jede variable)
++ setter(jede variable ausser id_activity, id_benutzer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>80</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Benutzer
+--
+- int id_benutzer
+- double resultat
+- String bemerkung
+--
++ Benutzer (id_benutzer : int)
++ getter(id_benutzer,resultat,bemerkung) 
++ setter(resultat, bemerkung)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>290</y>
+      <w>490</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Auswertung
+--
+- int id_auswertung
+- List&lt;double&gt; prozente
+- String bemerkung
+--
++ Auswertung (id_auswertung:int, prozente:List&lt;double&gt;, bemerkung:String)
++ getter (jede variable)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
