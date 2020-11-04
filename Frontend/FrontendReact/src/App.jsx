@@ -21,6 +21,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Axios from "axios";
+import {BounceLoader,BarLoader,BeatLoader} from "react-spinners";
 
 const sendLocation = {
   sendLocation(url,id){
@@ -114,7 +115,12 @@ export default function App() {
         </Switch>
         ):
         (
-        <div className="centerContent">Loading</div>
+          <div className="centerContent">
+            <br/>
+            <h3>Loading</h3>
+            <br/>
+            <BeatLoader size={35} color="white" loading/>
+          </div>
         )}
       </div>
     </Router>
