@@ -1,9 +1,9 @@
-package com.example.QuestionsAPI;
+package i3a.asn.QuestionsAPI;
 
-import com.example.Database.Database;
-import com.example.Models.AddUser;
-import com.example.Models.Answer;
-import com.example.Models.Question;
+import i3a.asn.Database.Database;
+import i3a.asn.Models.AddUser;
+import i3a.asn.Models.Answer;
+import i3a.asn.Models.Question;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

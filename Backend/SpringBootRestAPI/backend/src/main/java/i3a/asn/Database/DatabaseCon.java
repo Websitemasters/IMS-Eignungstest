@@ -1,4 +1,4 @@
-package com.example.Database;
+package i3a.asn.Database;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

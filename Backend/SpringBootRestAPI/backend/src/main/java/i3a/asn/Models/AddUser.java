@@ -1,4 +1,4 @@
-package com.example.Models;
+package i3a.asn.Models;
 
 public class AddUser {
     private int id;

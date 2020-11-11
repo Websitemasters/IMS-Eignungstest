@@ -1,7 +1,7 @@
-package com.example.QuestionsAPI;
+package i3a.asn.QuestionsAPI;
 
-import com.example.Models.AddUser;
-import com.example.Models.TestErgebnis;
+import i3a.asn.Models.AddUser;
+import i3a.asn.Models.TestErgebnis;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
