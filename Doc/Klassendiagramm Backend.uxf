@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>0</y>
-      <w>350</w>
-      <h>190</h>
+      <x>495</x>
+      <y>220</y>
+      <w>385</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>Datenbank
 --
@@ -25,10 +25,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
-      <y>610</y>
-      <w>330</w>
-      <h>120</h>
+      <x>517</x>
+      <y>891</y>
+      <w>363</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>ItemController
 --
@@ -42,10 +42,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>0</y>
-      <w>470</w>
-      <h>190</h>
+      <x>1111</x>
+      <y>220</y>
+      <w>517</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>DatenbankVerbindung
 --
@@ -64,10 +64,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>610</y>
-      <w>430</w>
-      <h>130</h>
+      <x>1023</x>
+      <y>891</y>
+      <w>473</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>AdminController
 --
@@ -81,10 +81,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>290</y>
-      <w>370</w>
-      <h>230</h>
+      <x>770</x>
+      <y>539</y>
+      <w>407</w>
+      <h>253</h>
     </coordinates>
     <panel_attributes>Model
 --
@@ -105,10 +105,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>830</y>
-      <w>210</w>
-      <h>190</h>
+      <x>605</x>
+      <y>1133</y>
+      <w>231</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>Item
 --
@@ -119,10 +119,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>820</y>
-      <w>340</w>
-      <h>170</h>
+      <x>1331</x>
+      <y>1122</y>
+      <w>374</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>Aktivität
 --
@@ -140,10 +140,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>930</x>
-      <y>820</y>
-      <w>210</w>
-      <h>140</h>
+      <x>1023</x>
+      <y>1122</y>
+      <w>231</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Benutzer
 --
@@ -160,9 +160,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>830</y>
-      <w>490</w>
-      <h>140</h>
+      <y>1133</y>
+      <w>539</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Auswertung
 --
@@ -178,12 +178,89 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>160</y>
-      <w>190</w>
-      <h>30</h>
+      <x>726</x>
+      <y>418</y>
+      <w>99</w>
+      <h>143</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;70.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>869</x>
+      <y>319</y>
+      <w>264</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>671</x>
+      <y>781</y>
+      <w>143</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>110.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1078</x>
+      <y>781</y>
+      <w>132</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;100.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1397</x>
+      <y>1023</y>
+      <w>110</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1133</x>
+      <y>1023</y>
+      <w>33</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>1012</y>
+      <w>33</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>1012</y>
+      <w>176</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>140.0;10.0;10.0;110.0</additional_attributes>
   </element>
 </diagram>
