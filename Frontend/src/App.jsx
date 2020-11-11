@@ -21,7 +21,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Axios from "axios";
-import {BounceLoader,BarLoader,BeatLoader} from "react-spinners";
+import {BeatLoader} from "react-spinners";
 
 const sendLocation = {
   sendLocation(url,id){
