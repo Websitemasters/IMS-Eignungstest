@@ -1,79 +1,114 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>20</y>
-      <w>210</w>
-      <h>190</h>
+      <x>495</x>
+      <y>220</y>
+      <w>385</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>Datenbank
 --
---</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>200</x>
-      <y>440</y>
-      <w>220</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>Item Controller
+-jdbc: DatabaseVerbindung
 --
---</panel_attributes>
++Datenbank()
++besucherHinzufügen()
++resultatHinzufügen(prozent:Double,user int): boolean
++aktivitätLoggen(user: int, url: String): boolean
++getBesucherSumme()
++getTestErgebnisse()
++getAktivitätLog()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>230</y>
-      <w>210</w>
-      <h>190</h>
+      <x>517</x>
+      <y>891</y>
+      <w>363</w>
+      <h>132</h>
     </coordinates>
-    <panel_attributes>Datenbank Verbindung
+    <panel_attributes>ItemController
 --
---</panel_attributes>
+-model: Model= Model.getInstanz()
+--
++getAlleItems: ArrayList&lt;Item&gt;()
++getItemId(id: String): Item
++berechneEignung(antwort: String): Auswertung</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>230</y>
-      <w>210</w>
-      <h>190</h>
+      <x>1111</x>
+      <y>220</y>
+      <w>517</w>
+      <h>209</h>
     </coordinates>
-    <panel_attributes>Admin Controller
+    <panel_attributes>DatenbankVerbindung
 --
---</panel_attributes>
+-instance: DatenbankVerbindung = null
+-benutzerName: String = "root"
+-passwort: String = ""
+-db_verbindugs_string: String = "jdbc:mysql://localhost/imseignungstest"
+-driver: String = "com.mysql.cj.jdbc.Driver"
+-verbindung: Connection = null
+--
++getInstanz(): DatenbankVerbindung
++erstelleVerbindung(): Connection
++schliesseVerbindung()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>440</y>
-      <w>210</w>
-      <h>190</h>
+      <x>1023</x>
+      <y>891</y>
+      <w>473</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>AdminController
+--
+-model: Model= Model.getInstanz()
+--
++setzteErgebniss(id: int,prozent: double,begründung: String): String
++getNaechsterBesucher(): int
++loggeAktivität(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>539</y>
+      <w>407</w>
+      <h>253</h>
     </coordinates>
     <panel_attributes>Model
 --
-
---</panel_attributes>
+-instanz: Model = null
+-items: ArrayList&lt;Item&gt; = new ArrayList&lt;&gt;()
+-sql: Datenbank
+--
+-Model()
++getInstanz(): Model
++getItems(): ArrayList&lt;Items&gt;
++getItemsID(id: String): Item
++berechneErgebnis(antwort: String): Auswertung
++netzerBesucher(): int
++resultatHinzufügen(prozent: double,id: int): boolean
++aktivitätLoggen(id: int,url: String)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>500</y>
-      <w>210</w>
-      <h>190</h>
+      <x>605</x>
+      <y>1133</y>
+      <w>231</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>Item
 --
@@ -84,10 +119,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>80</y>
-      <w>340</w>
-      <h>190</h>
+      <x>1331</x>
+      <y>1122</y>
+      <w>374</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>Aktivität
 --
@@ -105,10 +140,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1140</x>
-      <y>80</y>
-      <w>210</w>
-      <h>190</h>
+      <x>1023</x>
+      <y>1122</y>
+      <w>231</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Benutzer
 --
@@ -124,10 +159,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>290</y>
-      <w>490</w>
-      <h>190</h>
+      <x>0</x>
+      <y>1133</y>
+      <w>539</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>Auswertung
 --
@@ -139,5 +174,93 @@
 + getter (jede variable)
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>726</x>
+      <y>418</y>
+      <w>99</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;70.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>869</x>
+      <y>319</y>
+      <w>264</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>220.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>671</x>
+      <y>781</y>
+      <w>143</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>110.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1078</x>
+      <y>781</y>
+      <w>132</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;100.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1397</x>
+      <y>1023</y>
+      <w>110</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1133</x>
+      <y>1023</y>
+      <w>33</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>715</x>
+      <y>1012</y>
+      <w>33</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>1012</y>
+      <w>176</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>140.0;10.0;10.0;110.0</additional_attributes>
   </element>
 </diagram>
