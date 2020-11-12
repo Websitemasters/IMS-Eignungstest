@@ -151,10 +151,10 @@ pars.set(choice(mexpr,vexpr));
 }
 
 
-public void parseeeInt(String s){
+public int parseeeInt(String s){
 	Op<Integer>eval=pars.parse(Input.of(s)).getOrThrow();
 	int i=eval.apply(singleton.getX());
-	System.out.println(i);
+	return i;
 }
 
 

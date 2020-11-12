@@ -13,7 +13,7 @@ public  class Singleton {
 	public static Singleton instance;
 	private int x;
 	private int lastX=0;
-	private boolean valid=true;
+	private boolean valid=false;
 
 	public boolean isValid() {
 		return valid;

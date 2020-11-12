@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import i3a.asn.Models.Answer;
 import i3a.asn.Models.Question;
+import i3a.asn.parser.parsingClass;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuestionController {
     private Logic logic = Logic.getInstance();
+    private parsingClass pc=new parsingClass();
 
     @GetMapping("/getAllQuestion")
     @CrossOrigin(origins = "http://localhost:3000")
@@ -38,5 +40,10 @@ public class QuestionController {
     @CrossOrigin(origins = "http://localhost:3000")
     public Answer getCalculation(@RequestParam(value = "answers", defaultValue = "0") String answer) {
         return logic.calculateAnswer(answer);
+    }
+    @GetMapping("/useParser")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public int parseInput(@RequestParam(value= "code", defaultValue="return -1")String input){
+	   return pc.parseeeInt(input);
     }
 }
