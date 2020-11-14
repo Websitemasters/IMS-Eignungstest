@@ -8,10 +8,14 @@ package i3a.asn.QuestionsAPI;
 import java.util.ArrayList;
 
 import i3a.asn.Models.Answer;
+import i3a.asn.Models.ParseModel;
 import i3a.asn.Models.Question;
 import i3a.asn.parser.parsingClass;
+import static jdk.nashorn.tools.ShellFunctions.input;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,9 +45,10 @@ public class QuestionController {
     public Answer getCalculation(@RequestParam(value = "answers", defaultValue = "0") String answer) {
         return logic.calculateAnswer(answer);
     }
-    @GetMapping("/useParser")
+    
+    @PostMapping("/useParser")
     @CrossOrigin(origins = "http://localhost:3000")
-    public int parseInput(@RequestParam(value= "code", defaultValue="return -1")String input){
-	   return pc.parseeeInt(input);
+    public int parseInput(@RequestBody ParseModel m ){
+	   return pc.parseeeInt(m.getText());
     }
 }
