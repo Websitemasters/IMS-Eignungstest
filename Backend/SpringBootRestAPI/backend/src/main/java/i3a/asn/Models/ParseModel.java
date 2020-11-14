@@ -10,10 +10,12 @@ package i3a.asn.Models;
  * @author 1810g
  */
 public class ParseModel {
-String text;
-public ParseModel(String text){
-	this.text=text;
-}
+	int id;
+	String text;
+	public ParseModel(int id,String text){
+		this.id=id;
+		this.text=text;
+	}
 
 	public String getText() {
 		return text;
@@ -23,5 +25,11 @@ public ParseModel(String text){
 		this.text = text;
 	}
 
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 }

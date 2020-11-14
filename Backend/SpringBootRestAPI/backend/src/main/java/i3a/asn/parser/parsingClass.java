@@ -74,7 +74,7 @@ Parser<Chr, Op<Integer>> num = intr.map(i -> x -> i);
 // BINOP ::= '+' | '-' | '*' | '/' | '='
 Parser<Chr, BinOp> binOp =
         choice(
-                chr('#').map(c -> BinOp.ADD),
+                chr('+').map(c -> BinOp.ADD),
                 chr('-').map(c -> BinOp.SUB),
                 chr('*').map(c -> BinOp.MUL),
                 chr('/').map(c -> BinOp.DIV)
@@ -114,8 +114,8 @@ Parser<Chr,Op<Integer>>mexpr=vexpr.and(chr(' ')).and(vcom).map(d->s->e->e);
 //COND::= '>' | '<' | '==' | '!='
 Parser<Chr, CompOp> compOp =
         choice(
-                chr('!').map(c -> CompOp.GT),
-                chr('_').map(c -> CompOp.ST),
+                chr('>').map(c -> CompOp.GT),
+                chr('<').map(c -> CompOp.ST),
                 chr('=').andL(chr('=')).map(c -> CompOp.EQ),
                 chr('!').andL(chr('=')).map(c -> CompOp.NEQ)
         );
