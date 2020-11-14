@@ -8,6 +8,7 @@ export default function TextEditor(){
         setInputCode(e.target.value);
     }
     const runCode= async () =>{
+        console.log(inputCode);
         axios.post("http://localhost:8080/useParser",{
             text:inputCode,
         })
