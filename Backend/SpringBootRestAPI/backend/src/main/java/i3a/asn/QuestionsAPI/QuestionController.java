@@ -46,9 +46,9 @@ public class QuestionController {
         return logic.calculateAnswer(answer);
     }
     
-    @PostMapping("/useParser")
+    @GetMapping("/useParser")
     @CrossOrigin(origins = "http://localhost:3000")
-    public int parseInput(@RequestBody ParseModel m ){
-	   return pc.parseeeInt(m.getText());
+    public int parseInput(@RequestParam(value = "code", defaultValue = "0") String code){
+	   return pc.parseeeInt(code);
     }
 }
