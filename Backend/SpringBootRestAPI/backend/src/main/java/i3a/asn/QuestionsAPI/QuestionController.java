@@ -49,6 +49,7 @@ public class QuestionController {
     @PostMapping("/useParser")
     @CrossOrigin(origins = "http://localhost:3000")
     public int parseInput(@RequestBody ParseModel m ){
+	    System.out.println("Bis hier gabs kein Fehler");
 	   return pc.parseeeInt(m.getText());
     }
 }
