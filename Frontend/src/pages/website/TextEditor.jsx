@@ -11,11 +11,12 @@ export default function TextEditor(){
         var code = inputCode;
         code = code.replaceAll('>','!');
         code = code.replaceAll('<','_');
-        code = code.replaceAll('+','"');
+        code = code.replaceAll('+','#');
         console.log(code);
         axios.get(`http://localhost:8080/useParser?code=${code}`)
         .then((response)=>{
             console.log(response.data);
+            setCode(response.data);
         })
         .catch((error)=>{
             console.log(error);
