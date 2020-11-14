@@ -13,6 +13,7 @@ import Question from "./pages/questions/Question";
 import Ausgabe from "./pages/questions/Ausgabe";
 import LoginPage from "./auth/LoginPage";
 import PrivateRoute from "./auth/PrivateRoute";
+import TextEditor from "./pages/website/TextEditor";
 
 import {
   BrowserRouter as Router,
@@ -93,6 +94,9 @@ export default function App() {
               sendLocation={sendLocation}
               id={id}
             />
+          </Route>
+          <Route exact path="/Code">
+            <TextEditor/>
           </Route>
           {data.map((item) => (
             <PrivateRoute key={item.id} exact path={`/Questions/${item.id}`}>
