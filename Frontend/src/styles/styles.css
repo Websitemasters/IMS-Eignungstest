@@ -217,6 +217,10 @@ header button:hover {
   transition: all 0.3s ease 0s;
 }
 
+.coding textarea {
+  font-size: 25px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

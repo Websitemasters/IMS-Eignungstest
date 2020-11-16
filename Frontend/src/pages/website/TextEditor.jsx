@@ -13,7 +13,7 @@ export default function TextEditor(){
             text:inputCode,
         })
         .then((response)=>{
-            console.log(response.data);
+            console.log(response);
             setCode(response.data);
         })
         .catch((error)=>{
@@ -25,8 +25,8 @@ export default function TextEditor(){
         <div className="coding">
             <h1>Text Editor</h1>
             <div>
-                <textarea rows={20} cols={50} defaultValue={inputCode} onChange={setInput} />
-                <textarea rows={20} cols={50} defaultValue={outPut} />
+                <textarea rows={10} cols={30} defaultValue={inputCode} onChange={setInput} />
+                <textarea rows={10} cols={30} defaultValue={outPut} />
             </div>
             <br/>
             <button onClick={runCode}>Run</button>
