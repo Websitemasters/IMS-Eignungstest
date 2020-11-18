@@ -5,7 +5,10 @@
  */
 package javaparsernolibrary.JavaParserNoLibrary;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,10 +21,27 @@ public class Starter {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-		Map<String, Double>variablen=new HashMap();
-		variablen.put("x", 0.5);
-		variablen.put("y", 120.0);
-		System.out.println(Parser.eval("x=5",variablen)[1]);
+		ArrayList<String>befehle=new ArrayList();
+		befehle.add("x=5");
+		befehle.add("x*5");
+		befehle.add("y=15");
+		befehle.add("y*2");
+		befehle.add("if(x<0){x=1200}");
+		befehle.add("x*2");
+		befehle.add("return y");
+		System.out.println(doParsing(befehle,new HashMap()));
+
+		
+	}
+
+	private static double doParsing(List<String>befehle, Map<String, Double>variablen){
+		if(befehle.size()==1){
+			return (double)(Parser.eval(befehle.get(0),variablen)[0]);
+		}else{
+			Map<String,Double>retMap=(Map<String, Double>)Parser.eval(befehle.get(0),variablen)[1];
+			befehle.remove(0);
+		return doParsing(befehle,retMap);	
+		}
 	}
 	
 }

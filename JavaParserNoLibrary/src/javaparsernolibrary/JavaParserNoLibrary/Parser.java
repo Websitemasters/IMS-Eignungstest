@@ -76,9 +76,33 @@ public class Parser {
             } else if (ch >= 'a' && ch <= 'z') { // functions
                 while (ch >= 'a' && ch <= 'z') nextChar();
                 String func = str.substring(startPos, this.pos);
-                 if (variables.containsKey(func)){ if(eat('=')){variables.put(func, parseExpression());}else{x = variables.get(func);}}
-                else throw new RuntimeException("Unknown Variable: " + func);
-            } else {
+		if(func.equals("if")){
+		if(!eat('(')) throw new RuntimeException("Wrong Syntax at: "+ (char)ch);	
+		else{
+
+			//wenn wahr
+			x=parseExpression();
+//			nextChar();
+			String check = Character.toString((char)ch);
+			nextChar();
+			double p = parseExpression();
+			eat(')');
+			if(condition(x,check,p)){
+
+			
+			eat(')');
+			eat('{');
+			x = parseExpression();
+			eat('}');
+			}else{
+			while(!eat('}')) nextChar();
+			}
+		}
+		}
+		else if(func.equals("return")) return parseExpression();
+		else if(eat('=')){if(!eat('=')){variables.put(func, parseExpression());}else{throw new RuntimeException("No condition: "+(char)ch);}}else{x = variables.get(func);}
+            } else if(eat(')')||eat('>')||eat('<')||eat('!'));
+	    else {
                 throw new RuntimeException("Unexpected: " + (char)ch);
             }
 
@@ -87,4 +111,15 @@ public class Parser {
         }
     }.parse();
 }
+	private static boolean condition(double c1, String check, double c2){
+		switch(check){
+			case ">":return (c1>c2);
+			case "<":return (c1<c2);
+			case "!=":return (c1!=c2);
+			case "==":return (c1==c2);
+			default: throw new RuntimeException("No condition: "+check);
+			
+			
+		}
+	}
 }
