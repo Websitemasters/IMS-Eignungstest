@@ -21,7 +21,7 @@ public class Starter {
 		Map<String, Double>variablen=new HashMap();
 		variablen.put("x", 0.5);
 		variablen.put("y", 120.0);
-		System.out.println(Parser.eval("x*5+y",variablen));
+		System.out.println(Parser.eval("x=5",variablen)[1]);
 	}
 	
 }

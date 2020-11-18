@@ -12,7 +12,7 @@ import java.util.Map;
  * @author 1810g
  */
 public class Parser {
-	public static double eval(final String str, Map<String,Double> variables) {
+	public static Object[] eval(final String str, Map<String,Double> variables) {
     return new Object() {
         int pos = -1, ch;
 
@@ -29,11 +29,11 @@ public class Parser {
             return false;
         }
 
-        double parse() {
+        Object[] parse() {
             nextChar();
             double x = parseExpression();
             if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
-            return x;
+            return new Object[]{x, variables};
         }
 
         // Grammar:
@@ -64,18 +64,19 @@ public class Parser {
             if (eat('+')) return parseFactor(); // unary plus
             if (eat('-')) return -parseFactor(); // unary minus
 
-            double x;
+            double x=-1;
             int startPos = this.pos;
             if (eat('(')) { // parentheses
                 x = parseExpression();
                 eat(')');
-            } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
+            }
+	    else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
                 while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
                 x = Double.parseDouble(str.substring(startPos, this.pos));
             } else if (ch >= 'a' && ch <= 'z') { // functions
                 while (ch >= 'a' && ch <= 'z') nextChar();
                 String func = str.substring(startPos, this.pos);
-                 if (variables.containsKey(func)) x = variables.get(func);
+                 if (variables.containsKey(func)){ if(eat('=')){variables.put(func, parseExpression());}else{x = variables.get(func);}}
                 else throw new RuntimeException("Unknown Variable: " + func);
             } else {
                 throw new RuntimeException("Unexpected: " + (char)ch);
