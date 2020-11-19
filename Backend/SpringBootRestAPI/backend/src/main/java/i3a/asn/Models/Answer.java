@@ -12,19 +12,19 @@ package i3a.asn.Models;
 public class Answer {
 
     private int id;
-    private String percent;
+    private String antwort;
 
-    public Answer(int id, String percent) {
+    public Answer(int id, String antwort) {
         this.id = id;
-        this.percent = percent;
+        this.antwort = antwort;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getPercent() {
-        return percent;
+    public String getAntwort() {
+        return antwort;
     }
 
 }

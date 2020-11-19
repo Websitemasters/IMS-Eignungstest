@@ -2,30 +2,43 @@ import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
 export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }) {
-  var sum = "";
+  let sum = "";
   const [res, setRes] = useState("");
+
   useEffect(() => {
     for (let i = 0; i < auswahl.length; i++) {
       sum = sum.concat(auswahl[i].zahl);
     }
-    fetchData();
+    auswerten();
+    ini();
     sendLocation.sendLocation("/Ausgabe",id);
   }, []);
-  const fetchData = async () => {
-    const data = await fetch(
-      `http://localhost:8080/calculateRate?answers=${sum}`
-    );
-    const response = await data.json();
-    console.log(`Rest API ergebniss Data ${response.procent}`);
-    setRes(response.procent);
-    Axios.get(`http://localhost:8080/sendErgebis?id=${id}&prozent=${response.procent}`)
+
+  const auswerten = async () => {
+    let prozentZahl= 0;
+    Axios.post("http://localhost:8080/calculateRate",{
+      id:1,
+      antwort: sum
+    })
+    .then((response)=>{
+      prozentZahl = response.data;
+      console.log(response.data);
+      setRes(response.data);
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+
+    Axios.get(`http://localhost:8080/sendErgebis?id=${id}&prozent=${res}`)
     .then((response)=>{
       console.log(response.data);
     })
     .catch((error)=>{
       console.log(error);
     });
+  };
 
+  const ini = async () =>{
     //Um Daten Initial wieder zu Setzten
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");
     const questions = await fetchData.json();
@@ -33,7 +46,7 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }
       initial = [...initial, { id: i, zahl: 0 }];
     }
     setAuswahl(initial);
-  };
+  }
   return (
     <div className="centerContent">
       <h1>Ausgabe</h1>

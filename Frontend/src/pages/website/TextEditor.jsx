@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function TextEditor() {
+export default function TextEditor({sendLocation,id}) {
+    React.useEffect(()=>{
+        sendLocation.sendLocation("/Code",id);
+    },[]);
     const [inputCode, setInputCode] = useState("");
     const [outPut, setCode] = useState("");
     const setInput = (e) => {

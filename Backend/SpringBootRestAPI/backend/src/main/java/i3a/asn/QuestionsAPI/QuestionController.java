@@ -40,10 +40,10 @@ public class QuestionController {
         return logic.getQuestionId(id);
     }
 
-    @GetMapping("/calculateRate")
+    @PostMapping("/calculateRate")
     @CrossOrigin(origins = "http://localhost:3000")
-    public Answer getCalculation(@RequestParam(value = "answers", defaultValue = "0") String answer) {
-        return logic.calculateAnswer(answer);
+    public String getCalculation(@RequestBody Answer a){
+        return logic.calculateAnswer(a);
     }
     
     @PostMapping("/useParser")

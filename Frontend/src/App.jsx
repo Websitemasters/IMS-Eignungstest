@@ -96,7 +96,7 @@ export default function App() {
             />
           </Route>
           <Route exact path="/Code">
-            <TextEditor/>
+            <TextEditor sendLocation={sendLocation} id={id}/>
           </Route>
           {data.map((item) => (
             <PrivateRoute key={item.id} exact path={`/Questions/${item.id}`}>

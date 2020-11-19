@@ -58,15 +58,19 @@ public class Logic {
         return new Question(1,"404 Question not found");
     }
 
-    public Answer calculateAnswer(String answer){
+    public String calculateAnswer(Answer answer){
         double sum = 0;
-        for (int i = 0; i < answer.length(); i++) {
-            int a = Integer.parseInt(String.valueOf(answer.charAt(i)));
-            sum += a;
+        System.out.println(answer.getAntwort());
+        for (int i = 0; i < answer.getAntwort().length(); i++) {
+            System.out.println(answer.getAntwort().charAt(i));
+            double b = Double.parseDouble(String.valueOf(answer.getAntwort().charAt(i)));
+            sum += b;
         }
         sum /= questions.size() * 4;
         sum *= 100;
-        return new Answer(1, Double.toString(sum));
+        System.out.println(sum);
+        String ausgabe = Double.toString(sum);
+        return ausgabe;
     }
 
     public int nextUser(){
@@ -80,4 +84,5 @@ public class Logic {
     public boolean logActivity(int id,String url){
         return sql.logActivity(id,url);
     }
+
 }
