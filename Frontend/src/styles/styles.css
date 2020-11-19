@@ -12,13 +12,21 @@ header {
   padding: 30px 10%;
 }
 
-header li,
 header a,
 header button,
 header h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header li,
+header a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
   color: #edf0f1;
   text-decoration: none;
 }
@@ -59,7 +67,7 @@ header button:hover {
   background-color: #0088a9;
 }
 
-.userdata {
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,14 +80,38 @@ header button:hover {
           align-items: center;
 }
 
-.userdata p {
+.form div {
+  border-radius: 10px;
+  background-color: #1c2b32;
+  width: 67%;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 110px;
+}
+
+.form div br {
+  background-color: #1c2b32;
+}
+
+.form div p {
+  background-color: #1c2b32;
   font-weight: 500;
   font-size: 24px;
   color: #edf0f1;
   text-decoration: none;
 }
 
-.userdata input {
+.form div input {
+  background-color: #1c2b32;
   color: #edf0f1;
   font-weight: 500;
   font-size: 18px;
@@ -92,11 +124,11 @@ header button:hover {
   transition: all 0.4s ease 0s;
 }
 
-.userdata input:focus {
+.form div input:focus {
   border-bottom: 1px solid #74b8d3;
 }
 
-.userdata button {
+.form div button {
   color: #edf0f1;
   padding: 9px 25px;
   background-color: #74b8d3;
@@ -107,7 +139,7 @@ header button:hover {
   transition: all 0.3s ease 0s;
 }
 
-.userdata button:hover {
+.form div button:hover {
   background-color: #0088a9;
 }
 
@@ -191,7 +223,6 @@ header button:hover {
 }
 
 .coding {
-  color: #edf0f1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,9 +233,45 @@ header button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #edf0f1;
 }
 
-.coding button {
+.coding div {
+  border-radius: 10px;
+  background-color: #1c2b32;
+  width: 67%;
+  height: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+}
+
+.coding div .codeControl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.coding div .codeControl h1 {
+  background-color: #1c2b32;
+}
+
+.coding div .codeControl button {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -219,8 +286,20 @@ header button:hover {
   transition: all 0.3s ease 0s;
 }
 
-.coding textarea {
-  font-size: 25px;
+.coding div .editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.coding div .editor textarea {
+  resize: none;
+  background-color: #1c2b32;
+  font-size: 17px;
   color: #edf0f1;
 }
 

@@ -3,13 +3,20 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
-    li,
     a,
     button,
     h1 {
         font-family: $font;
         font-weight: 500;
         font-size: 16px;
+        color: $textColor;
+        text-decoration: none;
+    }
+    li,
+    a {
+        font-family: $font;
+        font-weight: 500;
+        font-size: 19px;
         color: $textColor;
         text-decoration: none;
     }

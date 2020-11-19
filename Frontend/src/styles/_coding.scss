@@ -1,23 +1,47 @@
 .coding {
-    color: $textColor;
     display: flex;
     flex-direction: column;
     align-items: center;
-    button {
-        font-family: $font;
-        font-weight: 500;
-        font-size: 16px;
-        color: $textColor;
-        text-decoration: none;
-        padding: 9px 25px;
-        background-color: #1aed07;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-    }
-    textarea {
-        font-size: 25px;
-        color: $textColor;
+    color: $textColor;
+    div {
+        border-radius: 10px;
+        background-color: #1c2b32;
+        width: 67%;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .codeControl {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            h1 {
+                background-color: #1c2b32;
+            }
+            button {
+                font-family: $font;
+                font-weight: 500;
+                font-size: 16px;
+                color: $textColor;
+                text-decoration: none;
+                padding: 9px 25px;
+                background-color: #1aed07;
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+        }
+        .editor {
+            display: flex;
+            flex-direction: row;
+            textarea {
+                resize: none;
+                background-color: #1c2b32;
+                font-size: 17px;
+                color: $textColor;
+            }
+        }
+        padding:50px;
     }
 }

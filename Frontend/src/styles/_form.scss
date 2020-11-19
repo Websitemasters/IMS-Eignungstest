@@ -1,37 +1,52 @@
-.userdata {
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    p {
-        font-weight: 500;
-        font-size: 24px;
-        color: $textColor;
-        text-decoration: none;
-    }
-    input {
-        color: $textColor;
-        font-weight: 500;
-        font-size: 18px;
-        border-style: none;
-        text-align: center;
-        padding: 5px;
-        border-bottom: 1px solid;
-        outline: none;
-        transition: all 0.4s ease 0s;
-        &:focus {
-            border-bottom: 1px solid $buttonColor;
+    div {
+        border-radius: 10px;
+        background-color: #1c2b32;
+        width: 67%;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 110px;
+        br {
+            background-color: #1c2b32;
         }
-    }
-    button {
-        color: $textColor;
-        padding: 9px 25px;
-        background-color: $buttonColor;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-        &:hover {
-            background-color: $hoverColor;
+        p {
+            background-color: #1c2b32;
+            font-weight: 500;
+            font-size: 24px;
+            color: $textColor;
+            text-decoration: none;
+        }
+        input {
+            background-color: #1c2b32;
+            color: $textColor;
+            font-weight: 500;
+            font-size: 18px;
+            border-style: none;
+            text-align: center;
+            padding: 5px;
+            border-bottom: 1px solid;
+            outline: none;
+            transition: all 0.4s ease 0s;
+            &:focus {
+                border-bottom: 1px solid $buttonColor;
+            }
+        }
+        button {
+            color: $textColor;
+            padding: 9px 25px;
+            background-color: $buttonColor;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            &:hover {
+                background-color: $hoverColor;
+            }
         }
     }
 }

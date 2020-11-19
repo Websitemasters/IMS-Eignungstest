@@ -26,13 +26,16 @@ export default function TextEditor({sendLocation,id}) {
     }
     return (
         <div className="coding">
-            <h1>Text Editor</h1>
             <div>
-                <textarea rows={10} cols={30} defaultValue={inputCode} onChange={setInput} />
-                <textarea rows={10} cols={30} defaultValue={outPut} />
+                <div className="codeControl">
+                    <h1>Text Editor</h1>
+                    <button onClick={runCode}>Run</button>
+                </div>
+                <div className="editor">
+                    <textarea rows={8} cols={80} defaultValue={inputCode} onChange={setInput} />
+                    <textarea rows={8} cols={30} defaultValue={outPut} />
+                </div>
             </div>
-            <br />
-            <button onClick={runCode}>Run</button>
         </div>
     )
 }
