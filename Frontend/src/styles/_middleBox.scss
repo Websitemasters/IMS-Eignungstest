@@ -1,0 +1,19 @@
+.middleBox {
+    display: flex;
+    flex-direction: column;
+    color: $textColor;
+    border-radius: 5px;
+    margin: auto;
+    width: 60%;
+    height: 30rem;
+    background-color: #1c2b32;
+    justify-content: center;
+    align-self: center;
+    padding: 40px;
+    p {
+        background-color: #1c2b32;
+    }
+    h1 {
+        background-color: #1c2b32;
+    }
+}

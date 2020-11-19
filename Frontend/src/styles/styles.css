@@ -47,7 +47,7 @@ header .nav__links li a:hover {
 
 header button {
   padding: 9px 25px;
-  background-color: #0088a9;
+  background-color: #74b8d3;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -56,7 +56,7 @@ header button {
 }
 
 header button:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: #0088a9;
 }
 
 .userdata {
@@ -93,12 +93,13 @@ header button:hover {
 }
 
 .userdata input:focus {
-  border-bottom: 1px solid #0088a9;
+  border-bottom: 1px solid #74b8d3;
 }
 
 .userdata button {
+  color: #edf0f1;
   padding: 9px 25px;
-  background-color: #0088a9;
+  background-color: #74b8d3;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -107,8 +108,7 @@ header button:hover {
 }
 
 .userdata button:hover {
-  background-color: #edf0f1;
-  color: #0088a9;
+  background-color: #0088a9;
 }
 
 .question {
@@ -187,9 +187,11 @@ header button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #edf0f1;
 }
 
 .coding {
+  color: #edf0f1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,20 +221,10 @@ header button:hover {
 
 .coding textarea {
   font-size: 25px;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: #24252a;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
   color: #edf0f1;
 }
 
-.staticQuestions {
+.middleBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,19 +232,34 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 22px;
+  color: #edf0f1;
+  border-radius: 5px;
+  margin: auto;
+  width: 60%;
+  height: 30rem;
+  background-color: #1c2b32;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 40px;
 }
 
-.staticQuestions a {
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+.middleBox p {
+  background-color: #1c2b32;
 }
 
-.staticQuestions a:hover {
-  color: rgba(0, 136, 169, 0.8);
+.middleBox h1 {
+  background-color: #1c2b32;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #101a1c;
+  font-family: "Montserrat", sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -5,9 +5,7 @@ import "./styles/styles.css";
 
 //Components Imports
 import NavBar from "./components/Navbar";
-import Home from "./pages/website/Home";
 import NotFoundPage from "./pages/error/404";
-import About from "./pages/website/About";
 import Question from "./pages/questions/Question";
 import Ausgabe from "./pages/questions/Ausgabe";
 import LoginPage from "./auth/LoginPage";
@@ -77,10 +75,7 @@ export default function App() {
         {loading ? (
           <Switch>
           <Route exact path="/">
-            <Home sendLocation={sendLocation} id={id}/>
-          </Route>
-          <Route exact path="/About">
-            <About sendLocation={sendLocation} id={id}/>
+            <TextEditor sendLocation={sendLocation} id={id}/>
           </Route>
           <Route path="/Login">
             <LoginPage sendLocation={sendLocation} id={id}/>
