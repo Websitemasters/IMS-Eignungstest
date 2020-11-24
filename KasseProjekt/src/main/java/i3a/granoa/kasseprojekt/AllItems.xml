@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Itemlist>
+  <Ware>
+    <name>Tomate</name>
+    <preis>1.5</preis>
+  </Ware>
+  <Ware>
+    <name>Zwiebel</name>
+    <preis>2.0</preis>
+  </Ware>
+  <Ware>
+    <preis>120</preis>
+    <name>Karotte</name>
+  </Ware>
+  <Ware>
+    <preis>15</preis>
+    <name>Bagel</name>
+  </Ware>
+</Itemlist>
