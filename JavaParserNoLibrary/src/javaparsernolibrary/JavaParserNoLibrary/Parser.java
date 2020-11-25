@@ -108,15 +108,11 @@ public class Parser {
 			if(!eat('(')) throw new RuntimeException("Wrong Syntax at: "+(char)ch);
 			else{
 			x=parseExpression();
-			try{
-				pos-=2;
+			pos-=3;
 				nextChar();
-				if((ch>='0'&&ch<='9')||(ch>='a'&&ch<='z')){
+				while((ch>='0'&&ch<='9')||(ch>='a'&&ch<='z')||ch=='('){
 					nextChar();	
 				}
-			}catch(Exception ex){
-				
-			}
 			String check = Character.toString((char)ch);
 			nextChar();
 			while(ch=='='){
@@ -126,18 +122,16 @@ public class Parser {
 			double p = parseExpression();
 			eat(')');
 			if(condition(x,check,p)){
-			eat(')');
 			eat('{');
-			x=parseExpression();
+			x = parseExpression();
 			eat('}');
 			pos=-1;
-			parse();
+			nextChar();
+			parseExpression();
 			}else{
 			while(!eat('}')) nextChar();
 			}
 
-
-				
 			}
 		}
 		else if(func.equals("return")) return parseExpression();

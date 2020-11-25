@@ -22,11 +22,11 @@ public class Starter {
 	 */
 	public static void main(String[] args) {
 		ArrayList<String>befehle=new ArrayList();
-		befehle.add("x=15");
+		befehle.add("x=100");
 		befehle.add("x*5");
 		befehle.add("y=15");
 		befehle.add("y*2");
-		befehle.add("if(x>0){x=100}");
+		befehle.add("while(x==100){x=x+50}");
 		befehle.add("x*2");
 		befehle.add("return x");
 		System.out.println(doParsing(befehle,new HashMap()));
