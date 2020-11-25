@@ -1,0 +1,2 @@
+Falls springen von frage zu frage erlaubt ist, zeigen wir dies an per farbe der ausgewählten Antwort. 
+Dadurch kann der Benutzer noch wissen welche Frage er gewählt hat

@@ -1,0 +1,34 @@
+$font: "Montserrat",
+sans-serif;
+$bgColor: #24252a;
+$hoverColor: #0088a9;
+$textColor: #edf0f1;
+@import "./navbar";
+@import "./form";
+@import "./questions";
+@import "./centerContent";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import "./coding";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: $bgColor;
+    font-family: $font;
+    font-weight: 500;
+    color: $textColor;
+}
+
+.staticQuestions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+    a {
+        text-decoration: none;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            color: rgba(0, 136, 169, 0.8);
+        }
+    }
+}
