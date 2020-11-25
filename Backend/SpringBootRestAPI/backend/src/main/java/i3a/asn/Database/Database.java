@@ -10,8 +10,6 @@ public class Database {
 
     public Database() throws SQLException, ClassNotFoundException {
         jdbc = DatabaseCon.getInstance();
-        jdbc.createConnection();
-        jdbc.closeConnection();
     }
 
     public int addVisitor(){
@@ -34,6 +32,9 @@ public class Database {
             ps.close();
 
             conn.close();
+            st.close();
+            rs.close();
+            ps.close();
             jdbc.closeConnection();
             return nextId;
         } catch (SQLException throwables) {
@@ -52,6 +53,7 @@ public class Database {
             st.executeUpdate("update user set resultat =" + procent + " where id = " + user );
 
             conn.close();
+            st.close();
             jdbc.closeConnection();
             return true;
         } catch (SQLException | ClassNotFoundException throwables) {
@@ -78,7 +80,8 @@ public class Database {
 
             ps.execute();
             ps.close();
-
+            st.close();
+            rs.close();
             conn.close();
             jdbc.closeConnection();
             return true;
