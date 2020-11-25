@@ -14,6 +14,7 @@ export default function TextEditor({sendLocation,id}) {
         let nowhiteSpaceCode = inputCode;
         nowhiteSpaceCode = nowhiteSpaceCode.replaceAll(/\s/g, '');
         console.log(nowhiteSpaceCode);
+        console.log(inputCode.split("\n"));
         axios.post(`http://localhost:8080/useParser`, {
             id: 1,
             text: inputCode,
