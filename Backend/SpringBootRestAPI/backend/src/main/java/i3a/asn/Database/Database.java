@@ -45,7 +45,7 @@ public class Database {
         return 0;
     }
 
-    public boolean updateAuswahl(double procent,int user){
+    public boolean updateAuswahl(double procent,Long user){
         try {
             Connection conn = jdbc.createConnection();
             Statement st = conn.createStatement();

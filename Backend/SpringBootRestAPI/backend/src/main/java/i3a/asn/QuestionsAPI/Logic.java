@@ -60,15 +60,12 @@ public class Logic {
 
     public String calculateAnswer(Answer answer){
         double sum = 0;
-        System.out.println(answer.getAntwort());
         for (int i = 0; i < answer.getAntwort().length(); i++) {
-            System.out.println(answer.getAntwort().charAt(i));
             double b = Double.parseDouble(String.valueOf(answer.getAntwort().charAt(i)));
             sum += b;
         }
         sum /= questions.size() * 4;
         sum *= 100;
-        System.out.println(sum);
         String ausgabe = Double.toString(sum);
         return ausgabe;
     }
@@ -77,7 +74,7 @@ public class Logic {
         return sql.addVisitor();
     }
 
-    public boolean updateAuswahl(double prozent,int id){
+    public boolean updateAuswahl(double prozent,Long id){
         return sql.updateAuswahl(prozent,id);
     }
 
