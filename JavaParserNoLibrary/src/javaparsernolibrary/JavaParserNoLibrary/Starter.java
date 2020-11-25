@@ -22,14 +22,19 @@ public class Starter {
 	 */
 	public static void main(String[] args) {
 		ArrayList<String>befehle=new ArrayList();
-		befehle.add("x=100");
-		befehle.add("x*5");
-		befehle.add("y=15");
-		befehle.add("y*2");
-		befehle.add("while(x==100){x=x+50}");
-		befehle.add("x*2");
+		ArrayList<String>befehle2=new ArrayList();
+		befehle.add("x=10;");
+		befehle.add("x*5;");
+		befehle.add("y=15;");
+		befehle.add("y*2;");
+		befehle.add("while(x<100){x=x+10;}");
 		befehle.add("return x");
-		System.out.println(doParsing(befehle,new HashMap()));
+		for(String s:befehle){
+		String p=s.replaceAll(";", "");
+		befehle2.add(p);
+		}
+		
+		System.out.println(doParsing(befehle2,new HashMap()));
 
 		
 	}

@@ -137,7 +137,7 @@ public class Parser {
 		else if(func.equals("return")) return parseExpression();
 		else if(eat('=')){if(!eat('=')){variables.put(func, parseExpression());}else{x=variables.get(func);}}
 		else{System.out.println(func);x = variables.get(func);}
-            } else if(eat(')')||eat('>')||eat('<')||eat('!')||eat('}'));
+            } else if(eat(')')||eat('>')||eat('<')||eat('!')||eat('}')||eat(';'));
 	    else {
                 throw new RuntimeException("Unexpected: " + (char)ch);
             }
