@@ -1,8 +1,11 @@
 package i3a.asn.QuestionsAPI;
 
 import i3a.asn.Models.AddUser;
+import i3a.asn.Models.LogEintrag;
 import i3a.asn.Models.TestErgebnis;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 public class AdminController {
@@ -39,4 +42,10 @@ public class AdminController {
         }
         return "Fucked";
     }
+
+   @GetMapping("/admin/sortNew")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ArrayList<LogEintrag> sortNew(){
+        return null;
+   }
 }
