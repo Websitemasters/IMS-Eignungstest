@@ -23,7 +23,7 @@ public class StartParser {
 	public String startParser(List<String>befehle){
 		ArrayList<String> befehle2 = new ArrayList();
 		for (int i = 0; i < befehle.size(); i++) {
-			if (befehle.get(i).contains("if")) {
+			if (befehle.get(i).contains("if")||befehle.get(i).contains("while")) {
 				String s = befehle.get(i);
 				i++;
 				while (!befehle.get(i).contains("}")) {
@@ -33,8 +33,10 @@ public class StartParser {
 				if (befehle.get(i).indexOf("}") == 0) {
 					s += "}";
 					befehle2.add(s);
-					befehle2.add(befehle.get(i).substring(1, befehle.get(i).length()));
-					i++;
+					s="";
+					if(befehle.get(i).length()>1){befehle2.add(befehle.get(i).substring(1, befehle.get(i).length()-1));}
+
+
 				}
 				else {
 					s += (befehle.get(i).substring(0, befehle.get(i).indexOf("}")));
@@ -46,9 +48,12 @@ public class StartParser {
 				befehle2.add(befehle.get(i));
 			}
 		}
+		System.out.println("Befehle2 Content: ");
 		for (String s : befehle2) {
+
 			System.out.println(s);
 		}
+		System.out.println("Befehl2 Content done");
 		return Double.toString(doParsing(befehle2,new HashMap()));
 
 		
