@@ -24,18 +24,20 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }
       prozentZahl = response.data;
       console.log(response.data);
       setRes(response.data);
+      Axios.post("http://localhost:8080/sendErgebis",{
+        id:id,
+        answers:response.data,
+      })
+      .then((response)=>{
+        console.log(response);
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
     })
     .catch((error)=>{
       console.log(error);
     })
-
-    Axios.get(`http://localhost:8080/sendErgebis?id=${id}&prozent=${res}`)
-    .then((response)=>{
-      console.log(response.data);
-    })
-    .catch((error)=>{
-      console.log(error);
-    });
   };
 
   const ini = async () =>{

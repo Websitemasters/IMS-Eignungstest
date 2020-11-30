@@ -5,6 +5,8 @@
  */
 package i3a.asn.Models;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 1810g

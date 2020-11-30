@@ -2,9 +2,9 @@ package i3a.asn.Models;
 
 public class TestErgebnis {
     private Long id;
-    private String answers;
+    private double answers;
 
-    public TestErgebnis(Long id, String answers) {
+    public TestErgebnis(Long id, double answers) {
         this.id = id;
         this.answers = answers;
     }
@@ -17,11 +17,11 @@ public class TestErgebnis {
         this.id = id;
     }
 
-    public String getAnswers() {
+    public double getAnswers() {
         return answers;
     }
 
-    public void setAnswers(String answers) {
+    public void setAnswers(double answers) {
         this.answers = answers;
     }
 }

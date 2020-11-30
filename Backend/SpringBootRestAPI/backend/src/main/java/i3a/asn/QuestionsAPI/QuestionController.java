@@ -10,7 +10,10 @@ import java.util.ArrayList;
 import i3a.asn.Models.Answer;
 import i3a.asn.Models.ParseModel;
 import i3a.asn.Models.Question;
-import i3a.asn.parser.parsingClass;
+import i3a.asn.parser.StartParser;
+
+import java.util.Arrays;
+import java.util.List;
 import static jdk.nashorn.tools.ShellFunctions.input;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QuestionController {
     private Logic logic = Logic.getInstance();
-    private parsingClass pc=new parsingClass();
+    private StartParser pc;
 
     @GetMapping("/getAllQuestion")
     @CrossOrigin(origins = "http://localhost:3000")
@@ -48,7 +51,15 @@ public class QuestionController {
     
     @PostMapping("/useParser")
     @CrossOrigin(origins = "http://localhost:3000")
-    public int parseInput(@RequestBody ParseModel code){
-	   return pc.parseeeInt(code.getText());
+    public String parseInput(@RequestBody ParseModel code){
+        pc=new StartParser();
+        String lines[] = code.getText().split("\\r?\\n");
+        List<String> inputCode = new ArrayList<>();
+        for(String s: lines){
+            System.out.println(s);
+            inputCode.add(s);
+        }
+
+	    return pc.startParser(inputCode);
     }
 }
