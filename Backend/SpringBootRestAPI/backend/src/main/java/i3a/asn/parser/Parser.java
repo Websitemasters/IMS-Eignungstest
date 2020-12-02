@@ -15,7 +15,6 @@ public class Parser {
 	public static Object[] eval(final String str, Map<String,Double> variables) {
     return new Object() {
         int pos = -1, ch;
-	int eqCount=0; 
 
         void nextChar() {
             ch = (++pos < str.length()) ? str.charAt(pos) : -1;
@@ -83,6 +82,7 @@ public class Parser {
 
 			//wenn wahr
 			x=parseExpression();
+
 				pos-=3;
 				nextChar();
 				while((ch>='0'&&ch<='9')||(ch>='a'&&ch<='z')||ch=='('){
@@ -95,6 +95,7 @@ public class Parser {
 				nextChar();
 			}
 			double p = parseExpression();
+
 			if(!eat(')')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			if(condition(x,check,p)){
 			if(!eat('{')) throw new RuntimeException("Wrong Syntax at: "+ str);
@@ -109,6 +110,8 @@ public class Parser {
 			if(!eat('(')) throw new RuntimeException("Wrong Syntax at: "+str);
 			else{
 			x=parseExpression();
+
+
 			pos-=3;
 				nextChar();
 				while((ch>='0'&&ch<='9')||(ch>='a'&&ch<='z')||ch=='('){
@@ -121,6 +124,7 @@ public class Parser {
 				nextChar();
 			}
 			double p = parseExpression();
+
 
 			if(!eat(')')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			if(condition(x,check,p)){

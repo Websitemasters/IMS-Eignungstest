@@ -20,12 +20,23 @@ public class StartParser {
 	/**
 	 * @param args the command line arguments
 	 */
-	public String startParser(List<String>befehle){
+	public String startParser(List<String> befehle) {
 		ArrayList<String> befehle2 = new ArrayList();
 		for (int i = 0; i < befehle.size(); i++) {
-			if (befehle.get(i).contains("if")||befehle.get(i).contains("while")) {
+			if (befehle.get(i).contains("if") || befehle.get(i).contains("while")) {
 				String s = befehle.get(i);
 				i++;
+				if (!befehle.get(i).contains("}")) {
+					int r = i + 1;
+					while (!befehle.get(r).contains("}")) {
+						if (befehle.get(r).matches("^\\s*$")) {
+							r++;
+						}
+						else {
+							return "too many arguments in statement (max. 1)";
+						}
+					}
+				}
 				while (!befehle.get(i).contains("}")) {
 					s = s.concat(befehle.get(i));
 					i++;
@@ -33,23 +44,16 @@ public class StartParser {
 				if (befehle.get(i).indexOf("}") == 0) {
 					s += "}";
 					befehle2.add(s);
-					s="";
-					if(befehle.get(i).length()>1){befehle2.add(befehle.get(i).substring(1, befehle.get(i).length()-1));}
-
-
-				}else if(befehle.get(i).indexOf("}")==(befehle.get(i).length()-1)){
-					s+=befehle.get(i);
-					befehle2.add(s);
-					s="";
-				}else if(!befehle.get(i).contains("}")){
-					int r =i;
-					while(!befehle.get(r).contains("}")){
-						if(befehle.get(r).matches("^\\s*$")){
-							r++;
-						}else{
-							return "Zu viele Argumente in statement (max. 1)";
-						}
+					s = "";
+					if (befehle.get(i).length() > 1) {
+						befehle2.add(befehle.get(i).substring(1, befehle.get(i).length() - 1));
 					}
+
+				}
+				else if (befehle.get(i).indexOf("}") == (befehle.get(i).length() - 1)) {
+					s += befehle.get(i);
+					befehle2.add(s);
+					s = "";
 				}
 				else {
 					s += (befehle.get(i).substring(0, befehle.get(i).indexOf("}")));
@@ -67,25 +71,27 @@ public class StartParser {
 			System.out.println(s);
 		}
 		System.out.println("Befehl2 Content done");
-		String retStr="";
-		try{retStr= Double.toString(doParsing(befehle2,new HashMap()));}
-		catch(Exception ex){
+		String retStr = "";
+		try {
+			retStr = Double.toString(doParsing(befehle2, new HashMap()));
+		}
+		catch (Exception ex) {
 			return ex.getMessage();
 		}
 
 		return retStr;
 
-		
 	}
 
-	private static double doParsing(List<String>befehle, Map<String, Double>variablen){
-		if(befehle.size()==1){
-			return (double)(Parser.eval(befehle.get(0),variablen)[0]);
-		}else{
-			Map<String,Double>retMap=(Map<String, Double>)Parser.eval(befehle.get(0),variablen)[1];
+	private static double doParsing(List<String> befehle, Map<String, Double> variablen) {
+		if (befehle.size() == 1) {
+			return (double) (Parser.eval(befehle.get(0), variablen)[0]);
+		}
+		else {
+			Map<String, Double> retMap = (Map<String, Double>) Parser.eval(befehle.get(0), variablen)[1];
 			befehle.remove(0);
-		return doParsing(befehle,retMap);	
+			return doParsing(befehle, retMap);
 		}
 	}
-	
+
 }
