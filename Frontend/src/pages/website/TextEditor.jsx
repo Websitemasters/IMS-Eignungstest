@@ -21,7 +21,7 @@ export default function TextEditor({sendLocation,id}) {
             })
             .catch((error) => {
                 console.log(error);
-                setCode("Error");
+                setCode("fehler");
             })
     }
     return (

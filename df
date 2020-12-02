@@ -1,0 +1,431 @@
+[33mcommit f6e9e41fc9947bf9bf4ed7c007e4dbea0c70a49c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Mon Nov 30 10:25:42 2020 +0100
+
+    Parser sollte funktionieren
+
+[33mcommit 951fcb3405118017b8142a99ec52b57f354e92c2[m
+Merge: 1e731b2 0a54b13
+Author: 1810g <1810.grand@gmail.com>
+Date:   Mon Nov 30 09:57:56 2020 +0100
+
+    Merge branch 'master' of https://github.com/Websitemasters/IMS-Eignungstest into master
+
+[33mcommit 0a54b13389e0cac949ce6fb08a7c5566a81c04e9[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Mon Nov 30 09:51:48 2020 +0100
+
+    gib code
+
+[33mcommit 1f1c7a56a5ea11d19c35a5356ec7c57705c0a1a2[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Mon Nov 30 09:51:38 2020 +0100
+
+    please work soon
+
+[33mcommit 1996c20e39bbdc1e31883265e7c73b30355d21bf[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Mon Nov 30 08:34:06 2020 +0100
+
+    Parser implemented :) ..?
+
+[33mcommit 7387ed4f7f039b26c80f747a00fae54b888bcdfd[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 28 15:00:28 2020 +0100
+
+    bootstrap removed
+
+[33mcommit b3dfee01e78e3401914dfcb6ea4bdec103ed849a[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 25 21:20:29 2020 +0100
+
+    split per line
+
+[33mcommit fed96870bea2cb2af92b0086fc9f713c1ff837a2[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 25 16:22:57 2020 +0100
+
+    statements and more closed in database class
+
+[33mcommit 0107c6af79d7d369334736e26769e4256b54dbee[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 25 16:15:56 2020 +0100
+
+    ergbeniss sichern gefixed
+
+[33mcommit 1e731b2125bc8827278eb81f8c626ae76e152e18[m
+Merge: 0cc8288 540fda1
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 25 15:37:49 2020 +0100
+
+    Merge origin/master
+
+[33mcommit 0cc8288cd62aa812092e2374a9ac2894562a8916[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 25 15:35:24 2020 +0100
+
+    ; support
+
+[33mcommit 540fda175868bd025300d66b12af81d35f5cb38f[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 25 15:30:00 2020 +0100
+
+    whitespaces and new lines removed
+
+[33mcommit 54b137732821e81b855c8e243f28da26c6bc4c6c[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 25 15:03:10 2020 +0100
+
+    WHILE funktion implementiert
+
+[33mcommit 19adcb6ef2ff35a1d5c8fcc8b488795e138efb4c[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 25 14:59:44 2020 +0100
+
+    If funktion implementiert
+
+[33mcommit 172c33fb8fad9382ec506ad7cafa814e0166c46b[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Tue Nov 24 23:12:13 2020 +0100
+
+    Revert "Revert "Kasse Programm funktioniert""
+    
+    This reverts commit e806584bd8c4efb8b91db72a29308eec28faca8c.
+
+[33mcommit e806584bd8c4efb8b91db72a29308eec28faca8c[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Tue Nov 24 23:07:50 2020 +0100
+
+    Revert "Kasse Programm funktioniert"
+    
+    This reverts commit efe44333d7e9159b7e31ff2eed4e53087d54f15e.
+
+[33mcommit efe44333d7e9159b7e31ff2eed4e53087d54f15e[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Tue Nov 24 23:06:46 2020 +0100
+
+    Kasse Programm funktioniert
+
+[33mcommit aa0ceafe215aa534d62189677faf31913e8cab75[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Thu Nov 19 09:56:39 2020 +0100
+
+    hot fix berechnungs
+
+[33mcommit 31d3fb5b6b27be2485aedabc9ff51a30895ede73[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 18 16:05:13 2020 +0100
+
+    if, return and = gehen
+
+[33mcommit d192df01c0feadba5bc7673d4d95002b27a2b430[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 18 14:54:13 2020 +0100
+
+    Implementation of Variables
+
+[33mcommit 06387a11de4fd446b9319eb253a9e4a6f5fbd508[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 18 14:41:04 2020 +0100
+
+    Just for safety
+
+[33mcommit b91925731ecb8618ecffe00812805dd272ba825e[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 18 12:28:33 2020 +0100
+
+    formating
+
+[33mcommit f18aa428a83b97d9028ead9b77c434ad1ae703d1[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Mon Nov 16 07:40:06 2020 +0100
+
+    texteditor visuel
+
+[33mcommit 0d71c84585de33a9b9bdbcb3897da09776c47026[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sun Nov 15 14:08:59 2020 +0100
+
+    asciiChanges Removed
+
+[33mcommit 03b21182dd93248dbe8956af33f51aede475959a[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 21:18:07 2020 +0100
+
+    navbar linkt to code
+
+[33mcommit 19701cc1f3a957bc1b2ab7f9019461819d2f00db[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 18:50:55 2020 +0100
+
+    fixed
+
+[33mcommit 58e8136944d7862b54906a668bb88aeb598e1a03[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 14:20:15 2020 +0100
+
+    " to # for +
+
+[33mcommit 2145021468933a6560f47416687dc3dd2a4efe5a[m
+Merge: 0535e46 b23d306
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 14:11:27 2020 +0100
+
+    Merge branch 'master' of https://github.com/Websitemasters/IMS-Eignungstest
+
+[33mcommit 0535e46b5cdec22ea818074c8b0560b3b7609df4[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 14:08:29 2020 +0100
+
+    bitchass
+
+[33mcommit b23d306724ec887dd42f8f8242bc2e1e766631d5[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Sat Nov 14 14:01:28 2020 +0100
+
+    Ascii changes file
+
+[33mcommit d98b7c3b55c9fc1937ce7637354e30aacc16268b[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Sat Nov 14 13:57:28 2020 +0100
+
+    > = !
+    < = _
+    + = "
+
+[33mcommit 58abad89a3cf108232d21666bb7057f7a324345c[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 13:44:39 2020 +0100
+
+    texteditor
+
+[33mcommit 7cb49264eb3d73d0f7f6e4dda46dee9f4c7d73d1[m
+Merge: 120c843 ba9e9e3
+Author: 1810g <1810.grand@gmail.com>
+Date:   Sat Nov 14 13:29:17 2020 +0100
+
+    Merge branch 'master' of https://github.com/Websitemasters/IMS-Eignungstest into master
+
+[33mcommit 120c84397eb186c87ba2bc5aca7e4de03f27ad35[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Sat Nov 14 13:28:24 2020 +0100
+
+    ParseModel Class implementiert
+
+[33mcommit ba9e9e38799473dbc0bad64dba2d53390de04c3f[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Sat Nov 14 13:27:26 2020 +0100
+
+    TextEditor
+
+[33mcommit 889244bbab5eeb0e89fcfef3e237ee982c137a58[m
+Merge: f1a6b7a 1d8e428
+Author: 1810g <1810.grand@gmail.com>
+Date:   Thu Nov 12 15:05:52 2020 +0100
+
+    Merge origin/master
+
+[33mcommit f1a6b7a3e7156f3ef47ce35180ff397459076120[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Thu Nov 12 15:05:00 2020 +0100
+
+    Parser mit form x=1 if(x>10){x=100}return x funktioniert
+
+[33mcommit 4e36005a591fc893f828d4841d3775e653226cc6[m
+Author: Noah Grand <1810.grand@gmail.com>
+Date:   Thu Nov 12 09:21:59 2020 +0100
+
+    Chain of Responsibility Pattern integriert
+
+[33mcommit 1d8e4281309efdaa5376290e9e61bb47a3da5188[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 11 15:37:03 2020 +0100
+
+    Klassendiagramm
+
+[33mcommit 9227088a07522ce1d5daa38ed7816fa1659cd237[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 11 15:28:47 2020 +0100
+
+    Klassendiagramm beenden Prototyp
+
+[33mcommit f901b6c3d2aef0e5b56440583bb1b4c9a3c0e0d5[m
+Merge: 4e96837 7466092
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 11 14:49:23 2020 +0100
+
+    Merge origin/master
+
+[33mcommit 4e96837b198145ce06232419d8ffbfaf5a28d8e4[m
+Author: 1810g <1810.grand@gmail.com>
+Date:   Wed Nov 11 14:49:04 2020 +0100
+
+    Andrei sagte ich soll ein Commit machen
+
+[33mcommit 74660922ee3fcb7014058ba9f6324a30744c9ec7[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 11 14:24:31 2020 +0100
+
+    struktur verbessert
+
+[33mcommit 52017b27313da5665016d26cbf690d24f00c79eb[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 4 15:52:25 2020 +0100
+
+    percent und diagramme
+
+[33mcommit e581ee6fd9362b0dd8f2fb78a4124ffc3e5414bf[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 4 15:09:38 2020 +0100
+
+    ordner struktur
+
+[33mcommit 977cc544fa3d39f481ef0e228d34f3ad6f367b7b[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 4 14:58:33 2020 +0100
+
+    Database implement sql file and model
+
+[33mcommit 4c2c5420f66368aebeb716c972aa7f14d5e83b94[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 4 12:37:13 2020 +0100
+
+    debug log remove
+
+[33mcommit bf11ff03885fedd7727f4c32b0dc23977304b780[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 4 07:18:50 2020 +0100
+
+    axios in index removed
+
+[33mcommit b4050d196aec21dffc5130d3dab27b84e8df95e6[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Nov 4 07:18:25 2020 +0100
+
+    BounceLoader and Root removed
+
+[33mcommit c8f4fe9bf3858eb2be9dd6d47b690c680aa071d2[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 19:09:31 2020 +0100
+
+    low vulnerabilities removed
+
+[33mcommit 42c022eba6a01d40e2b1396171605ce2b8aa66ad[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 18:57:36 2020 +0100
+
+    spinner npm added
+
+[33mcommit 7c696a61698b56291f0804c36ba0548672db2a5d[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 17:44:13 2020 +0100
+
+    error with first login fixed
+
+[33mcommit a31793d38b1c12d627311c8885ee7615894d3191[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 17:09:19 2020 +0100
+
+    error catch
+
+[33mcommit 15b1cfc648dbf5e3fb5eff7a25368bff9308f282[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 14:29:59 2020 +0100
+
+    tracking first prototyp
+
+[33mcommit 202af9e7809d085e31b34a1ac981f15085d2e77e[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 13:55:24 2020 +0100
+
+    submit ergebniss
+
+[33mcommit bb9dce4621294a31256c702ce8c1a01255199a86[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 13:16:39 2020 +0100
+
+    Doku and Idea added
+
+[33mcommit 050d2ee6a66cc69a173cb17db52ca52c27dd41b2[m
+Author: AndreiRobertoOleniuc <andreioleniucroberto@gmail.com>
+Date:   Tue Nov 3 13:13:00 2020 +0100
+
+    add user with database
+
+[33mcommit 2db409a6d1b391ab56559cd59ff48462989875ac[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Mon Nov 2 13:14:40 2020 +0100
+
+    /home path to / path
+
+[33mcommit 99305f71d72e6a4e019420ba4e921821750de8a9[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Sun Nov 1 13:22:34 2020 +0100
+
+    debug kog deleted
+
+[33mcommit caec103df73428995491ed7e6d61f21ed1c9a737[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Fri Oct 30 09:32:11 2020 +0100
+
+    tracking half implementation
+
+[33mcommit 7d3e23e06db69f4a0bfaae7ae976e31226a10d2e[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Fri Oct 30 09:17:37 2020 +0100
+
+    staticquestion removed
+
+[33mcommit b2d7b15532d6269cf68bb9c1452c100c3ead12da[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Fri Oct 30 09:00:13 2020 +0100
+
+    breakthrough sendLocation
+
+[33mcommit 957cb51e174708f4f6882f6819fd7b6b607572f9[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Fri Oct 30 08:55:45 2020 +0100
+
+    small tweek
+
+[33mcommit f7d4c3f5afd1d0d19cac6ba789d9a57e1172e0d0[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Thu Oct 29 22:15:11 2020 +0100
+
+    code refactoring
+
+[33mcommit cb0c715dd271be06604b2488c2b31393336e7b03[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Thu Oct 29 13:41:35 2020 +0100
+
+    Todos
+
+[33mcommit f6e820dee2a96933a98ee981586afd5cfc5b93ef[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Thu Oct 29 13:39:30 2020 +0100
+
+    Database implemenation
+
+[33mcommit a9d811309e9d0b32b51b9caac720fe3d5cc6755a[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Thu Oct 29 09:53:31 2020 +0100
+
+    Database implemenation started
+
+[33mcommit 0b52d44d4ee1cb4c5484f18eb6afe41a5405ee8d[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Thu Oct 29 09:45:28 2020 +0100
+
+    full Jsx support
+
+[33mcommit 907f19758cbd5a0f1dfc80034de6f39a686a43e7[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Oct 28 16:05:05 2020 +0100
+
+    daily commmit
+
+[33mcommit 5309e88a32908e50d4a98f1f42e96b2123af13c2[m
+Author: Andrei Roberto Oleniuc <andreioleniucroberto@gmail.com>
+Date:   Wed Oct 28 14:42:56 2020 +0100
+
+    ini

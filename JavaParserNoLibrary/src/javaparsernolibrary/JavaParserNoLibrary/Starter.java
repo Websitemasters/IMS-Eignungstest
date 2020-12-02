@@ -24,11 +24,8 @@ public class Starter {
 		ArrayList<String> befehle2 = new ArrayList();
 		List<String> befehle = new ArrayList();
 		befehle.add("x=5");
-		befehle.add("if(x<100)");
-		befehle.add("{x=5*x");
-		befehle.add("}return x");
-		int manySkip = 0;
-		for (int i = 0; i < befehle.size(); i++) {
+		befehle.add("return x");
+		/*for (int i = 0; i < befehle.size(); i++) {
 			if (befehle.get(i).contains("if")) {
 				String s = befehle.get(i);
 				i++;
@@ -51,11 +48,11 @@ public class Starter {
 			else {
 				befehle2.add(befehle.get(i));
 			}
-		}
+		}*/
 		for (String s : befehle2) {
 			System.out.println(s);
 		}
-		System.out.println(doParsing(befehle2, new HashMap()));
+		System.out.println(doParsing(befehle, new HashMap()));
 	}
 
 	private static double doParsing(List<String> befehle, Map<String, Double> variablen) {
