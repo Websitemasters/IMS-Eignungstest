@@ -59,58 +59,6 @@ header button:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
 
-.userdata {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.userdata p {
-  font-weight: 500;
-  font-size: 24px;
-  color: #edf0f1;
-  text-decoration: none;
-}
-
-.userdata input {
-  color: #edf0f1;
-  font-weight: 500;
-  font-size: 18px;
-  border-style: none;
-  text-align: center;
-  padding: 5px;
-  border-bottom: 1px solid;
-  outline: none;
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s;
-}
-
-.userdata input:focus {
-  border-bottom: 1px solid #0088a9;
-}
-
-.userdata button {
-  padding: 9px 25px;
-  background-color: #0088a9;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.userdata button:hover {
-  background-color: #edf0f1;
-  color: #0088a9;
-}
-
 .question {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,30 +98,6 @@ header button:hover {
 .question button:hover {
   background-color: rgba(0, 136, 169, 0.8);
   color: #edf0f1;
-}
-
-.question .questionSelector {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #c5c5c5;
-}
-
-.question .questionSelector li {
-  float: left;
-}
-
-.question .questionSelector li a {
-  display: block;
-  color: #edf0f1;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-.question .questionSelector li a:hover {
-  color: rgba(0, 136, 169, 0.8);
 }
 
 .centerContent {
@@ -218,10 +142,14 @@ header button:hover {
 }
 
 .coding textarea {
+  background-color: #24252a;
+  color: #edf0f1;
+  font-family: "Montserrat", sans-serif;
   font-size: 25px;
+  resize: none;
 }
 
-* {
+.parent {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -230,6 +158,11 @@ header button:hover {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #edf0f1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .staticQuestions {

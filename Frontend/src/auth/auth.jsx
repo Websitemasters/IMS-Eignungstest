@@ -1,7 +1,7 @@
 const auth = {
   isAuthenticated: false,
   authenticate(cb, name, vorname) {
-    if (name.length < 1 || vorname.length < 1) {
+    if (name != "admin" || vorname != "12345") {
       auth.isAuthenticated = false;
     } else {
       auth.isAuthenticated = true;
