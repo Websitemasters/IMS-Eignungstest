@@ -43,9 +43,15 @@ public class AdminController {
         return "Fucked";
     }
 
-   @GetMapping("/admin/sortNew")
+    @GetMapping("/admin/orderOld")
     @CrossOrigin(origins = "http://localhost:3000")
-    public ArrayList<LogEintrag> sortNew(){
-        return null;
+    public ArrayList<LogEintrag> orderOld(){
+        return repo.orderOld();
    }
+
+    @GetMapping("/admin/orderNew")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ArrayList<LogEintrag> orderNew(){
+        return repo.orderNew();
+    }
 }

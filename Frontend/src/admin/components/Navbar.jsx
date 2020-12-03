@@ -15,13 +15,13 @@ function Navbar() {
         <div>
         <IconContext.Provider value = {{ color: "#fff" } } >
             <div className = "navbar" >
-                <Link to = "#"classname = "menu-bars" >
+                <Link to = "#"className = "menu-bars" >
                 <FaIcons.FaBars onClick = { showSidebar } size={25}/></Link>
             </div> 
             <nav className = { sidebar ? "nav-menu active" : "nav-menu" } >
                 <ul className = "nav-menu-items" onClick = { showSidebar } >
                     <li className = "navbar-toggle" >
-                        <Link to = "#"classname = "menu-bars" >
+                        <Link to = "#"className = "menu-bars" >
                             <AiIcons.AiOutlineClose size={32}/ >
                         </Link> 
                     </li> 

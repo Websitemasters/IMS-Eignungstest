@@ -3,6 +3,7 @@ package i3a.asn.QuestionsAPI;
 import i3a.asn.Database.Database;
 import i3a.asn.Models.AddUser;
 import i3a.asn.Models.Answer;
+import i3a.asn.Models.LogEintrag;
 import i3a.asn.Models.Question;
 
 import java.sql.SQLException;
@@ -82,4 +83,11 @@ public class Logic {
         return sql.logActivity(id,url);
     }
 
+    public ArrayList<LogEintrag> orderNew() {
+        return sql.actLogNeuste();
+    }
+
+    public ArrayList<LogEintrag> orderOld() {
+        return sql.actLogAlteste();
+    }
 }

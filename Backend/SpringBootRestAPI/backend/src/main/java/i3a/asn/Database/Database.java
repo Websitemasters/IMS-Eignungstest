@@ -1,7 +1,13 @@
 package i3a.asn.Database;
 
+import i3a.asn.Models.LogEintrag;
+import sun.rmi.runtime.Log;
+
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Database {
 
@@ -89,5 +95,32 @@ public class Database {
             throwables.printStackTrace();
         }
         return false;
+    }
+
+    public ArrayList<LogEintrag> actLogNeuste() {
+        return null;
+    }
+
+    public ArrayList<LogEintrag> actLogAlteste() {
+        try {
+            ArrayList<LogEintrag> act = new ArrayList<>();
+            Connection conn = jdbc.createConnection();
+            Statement st = conn.createStatement();
+            String sql = "select * from activity";
+            ResultSet rs = st.executeQuery(sql);
+            int nextId = 0;
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            while(rs.next()){
+                act.add(new LogEintrag(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getTimestamp(4)));
+            }
+            rs.close();
+            st.close();
+            conn.close();
+            jdbc.closeConnection();
+            return act;
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
 }
