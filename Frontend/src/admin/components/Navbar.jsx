@@ -16,32 +16,32 @@ function Navbar() {
         <IconContext.Provider value = {{ color: "#fff" } } >
             <div className = "navbar" >
                 <Link to = "#"className = "menu-bars" >
-                <FaIcons.FaBars onClick = { showSidebar } size={25}/></Link>
-                <h1>Admin</h1>
+                <FaIcons.FaBars onClick = { showSidebar } size={23} color="black"/></Link>
+                <h1>Administartor Kanti Baden</h1>
             </div> 
             <nav className = { sidebar ? "nav-menu active" : "nav-menu" } >
                 <ul className = "nav-menu-items" onClick = { showSidebar } >
                     <li className = "navbar-toggle" >
                         <Link to = "#"className = "menu-bars" >
-                            <AiIcons.AiOutlineClose size={32}/ >
+                            <AiIcons.AiOutlineClose color="black"/ >
                         </Link> 
                     </li> 
 
                     <li className="nav-text">
                         <Link to="/admin">
-                            <MdIcons.MdDashboard />
+                            <MdIcons.MdDashboard color="black"/>
                             <span>Dashboard</span>
                         </Link>
                     </li>
                     <li className="nav-text">
                         <Link to="/admin/log">
-                            <FiIcons.FiActivity />
+                            <FiIcons.FiActivity color="black"/>
                             <span>Aktivitäts Log</span>
                         </Link>
                     </li>
                     <li className="nav-text">
                         <Link to="/admin/results">
-                            <IoIcons.IoIosPaper />
+                            <IoIcons.IoIosPaper color="black"/>
                             <span>Test Resultate</span>
                         </Link>
                     </li>
