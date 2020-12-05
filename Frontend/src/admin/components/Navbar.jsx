@@ -17,6 +17,7 @@ function Navbar() {
             <div className = "navbar" >
                 <Link to = "#"className = "menu-bars" >
                 <FaIcons.FaBars onClick = { showSidebar } size={25}/></Link>
+                <h1>Admin</h1>
             </div> 
             <nav className = { sidebar ? "nav-menu active" : "nav-menu" } >
                 <ul className = "nav-menu-items" onClick = { showSidebar } >

@@ -7,27 +7,45 @@ function ActivityLog() {
         fetchData();
     },[]);
     const fetchData = async()=>{
-        axios.get("http://localhost:8080/admin/orderOld")
+        axios.get("http://localhost:8080/admin/actLog")
         .then((response)=>{
-            console.log(response.data);
-            setEintrage(response.data);
+            setEintrage(response.data.map((item)=>{
+                let realtime = item.activityTime.replace("T",", Uhrzeit: ");
+                realtime = realtime.replace(".000+00:00"," ");
+                return {
+                    ...item,
+                    activityTime: realtime
+                }
+            }));
         })
         .catch((error)=>{
             console.log(error);
         })
     }
+    //Download statt anzeigen lieber andere Daten anzeigen lassen
     return (
-        <div className="middle">
-            <ul>
-            {eintrage.map((item)=>(
-                <li key={item.id}>
-                    <p>id: {item.id}</p>
-                    <p>userid: {item.userId}</p>
-                    <p>url: {item.vistedPage}</p>
-                    <p>time: {item.activityTime}</p>
-                </li>
-            ))}
-            </ul>
+        //Desgin geklaut von https://codemyui.com/css-only-mobile-friendly-table-layout/
+        <div className="table-wrapper">
+            <table className="fl-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>User Id</th>
+                        <th>URL</th>
+                        <th>Datum und Uhrzeit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {eintrage.map((item)=>(
+                    <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.userId}</td>
+                        <td>{item.vistedPage}</td>
+                        <td>{item.activityTime}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
         </div>
     )
 }

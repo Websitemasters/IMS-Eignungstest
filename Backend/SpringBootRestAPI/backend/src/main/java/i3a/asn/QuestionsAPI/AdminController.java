@@ -3,6 +3,7 @@ package i3a.asn.QuestionsAPI;
 import i3a.asn.Models.AddUser;
 import i3a.asn.Models.LogEintrag;
 import i3a.asn.Models.TestErgebnis;
+import i3a.asn.Models.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -43,15 +44,28 @@ public class AdminController {
         return "Fucked";
     }
 
-    @GetMapping("/admin/orderOld")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public ArrayList<LogEintrag> orderOld(){
-        return repo.orderOld();
-   }
 
-    @GetMapping("/admin/orderNew")
+    @GetMapping("/admin/actLog")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<LogEintrag> orderNew(){
-        return repo.orderNew();
+        return repo.actLog();
+    }
+
+    @GetMapping("/admin/seitenaufrufe")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public int getSeitenaufrufe(){
+        return repo.getSeitenAufrufe();
+    }
+
+    @GetMapping("/admin/getDurchgefuehrte")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public int getDurchgefuehrte(){
+        return repo.getDurchgefuehrte();
+    }
+
+    @GetMapping("/admin/getTestErg")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ArrayList<User> getTestErg(){
+        return repo.getTestErg();
     }
 }
