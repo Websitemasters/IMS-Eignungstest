@@ -182,6 +182,10 @@ span {
           flex-direction: column;
   -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
 }
 
 .content .plate .contentInfo1 .actLog .tableHold {
@@ -192,6 +196,11 @@ span {
   border-collapse: separate;
   border-spacing: 0 15px;
   width: 90%;
+}
+
+.content .plate .contentInfo1 .actLog:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 .content .plate .contentInfo2 .downloadAct button {
