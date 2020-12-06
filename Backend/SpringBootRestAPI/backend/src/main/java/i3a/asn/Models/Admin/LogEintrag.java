@@ -1,15 +1,15 @@
 package i3a.asn.Models;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Timestamp;
 
 public class LogEintrag {
     private int id;
     private int userId;
     private String vistedPage;
-    private Timestamp activityTime;
+    private String activityTime;
 
-    public LogEintrag(int id, int userId, String vistedPage, Timestamp activityTime) {
+    public LogEintrag(int id, int userId, String vistedPage, String activityTime) {
         this.id = id;
         this.userId = userId;
         this.vistedPage = vistedPage;
@@ -40,11 +40,11 @@ public class LogEintrag {
         this.vistedPage = vistedPage;
     }
 
-    public Timestamp getActivityTime() {
+    public String getActivityTime() {
         return activityTime;
     }
 
-    public void setActivityTime(Timestamp activityTime) {
+    public void setActivityTime(String activityTime) {
         this.activityTime = activityTime;
     }
 }
