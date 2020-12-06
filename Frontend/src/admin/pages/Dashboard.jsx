@@ -60,9 +60,32 @@ function Dashboard() {
                         <h4>Durchgeführte Test</h4>
                         <p>{durchgefuehrte}</p>
                     </div>
+                    <div className="letzteAkt">
+                        <h3>Aktivätens Log</h3>
+                        <div className="tableHold">
+                            <table className="aktTable">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Datum und Uhrzeit</th>
+                                        <th>User</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {eintrage.map((item) => (
+                                        <tr key={item.id}>
+                                            <td>{item.vistedPage}</td>
+                                            <td>{item.activityTime}</td>
+                                            <td>{item.userId}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
