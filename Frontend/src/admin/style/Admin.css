@@ -236,7 +236,7 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 30px;
+  padding: 20px;
   -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
 }
@@ -273,10 +273,19 @@ span {
   padding: 10px;
   -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
 }
 
 .content .plate .contentInfo1 .seitenAufrufe * {
   margin: 5px;
+}
+
+.content .plate .contentInfo1 .seitenAufrufe:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .content .plate .contentInfo1 .durchgefuehrt {
@@ -297,10 +306,19 @@ span {
   -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
 }
 
 .content .plate .contentInfo1 .durchgefuehrt * {
   margin: 5px;
+}
+
+.content .plate .contentInfo1 .durchgefuehrt:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .content .plate .contentInfo1 .letzteAkt {
@@ -317,15 +335,69 @@ span {
           flex-direction: column;
   -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
 }
 
-.content .plate .contentInfo1 .letzteAkt .tableHold {
+.content .plate .contentInfo1 .letzteAkt .aktTablePlaceHolder {
   overflow: auto;
 }
 
-.content .plate .contentInfo1 .letzteAkt .tableHold .aktTable {
+.content .plate .contentInfo1 .letzteAkt .aktTablePlaceHolder .aktTable {
   border-collapse: separate;
   border-spacing: 0 15px;
   width: 90%;
+}
+
+.content .plate .contentInfo1 .letzteAkt:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.content .plate .contentInfo2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.content .plate .contentInfo2 .vpi {
+  border-radius: 10px;
+  background-color: #F2F5FA;
+  width: 100%;
+  height: 24vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.content .plate .contentInfo2 .vpi .vpiTablePlaceHolder {
+  overflow: auto;
+}
+
+.content .plate .contentInfo2 .vpi .vpiTablePlaceHolder .vpiTable {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  width: 90%;
+}
+
+.content .plate .contentInfo2 .vpi:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 /*# sourceMappingURL=Admin.css.map */

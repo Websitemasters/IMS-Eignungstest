@@ -16,16 +16,16 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <MainPage/>
+          <MainPage />
         </Route>
         <Route exact path="/admin">
-          <Admin/>
+          <Admin />
         </Route>
         <Route path="/Login">
-            <Login/>
+          <Login />
         </Route>
         <Route exact path="/404">
-          <NotFoundPage/>
+          <NotFoundPage />
         </Route>
         <Redirect to="/404" />
       </Switch>

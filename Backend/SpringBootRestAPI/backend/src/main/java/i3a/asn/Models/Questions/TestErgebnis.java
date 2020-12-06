@@ -1,4 +1,4 @@
-package i3a.asn.Models;
+package i3a.asn.Models.Questions;
 
 public class TestErgebnis {
     private Long id;

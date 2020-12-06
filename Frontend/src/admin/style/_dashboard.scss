@@ -1,67 +1,104 @@
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .plate {
-        border-radius: 10px;
-        background-color: #F2F5FA;
-        width: 80%;
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        padding: 30px;
-        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .3);
-        * {
-            margin: 10px;
-        }
-        .contentInfo1 {
+        .content {
             display: flex;
-            flex-direction: row;
-            .seitenAufrufe {
+            flex-direction: column;
+            align-items: center;
+            .plate {
                 border-radius: 10px;
                 background-color: #F2F5FA;
-                width: 20%;
-                height: 20vh;
+                width: 80%;
+                height: 80vh;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                padding: 10px;
-                box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
+                padding: 20px;
+                box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .3);
                 * {
-                    margin: 5px;
+                    margin: 10px;
                 }
-            }
-            .durchgefuehrt {
-                border-radius: 10px;
-                background-color: #F2F5FA;
-                width: 20%;
-                height: 20vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
-                padding: 10px;
-                * {
-                    margin: 5px;
+                .contentInfo1 {
+                    display: flex;
+                    flex-direction: row;
+                    .seitenAufrufe {
+                        border-radius: 10px;
+                        background-color: #F2F5FA;
+                        width: 20%;
+                        height: 20vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 10px;
+                        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
+                        * {
+                            margin: 5px;
+                        }
+                        transition:transform 300ms;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .durchgefuehrt {
+                        border-radius: 10px;
+                        background-color: #F2F5FA;
+                        width: 20%;
+                        height: 20vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
+                        padding: 10px;
+                        * {
+                            margin: 5px;
+                        }
+                        transition:transform 300ms;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .letzteAkt {
+                        border-radius: 10px;
+                        background-color: #F2F5FA;
+                        width: 60%;
+                        height: 30vh;
+                        display: flex;
+                        flex-direction: column;
+                        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
+                        .aktTablePlaceHolder {
+                            overflow: auto;
+                            .aktTable {
+                                border-collapse: separate;
+                                border-spacing: 0 15px;
+                                width: 90%;
+                            }
+                        }
+                        transition:transform 300ms;
+                        &:hover {
+                            transform: scale(1.01);
+                        }
+                    }
                 }
-            }
-            .letzteAkt {
-                border-radius: 10px;
-                background-color: #F2F5FA;
-                width: 60%;
-                height: 30vh;
-                display: flex;
-                flex-direction: column;
-                box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
-                .tableHold {
-                    overflow: auto;
-                    .aktTable {
-                        border-collapse: separate;
-                        border-spacing: 0 15px;
-                        width: 90%;
+                .contentInfo2 {
+                    display: flex;
+                    flex-direction: row;
+                    .vpi {
+                        border-radius: 10px;
+                        background-color: #F2F5FA;
+                        width: 100%;
+                        height: 24vh;
+                        display: flex;
+                        flex-direction: column;
+                        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
+                        .vpiTablePlaceHolder {
+                            overflow: auto;
+                            .vpiTable {
+                                border-collapse: separate;
+                                border-spacing: 0 15px;
+                                width: 90%;
+                            }
+                        }
+                        transition:transform 300ms;
+                        &:hover {
+                            transform: scale(1.01);
+                        }
                     }
                 }
             }
         }
-    }
-}

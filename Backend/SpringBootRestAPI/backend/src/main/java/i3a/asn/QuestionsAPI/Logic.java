@@ -1,11 +1,14 @@
 package i3a.asn.QuestionsAPI;
 
 import i3a.asn.Database.Database;
-import i3a.asn.Models.*;
+import i3a.asn.Models.Admin.LogEintrag;
+import i3a.asn.Models.Admin.User;
+import i3a.asn.Models.Admin.VerlassenPerItem;
+import i3a.asn.Models.Questions.Answer;
+import i3a.asn.Models.Questions.Question;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Logic {
@@ -90,6 +93,9 @@ public class Logic {
     }
     public ArrayList<User> getTestErg(){
         return sql.getAllTestErgebniss();
+    }
+    public ArrayList<VerlassenPerItem> getVPI (){
+        return sql.getVPI();
     }
 
 }

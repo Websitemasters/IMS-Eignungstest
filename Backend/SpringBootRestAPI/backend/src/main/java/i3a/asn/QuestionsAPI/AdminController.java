@@ -1,9 +1,9 @@
 package i3a.asn.QuestionsAPI;
 
-import i3a.asn.Models.AddUser;
-import i3a.asn.Models.LogEintrag;
-import i3a.asn.Models.TestErgebnis;
-import i3a.asn.Models.User;
+import i3a.asn.Models.Admin.LogEintrag;
+import i3a.asn.Models.Admin.VerlassenPerItem;
+import i3a.asn.Models.Questions.TestErgebnis;
+import i3a.asn.Models.Admin.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -67,5 +67,11 @@ public class AdminController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<User> getTestErg(){
         return repo.getTestErg();
+    }
+
+    @GetMapping("/admin/getVPI")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ArrayList<VerlassenPerItem> getVPI(){
+        return repo.getVPI();
     }
 }

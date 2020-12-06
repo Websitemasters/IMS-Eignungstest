@@ -6,10 +6,12 @@ function Dashboard() {
     const [aufrufe, setAufrufe] = useState();
     const [durchgefuehrte, setDurchgefuehrte] = useState();
     const [eintrage, setEintrage] = useState([]);
+    const [vpi, setVpi] = useState([]);
     useEffect(() => {
         getData();
     }, []);
     const getData = async () => {
+        //Get Seitenaufrufe
         axios.get("http://localhost:8080/admin/seitenaufrufe")
             .then((res) => {
                 setAufrufe(res.data - 1);
@@ -17,7 +19,7 @@ function Dashboard() {
             .catch((error) => {
                 console.log(error);
             })
-
+        //Get Anzahl durchgeführte Tests
         axios.get("http://localhost:8080/admin/getDurchgefuehrte")
             .then((res) => {
                 setDurchgefuehrte(res.data);
@@ -25,17 +27,19 @@ function Dashboard() {
             .catch((error) => {
                 console.log(error);
             })
-
+        //Get Aktivitäts Log
         axios.get("http://localhost:8080/admin/actLog")
             .then((response) => {
-                setEintrage(response.data.map((item) => {
-                    let realtime = item.activityTime.replace("T", ", Uhrzeit: ");
-                    realtime = realtime.replace(".000+00:00", " ");
-                    return {
-                        ...item,
-                        activityTime: realtime
-                    }
-                }));
+                setEintrage(response.data);
+
+                //To Avoid Problems
+                axios.get("http://localhost:8080/admin/getVPI")
+                    .then((res) => {
+                        setVpi(res.data);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
             })
             .catch((error) => {
                 console.log(error);
@@ -61,14 +65,14 @@ function Dashboard() {
                         <p>{durchgefuehrte}</p>
                     </div>
                     <div className="letzteAkt">
-                        <h3>Aktivätens Log</h3>
-                        <div className="tableHold">
+                        <h3>Aktivitäten</h3>
+                        <div className="aktTablePlaceHolder">
                             <table className="aktTable">
                                 <thead>
                                     <tr>
-                                        <th>URL</th>
-                                        <th>Datum und Uhrzeit</th>
-                                        <th>User</th>
+                                        <th align="left">URL</th>
+                                        <th align="left">Datum und Uhrzeit</th>
+                                        <th align="left">User</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -77,6 +81,29 @@ function Dashboard() {
                                             <td>{item.vistedPage}</td>
                                             <td>{item.activityTime}</td>
                                             <td>{item.userId}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div className="contentInfo2">
+                    <div className="vpi">
+                        <h3>Anzahl abbrüchen der Testdurchführung pro URL</h3>
+                        <div className="vpiTablePlaceHolder">
+                            <table className="vpiTable">
+                                <thead>
+                                    <tr>
+                                        <th align="left">URL</th>
+                                        <th align="left">Anzahl</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {vpi.map((item) => (
+                                        <tr key={item.url}>
+                                            <td>{item.url}</td>
+                                            <td>{item.anzahl}</td>
                                         </tr>
                                     ))}
                                 </tbody>

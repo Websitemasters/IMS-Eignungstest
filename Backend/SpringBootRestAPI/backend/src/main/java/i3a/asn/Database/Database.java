@@ -1,13 +1,10 @@
 package i3a.asn.Database;
 
-import i3a.asn.Models.LogEintrag;
-import i3a.asn.Models.User;
-import sun.rmi.runtime.Log;
+import i3a.asn.Models.Admin.LogEintrag;
+import i3a.asn.Models.Admin.User;
+import i3a.asn.Models.Admin.VerlassenPerItem;
 
 import java.sql.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Database {
@@ -109,9 +106,11 @@ public class Database {
             String sql = "select * from activity order by activityTime desc;";
             ResultSet rs = st.executeQuery(sql);
             int nextId = 0;
-            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             while(rs.next()){
-                act.add(new LogEintrag(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getTimestamp(4)));
+                String date = rs.getDate(4).toString();
+                String time = rs.getTime(4).toString();
+                String datetime = time + ", " +date;
+                act.add(new LogEintrag(rs.getInt(1),rs.getInt(2),rs.getString(3),datetime));
             }
             rs.close();
             st.close();
@@ -180,6 +179,39 @@ public class Database {
             conn.close();
             jdbc.closeConnection();
             return testErg;
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    //Get Verlassen je nach Item
+    public ArrayList<VerlassenPerItem> getVPI(){
+        try {
+            ArrayList<VerlassenPerItem> data = new ArrayList<>();
+            Connection conn = jdbc.createConnection();
+            Statement st = conn.createStatement();
+            String sql = "SELECT urlPage as Item_Urlpage, count(*) as Anzahl\n" +
+                    "FROM activity\n" +
+                    "    inner join user\n" +
+                    "    on activity.userId = user.id\n" +
+                    "WHERE activityTime IN (\n" +
+                    "    SELECT MAX(activityTime)\n" +
+                    "    FROM activity\n" +
+                    "    GROUP BY activity.userId\n" +
+                    ")\n" +
+                    "    and\n" +
+                    "    user.resultat = 0\n" +
+                    "group by activity.urlPage;";
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                data.add(new VerlassenPerItem(rs.getString(1),rs.getInt(2)));
+            }
+            rs.close();
+            st.close();
+            conn.close();
+            jdbc.closeConnection();
+            return data;
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }

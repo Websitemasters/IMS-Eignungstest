@@ -9,44 +9,13 @@ function ActivityLog() {
     const fetchData = async () => {
         axios.get("http://localhost:8080/admin/actLog")
             .then((response) => {
-                setEintrage(response.data.map((item) => {
-                    let realtime = item.activityTime.replace("T", ", Uhrzeit: ");
-                    realtime = realtime.replace(".000+00:00", " ");
-                    return {
-                        ...item,
-                        activityTime: realtime
-                    }
-                }));
+                setEintrage(response.data);
             })
             .catch((error) => {
                 console.log(error);
             })
     }
-    //Download statt anzeigen lieber andere Daten anzeigen lassen
     return (
-        //Desgin geklaut von https://codemyui.com/css-only-mobile-friendly-table-layout/
-        /*<div className="table-wrapper">
-            <table className="fl-table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>User Id</th>
-                        <th>URL</th>
-                        <th>Datum und Uhrzeit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {eintrage.map((item)=>(
-                    <tr key={item.id}>
-                        <td>{item.id}</td>
-                        <td>{item.userId}</td>
-                        <td>{item.vistedPage}</td>
-                        <td>{item.activityTime}</td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
-        </div>*/
         <div className="content">
             <div className="plate">
                 <div className="dashBoardTitle">
@@ -58,9 +27,9 @@ function ActivityLog() {
                             <table className="aktTable">
                                 <thead>
                                     <tr>
-                                        <th>URL</th>
-                                        <th>Datum und Uhrzeit</th>
-                                        <th>User</th>
+                                        <th align="left">URL</th>
+                                        <th align="left">Datum und Uhrzeit</th>
+                                        <th align="left">User</th>
                                     </tr>
                                 </thead>
                                 <tbody>

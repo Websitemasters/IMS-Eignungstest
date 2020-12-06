@@ -1,4 +1,4 @@
-package i3a.asn.Models;
+package i3a.asn.Models.Admin;
 
 import java.util.Date;
 import java.sql.Timestamp;
