@@ -1,3 +1,50 @@
 .content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    .plate {
+        border-radius: 10px;
+        background-color: #F2F5FA;
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .3);
+        * {
+            margin: 10px;
+        }
+        .contentInfo1 {
+            display: flex;
+            flex-direction: row;
+            .seitenAufrufe {
+                border-radius: 10px;
+                background-color: #F2F5FA;
+                width: 20%;
+                height: 20vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .3);
+                * {
+                    margin: 5px;
+                }
+            }
+            .durchgefuehrt {
+                border-radius: 10px;
+                background-color: #F2F5FA;
+                width: 20%;
+                height: 20vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .3);
+                padding: 10px;
+                * {
+                    margin: 5px;
+                }
+            }
+        }
+    }
 }
