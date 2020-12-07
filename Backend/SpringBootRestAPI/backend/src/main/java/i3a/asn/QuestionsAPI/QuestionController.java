@@ -7,14 +7,13 @@ package i3a.asn.QuestionsAPI;
 
 import java.util.ArrayList;
 
-import i3a.asn.Models.Answer;
-import i3a.asn.Models.ParseModel;
-import i3a.asn.Models.Question;
+import i3a.asn.Models.Items.Answer;
+import i3a.asn.Models.Parser.ParseModel;
+import i3a.asn.Models.Items.Question;
 import i3a.asn.parser.StartParser;
 
-import java.util.Arrays;
 import java.util.List;
-import static jdk.nashorn.tools.ShellFunctions.input;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
