@@ -31,9 +31,9 @@
                         width: 90%;
                     }
                 }
-                transition:transform 300ms;
+                transition: 300ms;
                 &:hover {
-                    transform: scale(1.01);
+                    box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .35);
                 }
             }
         }
