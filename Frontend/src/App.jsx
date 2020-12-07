@@ -22,15 +22,15 @@ import {
   Redirect,
 } from "react-router-dom";
 import Axios from "axios";
-import {BeatLoader} from "react-spinners";
+import { BeatLoader } from "react-spinners";
 
 const sendLocation = {
-  sendLocation(url,id){
+  sendLocation(url, id) {
     console.log(`user: ${id}, url: ${url}`);
     Axios.post(`http://localhost:8080/logActivity?id=${id}&url=${url}`)
-    .catch((error)=>{
-      console.log(error);
-    })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 };
 
@@ -77,55 +77,55 @@ export default function App() {
         <br />
         {loading ? (
           <Switch>
-          <Route exact path="/">
-            <Home sendLocation={sendLocation} id={id}/>
-          </Route>
-          <Route exact path="/About">
-            <About sendLocation={sendLocation} id={id}/>
-          </Route>
-          <Route path="/Login">
-            <LoginPage sendLocation={sendLocation} id={id}/>
-          </Route>
-          <Route exact path="/Ausgabe">
-            <Ausgabe
-              auswahl={auswahl}
-              setAuswahl={setAuswahl}
-              initial={initial} 
-              sendLocation={sendLocation}
-              id={id}
-            />
-          </Route>
-          <Route exact path="/Code">
-            <TextEditor sendLocation={sendLocation} id={id}/>
-          </Route>
-          {data.map((item) => (
-            <PrivateRoute key={item.id} exact path={`/Questions/${item.id}`}>
-              <Question
-                name={item.question}
-                nextPage={item.id + 1}
-                lastPage={item.id === data.length ? "true" : "false"}
+            <Route exact path="/">
+              <Home sendLocation={sendLocation} id={id} />
+            </Route>
+            <PrivateRoute exact path="/About">
+              <About sendLocation={sendLocation} id={id} />
+            </PrivateRoute>
+            <Route path="/Login">
+              <LoginPage sendLocation={sendLocation} id={id} />
+            </Route>
+            <Route exact path="/Ausgabe">
+              <Ausgabe
                 auswahl={auswahl}
                 setAuswahl={setAuswahl}
-                data={data}
+                initial={initial}
                 sendLocation={sendLocation}
                 id={id}
               />
-            </PrivateRoute>
-          ))}
-          <Route exact path="/404">
-            <NotFoundPage sendLocation={sendLocation} id={id}/>
-          </Route>
-          <Redirect to="/404" />
-        </Switch>
-        ):
-        (
-          <div className="centerContent">
-            <br/>
-            <h3>Loading</h3>
-            <br/>
-            <BeatLoader size={35} color="white" loading/>
-          </div>
-        )}
+            </Route>
+            <Route exact path="/Code">
+              <TextEditor sendLocation={sendLocation} id={id} />
+            </Route>
+            {data.map((item) => (
+              <PrivateRoute key={item.id} exact path={`/Questions/${item.id}`}>
+                <Question
+                  name={item.question}
+                  nextPage={item.id + 1}
+                  lastPage={item.id === data.length ? "true" : "false"}
+                  auswahl={auswahl}
+                  setAuswahl={setAuswahl}
+                  data={data}
+                  sendLocation={sendLocation}
+                  id={id}
+                />
+              </PrivateRoute>
+            ))}
+            <Route exact path="/404">
+              <NotFoundPage sendLocation={sendLocation} id={id} />
+            </Route>
+            <Redirect to="/404" />
+          </Switch>
+        ) :
+          (
+            <div className="centerContent">
+              <br />
+              <h3>Loading</h3>
+              <br />
+              <BeatLoader size={35} color="white" loading />
+            </div>
+          )}
       </div>
     </Router>
   );

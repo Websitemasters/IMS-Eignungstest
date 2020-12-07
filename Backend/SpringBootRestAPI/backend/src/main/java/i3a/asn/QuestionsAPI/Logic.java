@@ -4,6 +4,7 @@ import i3a.asn.Database.Database;
 import i3a.asn.Models.AddUser;
 import i3a.asn.Models.Answer;
 import i3a.asn.Models.Question;
+import i3a.asn.Models.UserLogin;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -82,4 +83,11 @@ public class Logic {
         return sql.logActivity(id,url);
     }
 
+    public String doLogin(UserLogin u) {
+        if(u.getPassword().equals("12345")&&u.getUsername().equals("admin")){
+            return "true";
+        }else{
+            return "false";
+        }
+    }
 }

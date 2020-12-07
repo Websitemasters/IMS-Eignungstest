@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import i3a.asn.Models.Answer;
 import i3a.asn.Models.ParseModel;
 import i3a.asn.Models.Question;
+import i3a.asn.Models.UserLogin;
 import i3a.asn.parser.parsingClass;
 import static jdk.nashorn.tools.ShellFunctions.input;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -50,5 +51,13 @@ public class QuestionController {
     @CrossOrigin(origins = "http://localhost:3000")
     public int parseInput(@RequestBody ParseModel code){
 	   return pc.parseeeInt(code.getText());
+    }
+
+    @PostMapping("/login")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String doLogin(@RequestBody UserLogin u){
+        System.out.println(u.getUsername());
+        System.out.println(u.getPassword());
+        return  logic.doLogin(u);
     }
 }

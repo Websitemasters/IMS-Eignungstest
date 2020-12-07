@@ -2,29 +2,25 @@ import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
 
-function LoginPage({sendLocation,id}) {
-  React.useEffect(()=>{
-    sendLocation.sendLocation("/Login",id);
-  },[]);
-  let history = useHistory();
+function LoginPage({ sendLocation, id }) {
+  React.useEffect(() => {
+    sendLocation.sendLocation("/Login", id);
+  }, []);
   let location = useLocation();
-  const [name, setName] = useState("");
-  const [vorname, setVorname] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const changeName = (e) => {
-    setName(e.target.value);
+  const changeUsername = (e) => {
+    setUsername(e.target.value);
   };
-  const changeVorname = (e) => {
-    setVorname(e.target.value);
+  const changePassword = (e) => {
+    setPassword(e.target.value);
   };
-  let { from } = location.state || { from: { pathname: "/" } };
+
   let login = () => {
     Auth.authenticate(
-      () => {
-        history.replace(from);
-      },
-      name,
-      vorname
+      username,
+      password
     );
   };
 
@@ -37,18 +33,18 @@ function LoginPage({sendLocation,id}) {
       <br />
       <input
         type="text"
-        placeholder="Nachname"
+        placeholder="Username"
         required
         autoComplete="off"
-        onChange={changeName}
+        onChange={changeUsername}
       />
       <br />
       <input
         type="text"
-        placeholder="Vorname"
+        placeholder="Password"
         required
         autoComplete="off"
-        onChange={changeVorname}
+        onChange={changePassword}
       />
       <br />
       <button onClick={login}>Test Starten</button>
