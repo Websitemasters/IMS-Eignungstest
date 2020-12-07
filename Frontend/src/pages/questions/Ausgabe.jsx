@@ -1,7 +1,8 @@
+
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
-export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }) {
+export default function Ausgabe({ auswahl, setAuswahl, initial, sendLocation, id }) {
   let sum = "";
   const [res, setRes] = useState("");
 
@@ -11,36 +12,36 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }
     }
     auswerten();
     ini();
-    sendLocation.sendLocation("/Ausgabe",id);
+    sendLocation.sendLocation("/Ausgabe", id);
   }, []);
 
   const auswerten = async () => {
-    let prozentZahl= 0;
-    Axios.post("http://localhost:8080/calculateRate",{
-      id:1,
+    let prozentZahl = 0;
+    Axios.post("http://localhost:8080/calculateRate", {
+      id: 1,
       antwort: sum
     })
-    .then((response)=>{
-      prozentZahl = response.data;
-      console.log(response.data);
-      setRes(response.data);
-      Axios.post("http://localhost:8080/sendErgebis",{
-        id:id,
-        answers:response.data,
+      .then((response) => {
+        prozentZahl = response.data;
+        console.log(response.data);
+        setRes(response.data);
+        Axios.post("http://localhost:8080/sendErgebis", {
+          id: id,
+          answers: response.data,
+        })
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
-      .then((response)=>{
-        console.log(response);
-      })
-      .catch((error)=>{
+      .catch((error) => {
         console.log(error);
-      });
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
+      })
   };
 
-  const ini = async () =>{
+  const ini = async () => {
     //Um Daten Initial wieder zu Setzten
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");
     const questions = await fetchData.json();

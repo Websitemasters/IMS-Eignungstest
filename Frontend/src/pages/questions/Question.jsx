@@ -7,13 +7,12 @@ export default function Question({
   lastPage,
   auswahl,
   setAuswahl,
-  data,
   sendLocation,
   id,
 }) {
-  React.useEffect(()=>{
-    sendLocation.sendLocation(`/Questions/${nextPage-1}`,id);
-  },[]);
+  React.useEffect(() => {
+    sendLocation.sendLocation(`/Questions/${nextPage - 1}`, id);
+  }, []);
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(11, location.pathname.length);
   var intId = parseInt(idOfQuestion);
@@ -103,14 +102,6 @@ export default function Question({
           <button onClick={add0}>Nie</button>
         </Link>
       </div>
-      <br />
-      <ul className="questionSelector">
-        {data.map((questions) => (
-          <li key={questions.id}>
-            <Link to={`/Questions/${questions.id}`}>{questions.id}</Link>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

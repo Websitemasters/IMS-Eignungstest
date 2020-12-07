@@ -1,15 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 $font: "Montserrat",
 sans-serif;
 $bgColor: #24252a;
 $hoverColor: #0088a9;
 $textColor: #edf0f1;
 @import "./navbar";
-@import "./form";
 @import "./questions";
 @import "./centerContent";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import "./coding";
-* {
+.parent {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -17,6 +16,11 @@ $textColor: #edf0f1;
     font-family: $font;
     font-weight: 500;
     color: $textColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .staticQuestions {

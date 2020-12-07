@@ -16,6 +16,10 @@
         transition: all 0.3s ease 0s;
     }
     textarea {
+        background-color: $bgColor;
+        color: $textColor;
+        font-family: $font;
         font-size: 25px;
+        resize: none;
     }
 }

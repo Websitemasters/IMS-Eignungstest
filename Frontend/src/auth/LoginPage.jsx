@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
+import "./style/style.css";
 
-function LoginPage({sendLocation,id}) {
-  React.useEffect(()=>{
-    sendLocation.sendLocation("/Login",id);
-  },[]);
+function LoginPage() {
   let history = useHistory();
   let location = useLocation();
   const [name, setName] = useState("");
@@ -29,7 +27,7 @@ function LoginPage({sendLocation,id}) {
   };
 
   return (
-    <div className="userdata">
+    <div className="loginAdmin">
       <p>
         Geben sie bitte Ihre Benutzerdaten ein um den EignungsTest durch zu
         führen
