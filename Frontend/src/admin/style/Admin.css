@@ -293,8 +293,8 @@ span {
 }
 
 .content .plate .contentInfo1 .seitenAufrufe:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .content .plate .contentInfo1 .durchgefuehrt {
@@ -326,8 +326,8 @@ span {
 }
 
 .content .plate .contentInfo1 .durchgefuehrt:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .content .plate .contentInfo1 .letzteAkt {
