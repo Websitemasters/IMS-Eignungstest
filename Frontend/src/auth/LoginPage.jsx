@@ -6,6 +6,7 @@ function LoginPage({ sendLocation, id }) {
   React.useEffect(() => {
     sendLocation.sendLocation("/Login", id);
   }, []);
+  let history = useHistory();
   let location = useLocation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,13 +18,16 @@ function LoginPage({ sendLocation, id }) {
     setPassword(e.target.value);
   };
 
+  let { from } = location.state || { from: { pathname: "/" } };
   let login = () => {
     Auth.authenticate(
+      () => {
+        history.replace(from);
+      },
       username,
       password
     );
   };
-
   return (
     <div className="userdata">
       <p>

@@ -26,7 +26,6 @@ import { BeatLoader } from "react-spinners";
 
 const sendLocation = {
   sendLocation(url, id) {
-    console.log(`user: ${id}, url: ${url}`);
     Axios.post(`http://localhost:8080/logActivity?id=${id}&url=${url}`)
       .catch((error) => {
         console.log(error);
@@ -41,12 +40,16 @@ export default function App() {
   const [id, setID] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    fetchData();
+    getIdFunction();
+  }, []);
+
   const getIdFunction = async () => {
     try {
-      const data = await Axios
+      await Axios
         .get(`http://localhost:8080/addUser`)
         .then((res) => {
-          console.log(res);
           setID(res.data);
         });
       setLoading(true);
@@ -59,17 +62,11 @@ export default function App() {
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");
     const questions = await fetchData.json();
     setData(questions);
-    console.log(questions);
     for (let i = 1; i <= questions.length; i++) {
       initial = [...initial, { id: i, zahl: 0 }];
     }
     setAuswahl(initial);
   };
-
-  useEffect(() => {
-    fetchData();
-    getIdFunction();
-  }, []);
   return (
     <Router>
       <div className="parent">
@@ -99,7 +96,7 @@ export default function App() {
               <TextEditor sendLocation={sendLocation} id={id} />
             </Route>
             {data.map((item) => (
-              <PrivateRoute key={item.id} exact path={`/Questions/${item.id}`}>
+              <Route key={item.id} exact path={`/Questions/${item.id}`}>
                 <Question
                   name={item.question}
                   nextPage={item.id + 1}
@@ -110,7 +107,7 @@ export default function App() {
                   sendLocation={sendLocation}
                   id={id}
                 />
-              </PrivateRoute>
+              </Route>
             ))}
             <Route exact path="/404">
               <NotFoundPage sendLocation={sendLocation} id={id} />

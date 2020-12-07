@@ -2,7 +2,7 @@ import axios from "axios";
 
 const auth = {
   isAuthenticated: false,
-  authenticate(username, password) {
+  authenticate(cb, username, password) {
     axios.post("http://localhost:8080/login", {
       username: username,
       password: password
@@ -15,6 +15,7 @@ const auth = {
           auth.isAuthenticated = false;
         }
       })
+    setTimeout(cb, 100);
   }
 };
 
