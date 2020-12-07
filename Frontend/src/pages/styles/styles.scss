@@ -8,6 +8,12 @@ $textColor: #edf0f1;
 @import "./questions";
 @import "./centerContent";
 @import "./coding";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .parent {
     box-sizing: border-box;
     margin: 0;
