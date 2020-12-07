@@ -37,6 +37,19 @@ public class StartParser {
 					if(befehle.get(i).length()>1){befehle2.add(befehle.get(i).substring(1, befehle.get(i).length()-1));}
 
 
+				}else if(befehle.get(i).indexOf("}")==(befehle.get(i).length()-1)){
+					s+=befehle.get(i);
+					befehle2.add(s);
+					s="";
+				}else if(!befehle.get(i).contains("}")){
+					int r =i;
+					while(!befehle.get(r).contains("}")){
+						if(befehle.get(r).matches("^\\s*$")){
+							r++;
+						}else{
+							return "Zu viele Argumente in statement (max. 1)";
+						}
+					}
 				}
 				else {
 					s += (befehle.get(i).substring(0, befehle.get(i).indexOf("}")));
@@ -54,7 +67,13 @@ public class StartParser {
 			System.out.println(s);
 		}
 		System.out.println("Befehl2 Content done");
-		return Double.toString(doParsing(befehle2,new HashMap()));
+		String retStr="";
+		try{retStr= Double.toString(doParsing(befehle2,new HashMap()));}
+		catch(Exception ex){
+			return ex.getMessage();
+		}
+
+		return retStr;
 
 		
 	}

@@ -15,6 +15,7 @@ public class Parser {
 	public static Object[] eval(final String str, Map<String,Double> variables) {
     return new Object() {
         int pos = -1, ch;
+	int eqCount=0; 
 
         void nextChar() {
             ch = (++pos < str.length()) ? str.charAt(pos) : -1;
@@ -77,7 +78,7 @@ public class Parser {
                 while (ch >= 'a' && ch <= 'z') nextChar();
                 String func = str.substring(startPos, this.pos);
 		if(func.equals("if")){
-		if(!eat('(')) {throw new RuntimeException("Wrong Syntax at: "+ (char)ch);}
+		if(!eat('(')) {throw new RuntimeException("Wrong Syntax at: "+ str);}
 		else{
 
 			//wenn wahr
@@ -94,18 +95,18 @@ public class Parser {
 				nextChar();
 			}
 			double p = parseExpression();
-			eat(')');
+			if(!eat(')')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			if(condition(x,check,p)){
-			eat('{');
+			if(!eat('{')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			x = parseExpression();
-			eat('}');
+			if(!eat('}')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			}else{
 			while(!eat('}')) nextChar();
 			}
 		}
 		}
 		else if(func.equals("while")){
-			if(!eat('(')) throw new RuntimeException("Wrong Syntax at: "+(char)ch);
+			if(!eat('(')) throw new RuntimeException("Wrong Syntax at: "+str);
 			else{
 			x=parseExpression();
 			pos-=3;
@@ -120,11 +121,12 @@ public class Parser {
 				nextChar();
 			}
 			double p = parseExpression();
-			eat(')');
+
+			if(!eat(')')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			if(condition(x,check,p)){
-			eat('{');
+			if(!eat('{')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			x = parseExpression();
-			eat('}');
+			if(!eat('}')) throw new RuntimeException("Wrong Syntax at: "+ str);
 			pos=-1;
 			nextChar();
 			parseExpression();
@@ -134,12 +136,13 @@ public class Parser {
 
 			}
 		}
-		else if(func.equals("return")) return parseExpression();
+//		else if(func.equals("return")) return parseExpression();
+		else if(func.equals("return")) throw new RuntimeException(Double.toString(parseExpression()));
 		else if(eat('=')){if(!eat('=')){variables.put(func, parseExpression());}else{x=variables.get(func);}}
 		else{System.out.println(func);x = variables.get(func);}
             } else if(eat(')')||eat('>')||eat('<')||eat('!')||eat('}')||eat(';'));
 	    else {
-                throw new RuntimeException("Unexpected: " + (char)ch);
+                throw new RuntimeException("Unexpected: " + str);
             }
 
 
