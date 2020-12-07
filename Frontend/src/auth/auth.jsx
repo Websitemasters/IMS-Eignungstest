@@ -8,7 +8,8 @@ const auth = {
       password: password
     })
       .then((res) => {
-        if (res.data === "true") {
+        console.log(typeof (res.data));
+        if (res.data == true) {
           auth.isAuthenticated = true;
         } else {
           auth.isAuthenticated = false;
