@@ -7,13 +7,12 @@ export default function Question({
   lastPage,
   auswahl,
   setAuswahl,
-  data,
   sendLocation,
   id,
 }) {
-  React.useEffect(()=>{
-    sendLocation.sendLocation(`/Questions/${nextPage-1}`,id);
-  },[]);
+  React.useEffect(() => {
+    sendLocation.sendLocation(`/Questions/${nextPage - 1}`, id);
+  }, []);
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(11, location.pathname.length);
   var intId = parseInt(idOfQuestion);

@@ -361,8 +361,8 @@ span {
 }
 
 .content .plate .contentInfo1 .letzteAkt:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .content .plate .contentInfo2 {
@@ -406,7 +406,7 @@ span {
 }
 
 .content .plate .contentInfo2 .vpi:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 /*# sourceMappingURL=Admin.css.map */
