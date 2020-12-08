@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Home({sendLocation,id}) {
-  React.useEffect(()=>{
-    sendLocation.sendLocation("/",id);
-  },[]);
+export default function Home({ sendeAktivitaet, userID }) {
+  React.useEffect(() => {
+    sendeAktivitaet.sendeAktivitaet("/", userID);
+  }, []);
   return (
     <div className="centerContent">
       <h1>Home</h1>

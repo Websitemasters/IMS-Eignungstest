@@ -5,76 +5,26 @@ export default function Question({
   name,
   nextPage,
   lastPage,
-  auswahl,
-  setAuswahl,
-  sendLocation,
-  id,
+  userAntworten,
+  setUserAntworten,
+  sendeAktivitaet,
+  userID,
 }) {
   React.useEffect(() => {
-    sendLocation.sendLocation(`/Questions/${nextPage - 1}`, id);
+    sendeAktivitaet.sendeAktivitaet(`/Questions/${nextPage - 1}`, userID);
   }, []);
+
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(11, location.pathname.length);
   var intId = parseInt(idOfQuestion);
-  function add4() {
-    setAuswahl(
-      auswahl.map((item) => {
+
+  const add = (e) => {
+    setUserAntworten(
+      userAntworten.map((item) => {
         if (item.id === intId) {
           return {
             ...item,
-            zahl: 4,
-          };
-        }
-        return item;
-      })
-    );
-  }
-  function add3() {
-    setAuswahl(
-      auswahl.map((item) => {
-        if (item.id === intId) {
-          return {
-            ...item,
-            zahl: 3,
-          };
-        }
-        return item;
-      })
-    );
-  }
-  function add2() {
-    setAuswahl(
-      auswahl.map((item) => {
-        if (item.id === intId) {
-          return {
-            ...item,
-            zahl: 2,
-          };
-        }
-        return item;
-      })
-    );
-  }
-  function add1() {
-    setAuswahl(
-      auswahl.map((item) => {
-        if (item.id === intId) {
-          return {
-            ...item,
-            zahl: 1,
-          };
-        }
-        return item;
-      })
-    );
-  }
-  function add0() {
-    setAuswahl(
-      auswahl.map((item) => {
-        if (item.id === intId) {
-          return {
-            ...item,
-            zahl: 0,
+            zahl: parseInt(e.target.id),
           };
         }
         return item;
@@ -87,19 +37,19 @@ export default function Question({
       <br />
       <div className="choices">
         <Link to={lastPage === "true" ? "/Ausgabe" : `/Questions/${nextPage}`}>
-          <button onClick={add4}>Trifft zu</button>
+          <button id="4" onClick={add}>Trifft zu</button>
         </Link>
         <Link to={lastPage === "true" ? "/Ausgabe" : `/Questions/${nextPage}`}>
-          <button onClick={add3}>Oft</button>
+          <button id="3" onClick={add}>Oft</button>
         </Link>
         <Link to={lastPage === "true" ? "/Ausgabe" : `/Questions/${nextPage}`}>
-          <button onClick={add2}>Manchmal</button>
+          <button id="2" onClick={add}>Manchmal</button>
         </Link>
         <Link to={lastPage === "true" ? "/Ausgabe" : `/Questions/${nextPage}`}>
-          <button onClick={add1}>Selten</button>
+          <button id="1" onClick={add}>Selten</button>
         </Link>
         <Link to={lastPage === "true" ? "/Ausgabe" : `/Questions/${nextPage}`}>
-          <button onClick={add0}>Nie</button>
+          <button id="0" onClick={add}>Nie</button>
         </Link>
       </div>
     </div>

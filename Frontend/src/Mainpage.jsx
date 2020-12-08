@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 //Styles 
 import "./pages/styles/styles.css";
-
 //Components Imports
 import NavBar from "./pages/components/Navbar";
 import Home from "./pages/website/Home";
@@ -10,7 +9,6 @@ import About from "./pages/website/About";
 import Question from "./pages/questions/Question";
 import Ausgabe from "./pages/questions/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -20,9 +18,8 @@ import {
 import Axios from "axios";
 import { BeatLoader } from "react-spinners";
 
-const sendLocation = {
-    sendLocation(url, id) {
-        console.log(`user: ${id}, url: ${url}`);
+const sendeAktivitaet = {
+    sendeAktivitaet(url, id) {
         Axios.post(`http://localhost:8080/logActivity?id=${id}&url=${url}`)
             .catch((error) => {
                 console.log(error);
@@ -30,11 +27,11 @@ const sendLocation = {
     }
 };
 
-export default function MainPage() {
+function MainPage() {
     let initial = [];
-    const [data, setData] = useState([]);
-    const [auswahl, setAuswahl] = useState(initial);
-    const [id, setID] = useState(null);
+    const [items, setItems] = useState([]);
+    const [userAntworten, setUserAntworten] = useState(initial);
+    const [userID, setID] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const getIdFunction = async () => {
@@ -42,7 +39,6 @@ export default function MainPage() {
             await Axios
                 .get(`http://localhost:8080/addUser`)
                 .then((res) => {
-                    console.log(res);
                     setID(res.data);
                 });
             setLoading(true);
@@ -54,12 +50,11 @@ export default function MainPage() {
     const fetchData = async () => {
         const fetchData = await fetch("http://localhost:8080/getAllQuestion");
         const questions = await fetchData.json();
-        setData(questions);
-        console.log(questions);
+        setItems(questions);
         for (let i = 1; i <= questions.length; i++) {
             initial = [...initial, { id: i, zahl: 0 }];
         }
-        setAuswahl(initial);
+        setUserAntworten(initial);
     };
 
     useEffect(() => {
@@ -74,34 +69,33 @@ export default function MainPage() {
                 {loading ? (
                     <Switch>
                         <Route exact path="/">
-                            <Home sendLocation={sendLocation} id={id} />
+                            <Home sendeAktivitaet={sendeAktivitaet} userID={userID} />
                         </Route>
                         <Route exact path="/About">
-                            <About sendLocation={sendLocation} id={id} />
+                            <About sendeAktivitaet={sendeAktivitaet} userID={userID} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
-                                auswahl={auswahl}
-                                setAuswahl={setAuswahl}
+                                userAntworten={userAntworten}
+                                setUserAntworten={setUserAntworten}
                                 initial={initial}
-                                sendLocation={sendLocation}
-                                id={id}
+                                sendeAktivitaet={sendeAktivitaet}
+                                userID={userID}
                             />
                         </Route>
                         <Route exact path="/Code">
-                            <TextEditor sendLocation={sendLocation} id={id} />
+                            <TextEditor sendeAktivitaet={sendeAktivitaet} userID={userID} />
                         </Route>
-                        {data.map((item) => (
+                        {items.map((item) => (
                             <Route key={item.id} exact path={`/Questions/${item.id}`}>
                                 <Question
                                     name={item.question}
                                     nextPage={item.id + 1}
-                                    lastPage={item.id === data.length ? "true" : "false"}
-                                    auswahl={auswahl}
-                                    setAuswahl={setAuswahl}
-                                    data={data}
-                                    sendLocation={sendLocation}
-                                    id={id}
+                                    lastPage={item.id === items.length ? "true" : "false"}
+                                    userAntworten={userAntworten}
+                                    setUserAntworten={setUserAntworten}
+                                    sendeAktivitaet={sendeAktivitaet}
+                                    userID={userID}
                                 />
                             </Route>
                         ))}
@@ -120,3 +114,5 @@ export default function MainPage() {
         </Router>
     );
 }
+
+export default MainPage;

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function About({sendLocation,id}) {
-  React.useEffect(()=>{
-    sendLocation.sendLocation("/About",id);
-  },[]);  return (
+export default function About({ sendeAktivitaet, userID }) {
+  React.useEffect(() => {
+    sendeAktivitaet.sendeAktivitaet("/About", userID);
+  }, []); return (
     <div className="centerContent">
       <h1>Kanti Web Project</h1>
       <br />

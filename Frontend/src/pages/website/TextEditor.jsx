@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function TextEditor({sendLocation,id}) {
-    React.useEffect(()=>{
-        sendLocation.sendLocation("/Code",id);
-    },[]);
+export default function TextEditor({ sendeAktivitaet, userID }) {
+    React.useEffect(() => {
+        sendeAktivitaet.sendeAktivitaet("/Code", userID);
+    }, []);
     const [inputCode, setInputCode] = useState("");
     const [outPut, setCode] = useState("");
     const setInput = (e) => {
@@ -12,8 +12,8 @@ export default function TextEditor({sendLocation,id}) {
     }
     const runCode = async () => {
         axios.post(`http://localhost:8080/useParser`, {
-            id:1,
-            text:inputCode,
+            id: 1,
+            text: inputCode,
         })
             .then((response) => {
                 console.log(response);
