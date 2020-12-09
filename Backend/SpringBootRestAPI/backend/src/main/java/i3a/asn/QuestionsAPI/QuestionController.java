@@ -8,6 +8,7 @@ package i3a.asn.QuestionsAPI;
 import java.util.ArrayList;
 
 import i3a.asn.Models.Items.Answer;
+import i3a.asn.Models.Items.Items;
 import i3a.asn.Models.Parser.ParseModel;
 import i3a.asn.Models.Items.Question;
 import i3a.asn.parser.StartParser;
@@ -30,24 +31,6 @@ public class QuestionController {
     private Logic logic = Logic.getInstance();
     private StartParser pc;
 
-    @GetMapping("/getAllQuestion")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public ArrayList<Question> questions() {
-        return logic.getQuestions();
-    }
-
-    @GetMapping("/getQuestionID")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public Question getQuestionId(@RequestParam(value = "id", defaultValue = "1") String id) {
-        return logic.getQuestionId(id);
-    }
-
-    @PostMapping("/calculateRate")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public String getCalculation(@RequestBody Answer a){
-        return logic.calculateAnswer(a);
-    }
-    
     @PostMapping("/useParser")
     @CrossOrigin(origins = "http://localhost:3000")
     public String parseInput(@RequestBody ParseModel code){
@@ -60,5 +43,11 @@ public class QuestionController {
         }
 
 	    return pc.startParser(inputCode);
+    }
+
+    @GetMapping("/getAllItems")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ArrayList<Items> getAllItems(){
+        return logic.getAllItems();
     }
 }

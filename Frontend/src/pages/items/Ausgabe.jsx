@@ -2,27 +2,24 @@
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
-function Ausgabe({ userAntworten, setUserAntworten, initial, sendeAktivitaet, userID }) {
+function Ausgabe({ items, setItems, sendeAktivitaet, userID }) {
   let sum = "";
   const [res, setRes] = useState("");
 
   useEffect(() => {
-    for (let i = 0; i < userAntworten.length; i++) {
-      sum = sum.concat(userAntworten[i].zahl);
+    console.log(items)
+    for (let i = 0; i < items.length; i++) {
+      sum = sum.concat(items[i].antwort);
     }
-    auswerten();
-    ini();
     sendeAktivitaet.sendeAktivitaet("/Ausgabe", userID);
   }, []);
 
   const auswerten = async () => {
-    let prozentZahl = 0;
     Axios.post("http://localhost:8080/calculateRate", {
       id: 1,
       antwort: sum
     })
       .then((response) => {
-        prozentZahl = response.data;
         console.log(response.data);
         setRes(response.data);
         Axios.post("http://localhost:8080/sendErgebis", {
@@ -46,9 +43,9 @@ function Ausgabe({ userAntworten, setUserAntworten, initial, sendeAktivitaet, us
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");
     const questions = await fetchData.json();
     for (let i = 1; i <= questions.length; i++) {
-      initial = [...initial, { id: i, zahl: 0 }];
+      //initial = [...initial, { id: i, zahl: 0 }];
     }
-    setUserAntworten(initial);
+    setItems(1);
   }
   return (
     <div className="centerContent">

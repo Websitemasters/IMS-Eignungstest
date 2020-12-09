@@ -5,9 +5,11 @@ import "./pages/styles/styles.css";
 //Components Imports
 import NavBar from "./pages/components/Navbar";
 import Home from "./pages/website/Home";
-import Question from "./pages/questions/Question";
-import Ausgabe from "./pages/questions/Ausgabe";
+import Ausgabe from "./pages/items/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
+import OneToTen from "./pages/items/OneToTen";
+import FiveChoices from "./pages/items/5Auswahl";
+import Code from "./pages/items/Code";
 import {
     BrowserRouter as Router,
     Switch,
@@ -27,9 +29,7 @@ const sendeAktivitaet = {
 };
 
 function MainPage() {
-    let initial = [];
     const [items, setItems] = useState([]);
-    const [userAntworten, setUserAntworten] = useState(initial);
     const [userID, setID] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -47,13 +47,13 @@ function MainPage() {
     };
 
     const fetchData = async () => {
-        const fetchData = await fetch("http://localhost:8080/getAllQuestion");
-        const questions = await fetchData.json();
-        setItems(questions);
-        for (let i = 1; i <= questions.length; i++) {
-            initial = [...initial, { id: i, zahl: 0 }];
-        }
-        setUserAntworten(initial);
+        Axios.get("http://localhost:8080/getAllItems").
+            then((res) => {
+                setItems(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     };
 
     useEffect(() => {
@@ -72,9 +72,8 @@ function MainPage() {
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
-                                userAntworten={userAntworten}
-                                setUserAntworten={setUserAntworten}
-                                initial={initial}
+                                items={items}
+                                setItems={setItems}
                                 sendeAktivitaet={sendeAktivitaet}
                                 userID={userID}
                             />
@@ -82,19 +81,52 @@ function MainPage() {
                         <Route exact path="/Code">
                             <TextEditor sendeAktivitaet={sendeAktivitaet} userID={userID} />
                         </Route>
-                        {items.map((item) => (
-                            <Route key={item.id} exact path={`/Questions/${item.id}`}>
-                                <Question
-                                    name={item.question}
-                                    nextPage={item.id + 1}
-                                    lastPage={item.id === items.length ? "true" : "false"}
-                                    userAntworten={userAntworten}
-                                    setUserAntworten={setUserAntworten}
-                                    sendeAktivitaet={sendeAktivitaet}
-                                    userID={userID}
-                                />
-                            </Route>
-                        ))}
+                        {items.map((item) => {
+                            if (item.kategorie === "5choice") {
+                                return (
+                                    <Route key={item.id} exact path={`/Items/${item.id}`}>
+                                        <FiveChoices
+                                            frage={item.frage}
+                                            nextPage={item.id + 1}
+                                            lastPage={item.id === items.length ? "true" : "false"}
+                                            items={items}
+                                            setItems={setItems}
+                                            sendeAktivitaet={sendeAktivitaet}
+                                            userID={userID}
+                                        />
+                                    </Route>
+                                )
+                            }
+                            else if (item.kategorie === "1-10") {
+                                return (
+                                    <Route key={item.id} exact path={`/Items/${item.id}`}>
+                                        <OneToTen
+                                            frage={item.frage}
+                                            nextPage={item.id + 1}
+                                            lastPage={item.id === items.length ? "true" : "false"}
+                                            items={items}
+                                            setItems={setItems}
+                                            sendeAktivitaet={sendeAktivitaet}
+                                            userID={userID}
+                                        />
+                                    </Route>
+                                )
+                            }
+                            else if (item.kategorie === "code") {
+                                return (
+                                    <Route key={item.id} exact path={`/Items/${item.id}`}>
+                                        <Code
+                                            frage={item.frage}
+                                            nextPage={item.id + 1}
+                                            lastPage={item.id === items.length ? "true" : "false"}
+                                            items={items}
+                                            sendeAktivitaet={sendeAktivitaet}
+                                            userID={userID}
+                                        />
+                                    </Route>
+                                )
+                            }
+                        })}
                         <Redirect to="/" />
                     </Switch>
                 ) :

@@ -5,6 +5,7 @@ import i3a.asn.Models.Admin.LogEintrag;
 import i3a.asn.Models.Admin.User;
 import i3a.asn.Models.Admin.VerlassenPerItem;
 import i3a.asn.Models.Items.Answer;
+import i3a.asn.Models.Items.Items;
 import i3a.asn.Models.Items.Question;
 
 import java.sql.SQLException;
@@ -14,19 +15,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Logic {
 
     private static Logic instance = null;
-    private static final String template = "%s?";
-    ArrayList<Question> questions = new ArrayList<>();
+    ArrayList<Items> allItems = new ArrayList<Items>();
     private Database sql;
 
     private Logic() {
-        AtomicLong counter = new AtomicLong();
-        questions.add(new Question(counter.incrementAndGet(), "Example Question 1"));
-        questions.add(new Question(counter.incrementAndGet(), "Example Question 2"));
-        questions.add(new Question(counter.incrementAndGet(), "Example Question 3"));
-        questions.add(new Question(counter.incrementAndGet(), "Example Question 4"));
-        questions.add(new Question(counter.incrementAndGet(), "Example Question 5"));
-        questions.add(new Question(counter.incrementAndGet(), "Example Question 6"));
-
+        fillItems();
         try {
             sql = new Database();
         } catch (SQLException throwables) {
@@ -34,6 +27,22 @@ public class Logic {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    private void fillItems(){
+        allItems.add(new Items(1,"Hast du bereits Kenntnisse im Bereich Applikationsentwicklung?","5choice",7,"",0));
+        allItems.add(new Items(2,"Mir macht es Freude in Gruppen zu arbeiten","5choice",5,"",0));
+        allItems.add(new Items(3,"Ich habe grosses Interesse an Naturwissenschaftlichen Fächern (Geografie, Physik, Biologie, Chemie)","5choice",3,"",0));
+        allItems.add(new Items(4,"Mich interessieren wirtschaftliche Themen, wie die aktuelle Lage auf der Welt oder die Wirtschaftliche Infrastruktur der Schweiz","5choice",7,"",0));
+        allItems.add(new Items(5,"Ich möchte studieren","1-10",3,"",0));
+        allItems.add(new Items(6,"Hast du Interesse an genereller Informatik, wie z.B. Systemtechnik oder Web-Entwicklung?","1-10",8,"",0));
+        allItems.add(new Items(7,"Hier siehst du eine Variableneklaration. Versuche den Code so zu ändern, dass 70 ausgegeben wird","code",0,"x=3 \n return x",0));
+        allItems.add(new Items(8,"Versuche nun die Summe von x und y auszugeben","code",0,"x=4 \n y=2 \n return 0",0));
+        allItems.add(new Items(9,"Hier siehst du ein If-Statement. Basierend darauf, ob der Vergleich in der Klammer stimmt oder nicht, wird der Code innerhalb der {} Klammern ausgeführt oder nicht. Versuche den Vergleich so zu formulieren,dass er wahr ist","code",0,"x=4 \n if(x>100){\n x=50 \n} \n return x",0));
+        allItems.add(new Items(10,"Du hast gerade programmiert! Hat er dir Spass gemacht?","1-10",5,"",0));
+    }
+
+    public ArrayList<Items> getAllItems() {
+        return allItems;
     }
 
     public static Logic getInstance() {
@@ -43,45 +52,20 @@ public class Logic {
         return instance;
     }
 
-    public ArrayList<Question> getQuestions() {
-        return questions;
-    }
 
-    public Question getQuestionId(String id){
-        int idQue = Integer.parseInt(id);
-        for(Question q : questions){
-            if(q.getId()==idQue){
-                return q;
-            }
-        }
-        return new Question(1,"404 Question not found");
-    }
+    public void auswertung(){
 
-    public String calculateAnswer(Answer answer){
-        double sum = 0;
-        for (int i = 0; i < answer.getAntwort().length(); i++) {
-            double b = Double.parseDouble(String.valueOf(answer.getAntwort().charAt(i)));
-            sum += b;
-        }
-        sum /= questions.size() * 4;
-        sum *= 100;
-        String ausgabe = Double.toString(sum);
-        return ausgabe;
     }
 
     public int nextUser(){
         return sql.addVisitor();
     }
-
     public boolean updateAuswahl(double prozent,Long id){
         return sql.updateAuswahl(prozent,id);
     }
-
     public boolean logActivity(int id,String url){
         return sql.logActivity(id,url);
     }
-
-
     public ArrayList<LogEintrag> actLog() {
         return sql.actLog();
     }

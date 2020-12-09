@@ -1,16 +1,16 @@
 $font: "Montserrat",
 sans-serif;
-$bgColor: #021133;
-$hoverColor: #0088a9;
-$textColor: #ffffff;
-$buttonColor: #74b8d3;
-$plateColor:#010f24;
+$bgColor: #DFE2EB;
+$hoverColor: #000000;
+$textColor: #000000;
+$buttonColor: #F2F5FA;
+$plateColor: #F2F5FA;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import "./navbar";
-@import "./questions";
-@import "./centerContent";
 @import "./coding";
 @import "./home";
+@import "./oneToTen";
+@import "./5choices";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,25 +21,9 @@ $plateColor:#010f24;
     background-color: $bgColor;
     font-family: $font;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-}
-
-.staticQuestions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 22px;
-    a {
-        text-decoration: none;
-        transition: all 0.3s ease 0s;
-        &:hover {
-            color: rgba(0, 136, 169, 0.8);
-        }
-    }
 }
