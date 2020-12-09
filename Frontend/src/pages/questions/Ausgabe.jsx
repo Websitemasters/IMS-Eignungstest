@@ -1,53 +1,54 @@
+
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
-export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }) {
+function Ausgabe({ userAntworten, setUserAntworten, initial, sendeAktivitaet, userID }) {
   let sum = "";
   const [res, setRes] = useState("");
 
   useEffect(() => {
-    for (let i = 0; i < auswahl.length; i++) {
-      sum = sum.concat(auswahl[i].zahl);
+    for (let i = 0; i < userAntworten.length; i++) {
+      sum = sum.concat(userAntworten[i].zahl);
     }
     auswerten();
     ini();
-    sendLocation.sendLocation("/Ausgabe",id);
+    sendeAktivitaet.sendeAktivitaet("/Ausgabe", userID);
   }, []);
 
   const auswerten = async () => {
-    let prozentZahl= 0;
-    Axios.post("http://localhost:8080/calculateRate",{
-      id:1,
+    let prozentZahl = 0;
+    Axios.post("http://localhost:8080/calculateRate", {
+      id: 1,
       antwort: sum
     })
-    .then((response)=>{
-      prozentZahl = response.data;
-      console.log(response.data);
-      setRes(response.data);
-      Axios.post("http://localhost:8080/sendErgebis",{
-        id:id,
-        answers:response.data,
+      .then((response) => {
+        prozentZahl = response.data;
+        console.log(response.data);
+        setRes(response.data);
+        Axios.post("http://localhost:8080/sendErgebis", {
+          id: userID,
+          answers: response.data,
+        })
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       })
-      .then((response)=>{
-        console.log(response);
-      })
-      .catch((error)=>{
+      .catch((error) => {
         console.log(error);
-      });
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
+      })
   };
 
-  const ini = async () =>{
+  const ini = async () => {
     //Um Daten Initial wieder zu Setzten
     const fetchData = await fetch("http://localhost:8080/getAllQuestion");
     const questions = await fetchData.json();
     for (let i = 1; i <= questions.length; i++) {
       initial = [...initial, { id: i, zahl: 0 }];
     }
-    setAuswahl(initial);
+    setUserAntworten(initial);
   }
   return (
     <div className="centerContent">
@@ -56,3 +57,5 @@ export default function Ausgabe({ auswahl, setAuswahl, initial,sendLocation,id }
     </div>
   );
 }
+
+export default Ausgabe;

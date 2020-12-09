@@ -1,13 +1,14 @@
 package i3a.asn.QuestionsAPI;
 
 import i3a.asn.Database.Database;
-import i3a.asn.Models.AddUser;
-import i3a.asn.Models.Answer;
-import i3a.asn.Models.Question;
+import i3a.asn.Models.Admin.LogEintrag;
+import i3a.asn.Models.Admin.User;
+import i3a.asn.Models.Admin.VerlassenPerItem;
+import i3a.asn.Models.Items.Answer;
+import i3a.asn.Models.Items.Question;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Logic {
@@ -15,7 +16,6 @@ public class Logic {
     private static Logic instance = null;
     private static final String template = "%s?";
     ArrayList<Question> questions = new ArrayList<>();
-    private int pageVisited = 0;
     private Database sql;
 
     private Logic() {
@@ -27,7 +27,6 @@ public class Logic {
         questions.add(new Question(counter.incrementAndGet(), "Example Question 5"));
         questions.add(new Question(counter.incrementAndGet(), "Example Question 6"));
 
-        //TODO
         try {
             sql = new Database();
         } catch (SQLException throwables) {
@@ -82,4 +81,20 @@ public class Logic {
         return sql.logActivity(id,url);
     }
 
+
+    public ArrayList<LogEintrag> actLog() {
+        return sql.actLog();
+    }
+    public int getSeitenAufrufe(){
+        return sql.getSeitenAufrufe();
+    }
+    public int getDurchgefuehrte(){
+        return sql.getAnzahlDurchgefuerteTest();
+    }
+    public ArrayList<User> getTestErg(){
+        return sql.getAllTestErgebniss();
+    }
+    public ArrayList<VerlassenPerItem> getVPI (){
+        return sql.getVPI();
+    }
 }

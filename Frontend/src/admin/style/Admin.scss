@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2family=Lato&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.admin {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #DFE2EB;
+}
+
+.middle {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+@import "./navbar";
+@import "./activityLog";
+@import "./dashboard";
