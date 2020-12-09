@@ -5,7 +5,6 @@ import "./pages/styles/styles.css";
 //Components Imports
 import NavBar from "./pages/components/Navbar";
 import Home from "./pages/website/Home";
-import About from "./pages/website/About";
 import Question from "./pages/questions/Question";
 import Ausgabe from "./pages/questions/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
@@ -70,9 +69,6 @@ function MainPage() {
                     <Switch>
                         <Route exact path="/">
                             <Home sendeAktivitaet={sendeAktivitaet} userID={userID} />
-                        </Route>
-                        <Route exact path="/About">
-                            <About sendeAktivitaet={sendeAktivitaet} userID={userID} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
