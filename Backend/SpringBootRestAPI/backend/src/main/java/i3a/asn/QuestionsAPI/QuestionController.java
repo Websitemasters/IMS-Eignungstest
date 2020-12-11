@@ -7,10 +7,8 @@ package i3a.asn.QuestionsAPI;
 
 import java.util.ArrayList;
 
-import i3a.asn.Models.Items.Answer;
 import i3a.asn.Models.Items.Items;
 import i3a.asn.Models.Parser.ParseModel;
-import i3a.asn.Models.Items.Question;
 import i3a.asn.parser.StartParser;
 
 import java.util.List;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -49,5 +46,14 @@ public class QuestionController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<Items> getAllItems(){
         return logic.getAllItems();
+    }
+
+    @PostMapping("/rechneEignung")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String rechneEignung(@RequestBody ArrayList<Items> items){
+        if(items.size()!=0){
+            return "yeah";
+        }
+        return "nah";
     }
 }

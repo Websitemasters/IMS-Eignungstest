@@ -4,13 +4,10 @@ import i3a.asn.Database.Database;
 import i3a.asn.Models.Admin.LogEintrag;
 import i3a.asn.Models.Admin.User;
 import i3a.asn.Models.Admin.VerlassenPerItem;
-import i3a.asn.Models.Items.Answer;
 import i3a.asn.Models.Items.Items;
-import i3a.asn.Models.Items.Question;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
 
 public class Logic {
 

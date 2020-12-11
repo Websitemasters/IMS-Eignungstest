@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import * as VSCIcons from "react-icons/vsc";
 
 export default function TextEditor({ sendeAktivitaet, userID }) {
     React.useEffect(() => {
@@ -26,13 +27,27 @@ export default function TextEditor({ sendeAktivitaet, userID }) {
     }
     return (
         <div className="coding">
-            <h1>Text Editor</h1>
-            <div>
-                <textarea rows={10} cols={30} defaultValue={inputCode} onChange={setInput} />
-                <textarea rows={10} cols={30} defaultValue={outPut} />
+            <div className="plate">
+                <div className="title">
+                    <h1>Text Editor</h1>
+                </div>
+                <div className="codingArea">
+                    <div className="input">
+                        <textarea defaultValue={inputCode} onChange={setInput} />
+                    </div>
+                    <div className="output">
+                        <textarea defaultValue={outPut} />
+                    </div>
+                </div>
+                <div className="controlls">
+                    <div className="run">
+                        <button onClick={runCode}>
+                            <VSCIcons.VscDebugStart />
+                            <span>Run Code</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <br />
-            <button onClick={runCode}>Run</button>
         </div>
     )
 }
