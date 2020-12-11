@@ -29,7 +29,7 @@ export default function TextEditor({ sendeAktivitaet, userID }) {
         <div className="coding">
             <div className="plate">
                 <div className="title">
-                    <h1>Text Editor</h1>
+                    <h1>Code</h1>
                 </div>
                 <div className="codingArea">
                     <div className="input">

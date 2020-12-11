@@ -5,7 +5,7 @@ import image from "../res/kantiBadenLogoSchwarz.png";
 export default function NavBar() {
   return (
     <header>
-      <img src={image} className="websiteName" height="40" width="70" />
+      <img src={image} className="websiteName" height="40" width="70" alt="Kanti Logo" />
       <nav>
         <ul className="nav__links">
           <li className="link">
@@ -21,9 +21,7 @@ export default function NavBar() {
           </li>
         </ul>
       </nav>
-      <a className="cta">
-        <button>Contact</button>
-      </a>
+      <button>Contact</button>
     </header>
   );
 }

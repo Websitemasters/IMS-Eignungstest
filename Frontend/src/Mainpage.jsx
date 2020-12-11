@@ -47,8 +47,8 @@ function MainPage() {
     };
 
     const fetchData = async () => {
-        Axios.get("http://localhost:8080/getAllItems").
-            then((res) => {
+        Axios.get("http://localhost:8080/getAllItems")
+            .then((res) => {
                 setItems(res.data);
             })
             .catch((error) => {
@@ -126,6 +126,11 @@ function MainPage() {
                                     </Route>
                                 )
                             }
+                            return (
+                                <div>
+                                    <h1>Not Found</h1>
+                                </div>
+                            )
                         })}
                         <Redirect to="/" />
                     </Switch>

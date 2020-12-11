@@ -9,7 +9,6 @@ import {
 import MainPage from "./Mainpage";
 import Admin from "./admin/Admin";
 import NotFoundPage from "./error/404"
-import PrivateRoute from "./auth/PrivateRoute";
 import Login from "./auth/LoginPage";
 export default function App() {
   return (
