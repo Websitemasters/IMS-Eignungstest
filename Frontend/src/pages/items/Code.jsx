@@ -35,7 +35,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                     <p>{frage}</p>
                 </div>
                 <div className="content2">
-                    <textarea defaultValue={items[nextPage - 1].code} onChange={setInput} className="in" />
+                    <textarea defaultValue={items[nextPage - 2].code} onChange={setInput} className="in" />
                     <textarea defaultValue={outPut} className="out" />
                 </div>
                 <div className="content4">
