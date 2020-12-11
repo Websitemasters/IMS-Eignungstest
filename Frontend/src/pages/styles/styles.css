@@ -16,7 +16,7 @@ header {
 header .nav__links .link {
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #00060D;
+  border: solid 1px #274c75;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -115,6 +115,8 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
   padding: 20px;
 }
 
@@ -259,8 +261,8 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
 }
 
 .home .plate * {
@@ -327,6 +329,8 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
   color: white;
 }
 
@@ -361,8 +365,8 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
 }
 
 .choices5 .plate * {
@@ -467,8 +471,8 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -524,7 +528,7 @@ header button:hover {
 }
 
 .parent {
-  background-color: #00060D;
+  background-color: #274c75;
   font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
