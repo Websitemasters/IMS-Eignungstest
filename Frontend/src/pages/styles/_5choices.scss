@@ -4,7 +4,8 @@
     align-items: center;
     .plate {
         border-radius: 10px;
-        background-color: #F2F5FA;
+        background-color: $plateColor;
+        color: $textColor;
         width: 80%;
         height: 80vh;
         display: flex;
@@ -47,6 +48,7 @@
                         font-size: 25px;
                         cursor: pointer;
                         p {
+                            color: $textColor;
                             transition: transform ease 300ms;
                             &:hover {
                                 transform: scale(1.4);

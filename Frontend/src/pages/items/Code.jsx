@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import * as VSCIcons from "react-icons/vsc";
+import * as IoIosIcons from "react-icons/io";
 
 export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet, userID }) {
     React.useEffect(() => {
@@ -28,16 +29,24 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
     }
     return (
         <div className="coding">
-            <p>{frage}</p>
-            <div>
-                <textarea rows={10} cols={30} defaultValue={items[nextPage - 1].code} onChange={setInput} />
-                <textarea rows={10} cols={30} defaultValue={outPut} />
+            <div className="plate">
+                <div className="content1">
+                    <h1>Code Editor</h1>
+                    <p>{frage}</p>
+                </div>
+                <div className="content2">
+                    <textarea defaultValue={items[nextPage - 1].code} onChange={setInput} className="in" />
+                    <textarea defaultValue={outPut} className="out" />
+                </div>
+                <div className="content4">
+                    <button onClick={runCode} className="run">
+                        <VSCIcons.VscDebugStart size={25} />
+                    </button>
+                    <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
+                        <p>Next Page</p>
+                    </Link>
+                </div>
             </div>
-            <button onClick={runCode}>Run</button>
-            <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                <VSCIcons.VscDebugStart />
-                <span>Run Code</span>
-            </Link>
-        </div>
+        </div >
     )
 }

@@ -5,10 +5,29 @@ header {
     padding: 30px 10%;
     list-style: none;
     .nav__links {
-        li {
+        .link {
             cursor: pointer;
             border-radius: 5px;
             border: solid 1px $bgColor;
+            display: inline-block;
+            a,
+            h1 {
+                font-weight: bold;
+                font-size: 18px;
+                color: $textColor;
+                text-decoration: none;
+                margin: 10px;
+                padding: 10px;
+            }
+            transition:transform ease 300ms;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        .linkHighLighted {
+            cursor: pointer;
+            padding: 2px;
+            border-left: solid 1px #5da3f8;
             display: inline-block;
             a,
             h1 {
@@ -31,15 +50,14 @@ header {
     button {
         font-weight: 400;
         font-size: 18px;
-        color: $textColor;
         text-decoration: none;
         padding: 9px 25px;
-        background-color: #ffffff;
+        background-color: #5da3f8;
         border: none;
         border-radius: 50px;
         cursor: pointer;
         transition: all 0.3s ease 0s;
-        color: rgb(0, 0, 0);
+        color: $textColor;
         box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, .2);
         &:hover {
             transform: scale(1.1);

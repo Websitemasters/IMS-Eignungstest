@@ -73,7 +73,6 @@ function MainPage() {
                         <Route exact path="/Ausgabe">
                             <Ausgabe
                                 items={items}
-                                setItems={setItems}
                                 sendeAktivitaet={sendeAktivitaet}
                                 userID={userID}
                             />

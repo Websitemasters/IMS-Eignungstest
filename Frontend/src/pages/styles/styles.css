@@ -13,10 +13,10 @@ header {
   list-style: none;
 }
 
-header .nav__links li {
+header .nav__links .link {
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #DFE2EB;
+  border: solid 1px #00060D;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -24,17 +24,43 @@ header .nav__links li {
   transition: transform ease 300ms, -webkit-transform ease 300ms;
 }
 
-header .nav__links li a,
-header .nav__links li h1 {
+header .nav__links .link a,
+header .nav__links .link h1 {
   font-weight: bold;
   font-size: 18px;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   margin: 10px;
   padding: 10px;
 }
 
-header .nav__links li:hover {
+header .nav__links .link:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+header .nav__links .linkHighLighted {
+  cursor: pointer;
+  padding: 2px;
+  border-left: solid 1px #5da3f8;
+  display: inline-block;
+  -webkit-transition: -webkit-transform ease 300ms;
+  transition: -webkit-transform ease 300ms;
+  transition: transform ease 300ms;
+  transition: transform ease 300ms, -webkit-transform ease 300ms;
+}
+
+header .nav__links .linkHighLighted a,
+header .nav__links .linkHighLighted h1 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+}
+
+header .nav__links .linkHighLighted:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
@@ -46,16 +72,15 @@ header .websiteName {
 header button {
   font-weight: 400;
   font-size: 18px;
-  color: #000000;
   text-decoration: none;
   padding: 9px 25px;
-  background-color: #ffffff;
+  background-color: #5da3f8;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  color: black;
+  color: #ffffff;
   -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -79,8 +104,8 @@ header button:hover {
 }
 
 .coding .plate {
+  background-color: #0F1F33;
   border-radius: 10px;
-  background-color: #252525;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -91,53 +116,121 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(61, 61, 61, 0.3);
-          box-shadow: 5px 5px 25px 0 rgba(61, 61, 61, 0.3);
 }
 
-.coding .plate .title {
+.coding .plate .content1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: white;
+  margin: 20px;
 }
 
-.coding .plate .codingArea {
-  width: 50%;
+.coding .plate .content2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  border-radius: 10px;
+}
+
+.coding .plate .content2 .in {
+  padding: 10px;
+  resize: none;
+  width: 100%;
   height: 40vh;
-}
-
-.coding .plate .codingArea .input {
-  width: 100%;
-  height: 20vh;
-}
-
-.coding .plate .codingArea .input textarea {
-  background-color: #000000;
+  border-radius: 10px 10px 0px 10px;
+  background-color: black;
   color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  resize: none;
   border: 0px;
-  -webkit-box-shadow: 0px 0px 10px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0px 0px 10px 0 rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  font-size: 25px;
+  -webkit-box-shadow: -5px 0px 0px 0 #5da3f8;
+          box-shadow: -5px 0px 0px 0 #5da3f8;
 }
 
-.coding .plate .codingArea .output {
+.coding .plate .content2 .out {
+  padding: 10px;
+  resize: none;
   width: 100%;
-  height: 20vh;
+  height: 10vh;
+  border-radius: 10px 0px 10px 10px;
+  background-color: black;
+  color: white;
+  border: 0px;
+  font-size: 25px;
+  -webkit-box-shadow: -5px 0px 0px 0 #5da3f8;
+          box-shadow: -5px 0px 0px 0 #5da3f8;
 }
 
-.coding .plate .codingArea .output textarea {
-  background-color: #000000;
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  resize: none;
+.coding .plate .content4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 5vh;
+  margin-top: 20px;
+}
+
+.coding .plate .content4 .run {
+  background-color: #5da3f8;
   border: 0px;
-  -webkit-box-shadow: 0px 0px 10px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0px 0px 10px 0 rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  color: #ffffff;
+  width: 10%;
+  height: 5vh;
+  border-radius: 20px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.coding .plate .content4 .run:hover {
+  background-color: rgba(93, 163, 248, 0.329);
+}
+
+.coding .plate .content4 .info {
+  background-color: #f1f5fa;
+  border: 0px;
+  color: #ffffff;
+  width: 10%;
+  height: 5vh;
+  border-radius: 20px;
+  margin-left: 10px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.coding .plate .content4 .info:hover {
+  background-color: rgba(241, 245, 250, 0.356);
+}
+
+.coding .plate .content4 .nextPage {
+  background-color: #f1f5fa;
+  border: 0px;
+  color: black;
+  width: 10%;
+  height: 5vh;
+  border-radius: 20px;
+  margin-left: 10px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.coding .plate .content4 .nextPage:hover {
+  background-color: rgba(241, 245, 250, 0.356);
 }
 
 .home {
@@ -155,7 +248,7 @@ header button:hover {
 
 .home .plate {
   border-radius: 10px;
-  background-color: #F2F5FA;
+  background-color: #0F1F33;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -183,7 +276,7 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 10px;
-  background-color: #F2F5FA;
+  background-color: #0F1F33;
   width: 40%;
   height: 30vh;
   display: flex;
@@ -201,11 +294,11 @@ header button:hover {
 }
 
 .home .plate .contentInfo1 .title {
-  color: #000000;
+  color: #ffffff;
 }
 
 .home .plate .contentInfo1 .erklaerung {
-  color: #000000;
+  color: #ffffff;
 }
 
 .item {
@@ -223,7 +316,7 @@ header button:hover {
 
 .item .plate {
   border-radius: 10px;
-  background-color: #F2F5FA;
+  background-color: #0F1F33;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -234,8 +327,6 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
-  -webkit-box-shadow: 0px 0px 10px 0 rgba(255, 255, 255, 0.3);
-          box-shadow: 0px 0px 10px 0 rgba(255, 255, 255, 0.3);
   color: white;
 }
 
@@ -258,7 +349,8 @@ header button:hover {
 
 .choices5 .plate {
   border-radius: 10px;
-  background-color: #F2F5FA;
+  background-color: #0F1F33;
+  color: #ffffff;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -337,6 +429,7 @@ header button:hover {
 }
 
 .choices5 .plate .contentInfo1 .auswahl .linkbutton button p {
+  color: #ffffff;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
   transition: transform ease 300ms;
@@ -348,6 +441,77 @@ header button:hover {
           transform: scale(1.4);
 }
 
+.ausgabe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ausgabe .plate {
+  border-radius: 10px;
+  background-color: #0F1F33;
+  width: 80%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ausgabe .plate * {
+  margin: 10px;
+}
+
+.ausgabe .plate .contentInfo1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  background-color: #5da3f8;
+  width: 40%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ausgabe .plate .contentInfo1 * {
+  margin: 5px;
+}
+
+.ausgabe .plate .contentInfo1 .title {
+  color: #ffffff;
+}
+
+.ausgabe .plate .contentInfo1 .erklaerung {
+  color: #ffffff;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -355,8 +519,12 @@ header button:hover {
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 .parent {
-  background-color: #DFE2EB;
+  background-color: #00060D;
   font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
