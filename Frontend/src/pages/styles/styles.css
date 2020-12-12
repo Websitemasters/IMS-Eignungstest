@@ -42,7 +42,7 @@ header .nav__links .link:hover {
 header .nav__links .linkHighLighted {
   cursor: pointer;
   padding: 2px;
-  border-left: solid 1px #5da3f8;
+  border-left: solid 3px #0F1F33;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -74,7 +74,7 @@ header button {
   font-size: 18px;
   text-decoration: none;
   padding: 9px 25px;
-  background-color: #5da3f8;
+  background-color: #0F1F33;
   border: none;
   border-radius: 50px;
   cursor: pointer;
