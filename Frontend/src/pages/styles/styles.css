@@ -169,8 +169,8 @@ header button:hover {
   color: white;
   border: 0px;
   font-size: 25px;
-  -webkit-box-shadow: -5px 0px 0px 0 #5da3f8;
-          box-shadow: -5px 0px 0px 0 #5da3f8;
+  -webkit-box-shadow: -5px 0px 0px 0 #ffffff;
+          box-shadow: -5px 0px 0px 0 #ffffff;
 }
 
 .coding .plate .content4 {
