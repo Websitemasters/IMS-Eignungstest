@@ -16,7 +16,7 @@ export default function NavBar() {
       setSec2("link");
       setSec3("link");
     }
-    else if (path === "/I") {
+    else if (path === "/I" || path === "/A") {
       setSec1("link");
       setSec2("linkHighLighted");
       setSec3("link");

@@ -397,7 +397,7 @@ header button:hover {
       -ms-flex-align: left;
           align-items: left;
   padding: 10px;
-  font-size: 34px;
+  font-size: 30px;
 }
 
 .choices5 .plate .contentInfo1 .question * {
@@ -418,7 +418,6 @@ header button:hover {
       -ms-flex-align: left;
           align-items: left;
   padding: 10px;
-  font-size: 34px;
 }
 
 .choices5 .plate .contentInfo1 .auswahl * {
