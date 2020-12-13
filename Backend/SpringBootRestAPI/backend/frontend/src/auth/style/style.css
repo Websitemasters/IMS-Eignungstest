@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+.loginAdmin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Montserrat";
+}
+
+.loginAdmin p {
+  font-weight: 500;
+  font-size: 24px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.loginAdmin input {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  border-style: none;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid;
+  outline: none;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  background-color: black;
+}
+
+.loginAdmin input:focus {
+  border-bottom: 1px solid #0088a9;
+}
+
+.loginAdmin button {
+  color: white;
+  padding: 9px 25px;
+  background-color: #0088a9;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.loginAdmin button:hover {
+  background-color: #405157;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
