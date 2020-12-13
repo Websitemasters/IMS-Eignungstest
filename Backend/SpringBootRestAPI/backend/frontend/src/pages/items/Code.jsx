@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import * as VSCIcons from "react-icons/vsc";
 import * as IoIosIcons from "react-icons/io";
+import NavBar from "../components/Navbar";
 
 export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet, userID }) {
     React.useEffect(() => {
@@ -28,25 +29,28 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
             })
     }
     return (
-        <div className="coding">
-            <div className="plate">
-                <div className="content1">
-                    <h1>Code Editor</h1>
-                    <p>{frage}</p>
+        <div className="parent">
+            <NavBar />
+            <div className="coding">
+                <div className="plate">
+                    <div className="content1">
+                        <h1>Code Editor</h1>
+                        <p>{frage}</p>
+                    </div>
+                    <div className="content2">
+                        <textarea defaultValue={items[nextPage - 2].code} onChange={setInput} className="in" />
+                        <textarea defaultValue={outPut} className="out" />
+                    </div>
+                    <div className="content4">
+                        <button onClick={runCode} className="run">
+                            <VSCIcons.VscDebugStart size={25} />
+                        </button>
+                        <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
+                            <p>Next Page</p>
+                        </Link>
+                    </div>
                 </div>
-                <div className="content2">
-                    <textarea defaultValue={items[nextPage - 2].code} onChange={setInput} className="in" />
-                    <textarea defaultValue={outPut} className="out" />
-                </div>
-                <div className="content4">
-                    <button onClick={runCode} className="run">
-                        <VSCIcons.VscDebugStart size={25} />
-                    </button>
-                    <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                        <p>Next Page</p>
-                    </Link>
-                </div>
-            </div>
-        </div >
+            </div >
+        </div>
     )
 }
