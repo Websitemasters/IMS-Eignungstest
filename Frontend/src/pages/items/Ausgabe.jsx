@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import Axios from "axios";
+import NavBar from "../components/Navbar";
 
 function Ausgabe({ items, sendeAktivitaet, userID }) {
   useEffect(() => {
@@ -18,16 +18,19 @@ function Ausgabe({ items, sendeAktivitaet, userID }) {
       })
   }
   return (
-    <div className="ausgabe">
-      <div className="plate">
-        <div className="contentInfo1">
-          <div className="title">
-            <h1>Ausgabe</h1>
-          </div>
-          <div className="erklaerung">
-            <p>
-              Durch ihre angaben konnten wir herausfinden das Sie zu 0% zur IMS passen
+    <div className="parent">
+      <NavBar />
+      <div className="ausgabe">
+        <div className="plate">
+          <div className="contentInfo1">
+            <div className="title">
+              <h1>Ausgabe</h1>
+            </div>
+            <div className="erklaerung">
+              <p>
+                Durch ihre angaben konnten wir herausfinden das Sie zu 0% zur IMS passen
           </p>
+            </div>
           </div>
         </div>
       </div>
