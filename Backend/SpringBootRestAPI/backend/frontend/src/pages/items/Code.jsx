@@ -14,7 +14,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
         setInputCode(e.target.value);
     }
     const runCode = async () => {
-        axios.post(`http://localhost:8080/useParser`, {
+        axios.post(`http://localhost:8080/api/useParser`, {
             id: 1,
             text: inputCode,
         })

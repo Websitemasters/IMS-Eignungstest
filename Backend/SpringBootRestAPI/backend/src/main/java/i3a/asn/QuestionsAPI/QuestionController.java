@@ -28,8 +28,7 @@ public class QuestionController {
     private Logic logic = Logic.getInstance();
     private StartParser pc;
 
-    @PostMapping("/useParser")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/api/useParser")
     public String parseInput(@RequestBody ParseModel code){
         pc=new StartParser();
         String lines[] = code.getText().split("\\r?\\n");
@@ -42,14 +41,12 @@ public class QuestionController {
 	    return pc.startParser(inputCode);
     }
 
-    @GetMapping("/getAllItems")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/getAllItems")
     public ArrayList<Items> getAllItems(){
         return logic.getAllItems();
     }
 
-    @PostMapping("/rechneEignung")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/api/rechneEignung")
     public String rechneEignung(@RequestBody ArrayList<Items> items){
         if(items.size()!=0){
             return "yeah";

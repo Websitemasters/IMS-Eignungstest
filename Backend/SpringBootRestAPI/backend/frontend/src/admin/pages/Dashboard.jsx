@@ -12,7 +12,7 @@ function Dashboard() {
     }, []);
     const getData = async () => {
         //Get Seitenaufrufe
-        axios.get("http://localhost:8080/admin/seitenaufrufe")
+        axios.get("http://localhost:8080/api/admin/seitenaufrufe")
             .then((res) => {
                 setAufrufe(res.data - 1);
             })
@@ -20,7 +20,7 @@ function Dashboard() {
                 console.log(error);
             })
         //Get Anzahl durchgeführte Tests
-        axios.get("http://localhost:8080/admin/getDurchgefuehrte")
+        axios.get("http://localhost:8080/api/admin/getDurchgefuehrte")
             .then((res) => {
                 setDurchgefuehrte(res.data);
             })
@@ -28,12 +28,12 @@ function Dashboard() {
                 console.log(error);
             })
         //Get Aktivitäts Log
-        axios.get("http://localhost:8080/admin/actLog")
+        axios.get("http://localhost:8080/api/admin/actLog")
             .then((response) => {
                 setEintrage(response.data);
 
                 //To Avoid Problems
-                axios.get("http://localhost:8080/admin/getVPI")
+                axios.get("http://localhost:8080/api/admin/getVPI")
                     .then((res) => {
                         setVpi(res.data);
                     })

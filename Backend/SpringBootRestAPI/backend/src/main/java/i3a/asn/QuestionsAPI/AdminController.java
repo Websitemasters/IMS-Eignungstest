@@ -11,14 +11,12 @@ import java.util.ArrayList;
 public class AdminController {
     private Logic repo = Logic.getInstance();
 
-    @GetMapping("/addUser")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/addUser")
     public int getNextUser(){
         return repo.nextUser();
     }
 
-    @PostMapping("/logActivity")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/api/logActivity")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
         if(id==0){
             System.out.println("Its fucked");
@@ -33,32 +31,27 @@ public class AdminController {
     }
 
 
-    @GetMapping("/admin/actLog")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/actLog")
     public ArrayList<LogEintrag> orderNew(){
         return repo.actLog();
     }
 
-    @GetMapping("/admin/seitenaufrufe")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/seitenaufrufe")
     public int getSeitenaufrufe(){
         return repo.getSeitenAufrufe();
     }
 
-    @GetMapping("/admin/getDurchgefuehrte")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getDurchgefuehrte")
     public int getDurchgefuehrte(){
         return repo.getDurchgefuehrte();
     }
 
-    @GetMapping("/admin/getTestErg")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getTestErg")
     public ArrayList<User> getTestErg(){
         return repo.getTestErg();
     }
 
-    @GetMapping("/admin/getVPI")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getVPI")
     public ArrayList<VerlassenPerItem> getVPI(){
         return repo.getVPI();
     }
