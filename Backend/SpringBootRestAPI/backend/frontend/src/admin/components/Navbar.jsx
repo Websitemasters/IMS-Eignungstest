@@ -44,11 +44,6 @@ function Navbar() {
                                 <span>Test Resultate</span>
                             </Link>
                         </li>
-                        <li className="nav-text">
-                            <Link to="/">
-                                <span>Main Page</span>
-                            </Link>
-                        </li>
                     </ul>
                 </nav>
             </IconContext.Provider>

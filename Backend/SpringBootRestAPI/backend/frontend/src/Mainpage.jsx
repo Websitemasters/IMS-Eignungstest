@@ -19,6 +19,10 @@ import {
 import Axios from "axios";
 import { BeatLoader } from "react-spinners";
 
+import Admin from "./admin/Admin";
+import Login from "./auth/LoginPage";
+import PrivateRoute from "./auth/PrivateRoute";
+
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
         Axios.post(`/api/logActivity?id=${id}&url=${url}`)
@@ -131,6 +135,12 @@ function MainPage() {
                                 </div>
                             )
                         })}
+                        <PrivateRoute exact path="/admin">
+                            <Admin />
+                        </PrivateRoute>
+                        <Route path="/Login">
+                            <Login />
+                        </Route>
                         <Redirect to="/" />
                     </Switch>
                 ) :
