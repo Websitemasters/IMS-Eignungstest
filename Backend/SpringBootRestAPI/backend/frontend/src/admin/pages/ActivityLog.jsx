@@ -7,7 +7,7 @@ function ActivityLog() {
         fetchData();
     }, []);
     const fetchData = async () => {
-        axios.get("http://localhost:8080/api/admin/actLog")
+        axios.get("/api/admin/actLog")
             .then((response) => {
                 setEintrage(response.data);
             })

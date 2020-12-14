@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import Axios from "axios";
 
 function Ausgabe({ items, sendeAktivitaet, userID }) {
@@ -9,7 +8,7 @@ function Ausgabe({ items, sendeAktivitaet, userID }) {
     getEignung();
   }, []);
   const getEignung = async () => {
-    Axios.post("http://localhost:8080/api/rechneEignung", items)
+    Axios.post("/api/rechneEignung", items)
       .then((res) => {
         console.log(res.data);
       })

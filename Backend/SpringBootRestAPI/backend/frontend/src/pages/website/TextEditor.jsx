@@ -17,7 +17,7 @@ export default function TextEditor({ sendeAktivitaet, userID }) {
         setHelp("x=55 \n return x");
     }
     const runCode = async () => {
-        axios.post(`http://localhost:8080/api/useParser`, {
+        axios.post(`/api/useParser`, {
             id: 1,
             text: inputCode,
         })
