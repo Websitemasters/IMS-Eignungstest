@@ -26,7 +26,6 @@ function Navbar() {
                                 <AiIcons.AiOutlineClose color="black" />
                             </Link>
                         </li>
-
                         <li className="nav-text">
                             <Link to="/admin">
                                 <MdIcons.MdDashboard color="black" />
@@ -47,7 +46,7 @@ function Navbar() {
                         </li>
                         <li className="nav-text">
                             <Link to="/">
-                                <span>Back To MainPage</span>
+                                <span>Main Page</span>
                             </Link>
                         </li>
                     </ul>
