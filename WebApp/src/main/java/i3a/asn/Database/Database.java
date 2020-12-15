@@ -50,23 +50,6 @@ public class Database {
         return 0;
     }
 
-    //Set Testerg for User
-    public boolean updateAuswahl(double procent,Long user){
-        try {
-            Connection conn = jdbc.createConnection();
-            Statement st = conn.createStatement();
-            st.executeUpdate("update user set resultat =" + procent + " where id = " + user );
-
-            conn.close();
-            st.close();
-            jdbc.closeConnection();
-            return true;
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
-        }
-        return false;
-    }
-
     //Log Activity
     public boolean logActivity(int user,String url){
         try {
@@ -218,6 +201,7 @@ public class Database {
         return null;
     }
 
+    //Get Items
     public ArrayList<Items> getItems(){
         try(Connection conn = jdbc.createConnection()){
             ArrayList<Items> items = new ArrayList<>();
@@ -225,12 +209,13 @@ public class Database {
             String query = "select * from items;";
             ResultSet rs = st.executeQuery(query);
             while(rs.next()){
-                //items.add(new Items(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getDouble(6)));
+                items.add(new Items(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getInt(6)));
             }
             rs.close();
             st.close();
             conn.close();
             jdbc.closeConnection();
+            return items;
         }catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
