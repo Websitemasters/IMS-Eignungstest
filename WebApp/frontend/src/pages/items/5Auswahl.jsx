@@ -10,6 +10,7 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
   var idOfQuestion = location.pathname.substring(7, location.pathname.length);
   var intId = parseInt(idOfQuestion);
 
+  //Fix needed here
   const add = (e) => {
     setItems(
       items.map((item) => {
@@ -32,29 +33,19 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
           </div>
           <div className="auswahl">
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="4" onClick={add}>
-                <p>Immer</p>
-              </button>
+              <button id="5" onClick={add}>Immer</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="3" onClick={add}>
-                <p>Oft</p>
-              </button>
+              <button id="4" onClick={add}>Oft</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="2" onClick={add}>
-                <p>Manchmal</p>
-              </button>
+              <button id="3" onClick={add}>Manchmal</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="1" onClick={add}>
-                <p>Selten</p>
-              </button>
+              <button id="2" onClick={add}>Selten</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="0" onClick={add}>
-                <p>Nie</p>
-              </button>
+              <button id="1" onClick={add}>Nie</button>
             </Link>
           </div>
         </div>

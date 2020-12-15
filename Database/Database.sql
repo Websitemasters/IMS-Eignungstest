@@ -17,3 +17,13 @@ create table activity(
     PRIMARY KEY (id),
     FOREIGN KEY (userId) REFERENCES user(id) 
 );
+
+create table items(
+    id int not null auto_increment,
+    frage varchar(255) not null,
+    kategorie varchar(50) not null,
+    gewichtung int(20) not null,
+    code varchar(500),
+    antwort float,
+    Primary key (id)
+);

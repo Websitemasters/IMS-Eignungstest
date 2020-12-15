@@ -429,9 +429,6 @@ header button:hover {
   border: none;
   font-size: 25px;
   cursor: pointer;
-}
-
-.choices5 .plate .contentInfo1 .auswahl .linkbutton button p {
   color: #ffffff;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -439,7 +436,7 @@ header button:hover {
   transition: transform ease 300ms, -webkit-transform ease 300ms;
 }
 
-.choices5 .plate .contentInfo1 .auswahl .linkbutton button p:hover {
+.choices5 .plate .contentInfo1 .auswahl .linkbutton button:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
 }

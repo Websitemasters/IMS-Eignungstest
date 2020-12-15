@@ -3,6 +3,7 @@ package i3a.asn.Database;
 import i3a.asn.Models.Admin.LogEintrag;
 import i3a.asn.Models.Admin.User;
 import i3a.asn.Models.Admin.VerlassenPerItem;
+import i3a.asn.Models.Items.Items;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,9 +18,8 @@ public class Database {
 
     //Add new Visitor
     public int addVisitor(){
-        try {
+        try(Connection conn = jdbc.createConnection();) {
             String queryCreateUser = "Insert into user (id, resultat) values (?,?);";
-            Connection conn = jdbc.createConnection();
             PreparedStatement ps = conn.prepareStatement(queryCreateUser);
 
             Statement st = conn.createStatement();
@@ -213,6 +213,25 @@ public class Database {
             jdbc.closeConnection();
             return data;
         } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Items> getItems(){
+        try(Connection conn = jdbc.createConnection()){
+            ArrayList<Items> items = new ArrayList<>();
+            Statement st = conn.createStatement();
+            String query = "select * from items;";
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+                //items.add(new Items(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(5),rs.getDouble(6)));
+            }
+            rs.close();
+            st.close();
+            conn.close();
+            jdbc.closeConnection();
+        }catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
         return null;

@@ -46,12 +46,10 @@
                         border: none;
                         font-size: 25px;
                         cursor: pointer;
-                        p {
-                            color: $textColor;
-                            transition: transform ease 300ms;
-                            &:hover {
-                                transform: scale(1.4);
-                            }
+                        color: $textColor;
+                        transition: transform ease 300ms;
+                        &:hover {
+                            transform: scale(1.4);
                         }
                     }
                 }
