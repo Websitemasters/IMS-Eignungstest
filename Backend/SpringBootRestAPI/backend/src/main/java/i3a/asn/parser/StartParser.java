@@ -23,7 +23,7 @@ public class StartParser {
 	public String startParser(List<String> befehle) {
 		ArrayList<String> befehle2 = new ArrayList();
 		for (int i = 0; i < befehle.size(); i++) {
-			if (befehle.get(i).contains("if") || befehle.get(i).contains("while")) {
+			if ((befehle.get(i).contains("if")&&!befehle.get(i).contains("}")) || befehle.get(i).contains("while")) {
 				String s = befehle.get(i);
 				i++;
 				if (!befehle.get(i).contains("}")) {
