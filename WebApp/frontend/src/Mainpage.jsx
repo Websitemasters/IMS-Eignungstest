@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./pages/styles/styles.css";
 //Components Imports
 import NavBar from "./pages/components/Navbar";
-import Home from "./pages/website/Home";
+import StartTest from "./pages/website/StartTest";
 import Ausgabe from "./pages/items/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
 import OneToTen from "./pages/items/OneToTen";
@@ -68,7 +68,7 @@ function MainPage() {
                 {loading ? (
                     <Switch>
                         <Route exact path="/">
-                            <Home sendeAktivitaet={sendeAktivitaet} userID={userID} />
+                            <StartTest sendeAktivitaet={sendeAktivitaet} userID={userID} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
