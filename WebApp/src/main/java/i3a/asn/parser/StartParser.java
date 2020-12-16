@@ -65,12 +65,6 @@ public class StartParser {
 				befehle2.add(befehle.get(i));
 			}
 		}
-		System.out.println("Befehle2 Content: ");
-		for (String s : befehle2) {
-
-			System.out.println(s);
-		}
-		System.out.println("Befehl2 Content done");
 		String retStr = "";
 		try {
 			retStr = Double.toString(doParsing(befehle2, new HashMap()));

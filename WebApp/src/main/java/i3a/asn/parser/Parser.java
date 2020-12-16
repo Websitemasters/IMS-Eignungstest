@@ -143,7 +143,7 @@ public class Parser {
 //		else if(func.equals("return")) return parseExpression();
 		else if(func.equals("return")) throw new RuntimeException(Double.toString(parseExpression()));
 		else if(eat('=')){if(!eat('=')){variables.put(func, parseExpression());}else{x=variables.get(func);}}
-		else{System.out.println(func);x = variables.get(func);}
+		else{x = variables.get(func);}
             } else if(eat(')')||eat('>')||eat('<')||eat('!')||eat('}')||eat(';'));
 	    else {
                 throw new RuntimeException("Unexpected: " + str);

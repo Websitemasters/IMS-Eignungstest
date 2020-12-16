@@ -3,6 +3,7 @@ import axios from "axios";
 import Axios from "axios";
 
 function Ausgabe({ items, sendeAktivitaet, userID }) {
+  const[ausgabe,setAusgabe]=React.useState("");
   useEffect(() => {
     console.log(items);
     sendeAktivitaet.sendeAktivitaet("/Ausgabe", userID);
@@ -12,6 +13,7 @@ function Ausgabe({ items, sendeAktivitaet, userID }) {
     Axios.post("http://localhost:8080/rechneEignung", items)
       .then((res) => {
         console.log(res.data);
+        setAusgabe(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -26,7 +28,7 @@ function Ausgabe({ items, sendeAktivitaet, userID }) {
           </div>
           <div className="erklaerung">
             <p>
-              Durch ihre angaben konnten wir herausfinden das Sie zu 0% zur IMS passen
+            {ausgabe}
           </p>
           </div>
         </div>
