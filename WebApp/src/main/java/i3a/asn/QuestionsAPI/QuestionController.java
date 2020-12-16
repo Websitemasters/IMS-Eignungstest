@@ -63,7 +63,7 @@ public class QuestionController {
 		if(itemList.get(2).getAntwort()>7) retStr+="Wenn du ein hohes Interesse an Naturwissenschaftlichen Fächern hast und eventuell sogar planst, ein Studium in dieser Richtigung zu absolvieren, ist die Kantonsschule vielleicht besser geeignet.\n";
 		if(itemList.get(3).getAntwort()>7) retStr+="Ein Interesse an wirtschaftlichen Themen ist definitiv eine gute Vorraussetzung! Solltest du jedoch keine Interesse an Informatik haben, ist die Wirtschaftsmittelschule vielleicht eine bessere Option für dich.\n";
 		if(itemList.get(4).getAntwort()>7) retStr+="Hast du Interesse an einem Studium in Richtung Informatik, macht die IMS definitiv Sinn. Solltest du jedoch Arzt werden wollen kann es sein, dass du in der Kantonsschule besser aufgehoben bist.\n";
-		if(itemList.get(5).getAntwort()>7) retStr+="Perfekt! Grosser Wissensdurst und Interesse für der Materie sind Indikatoren, dass du dich in der IMS am richtigen Platz fühlen wirst.";
+		if(itemList.get(5).getAntwort()>7) retStr+="Grosser Wissensdurst und Interesse für der Materie sind Indikatoren, dass du dich in der IMS am richtigen Platz fühlen wirst.";
 		double eignung = 0.0;
 		double maxAnswers = 0.0;
 		for (Items is : itemList) {
