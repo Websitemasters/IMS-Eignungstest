@@ -17,7 +17,7 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
         if (item.id === intId) {
           return {
             ...item,
-            antwort: parseInt(e.target.id),
+            antwort: 2 * parseInt(e.target.id),
           };
         }
         return item;

@@ -260,9 +260,14 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 20px;
   -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
           box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .home .plate * {
@@ -278,7 +283,6 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 10px;
-  background-color: #0F1F33;
   width: 40%;
   height: 30vh;
   display: flex;
@@ -287,8 +291,6 @@ header button:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px;
-  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .home .plate .contentInfo1 * {
@@ -296,11 +298,24 @@ header button:hover {
 }
 
 .home .plate .contentInfo1 .title {
-  color: #ffffff;
+  -webkit-transition: -webkit-transform ease 500ms;
+  transition: -webkit-transform ease 500ms;
+  transition: transform ease 500ms;
+  transition: transform ease 500ms, -webkit-transform ease 500ms;
 }
 
-.home .plate .contentInfo1 .erklaerung {
+.home .plate .contentInfo1 .title a {
+  text-decoration: none;
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
   color: #ffffff;
+  font-size: 10vh;
+}
+
+.home .plate .contentInfo1 .title:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .item {
