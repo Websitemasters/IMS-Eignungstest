@@ -12,32 +12,43 @@
         padding: 20px;
         box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .3);
         * {
-            margin: 5px;
+            margin: 10px;
         }
-        .title {
-            width: auto;
-        }
-        .content {
+        .contentInfo1 {
             display: flex;
-            flex-direction: row;
-            .left {
-                .avg {
-                    display: flex;
-                    flex-direction: column;
-                    border-radius: 10px;
-                    background-color: #F2F5FA;
-                    width: auto;
-                    height: 25vh;
-                    box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .2);
-                    align-items: center;
-                    padding: 15px;
-                    * {
-                        margin: 5px;
-                    }
+            flex-direction: column;
+            .avg {
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                background-color: #F2F5FA;
+                width: 25%;
+                height: 20vh;
+                box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, .2);
+                align-items: center;
+                padding: 15px;
+                * {
+                    margin: 5px;
                 }
             }
-            .right {
-                background-color: orange;
+        }
+        .contentInfo2 {
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #F2F5FA;
+            width: 30%;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, .2);
+            .tableHold {
+                overflow: auto;
+                .testErg {
+                    border-collapse: separate;
+                    border-spacing: 0 15px;
+                    width: 90%;
+                }
             }
         }
     }
