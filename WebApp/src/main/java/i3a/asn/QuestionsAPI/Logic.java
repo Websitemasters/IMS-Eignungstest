@@ -60,4 +60,7 @@ public class Logic {
     public ArrayList<VerlassenPerItem> getVPI (){
         return sql.getVPI();
     }
+    public double getAvgTestErg() {
+        return sql.getTestErgDurchschnitt();
+    }
 }
