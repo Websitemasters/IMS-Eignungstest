@@ -9,57 +9,58 @@ import java.util.ArrayList;
 
 @RestController
 public class AdminController {
-    private Logic repo = Logic.getInstance();
+    private Logic logic = Logic.getInstance();
 
     @GetMapping("/addUser")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){
-        return repo.nextUser();
+        return logic.nextUser();
     }
 
     @PostMapping("/logActivity")
     @CrossOrigin(origins = "http://localhost:3000")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
-        if(id==0){
-            System.out.println("Its fucked");
-        }else{
-            if(repo.logActivity(id,url)){
+         if(logic.logActivity(id,url)){
                 return "Ok";
-            }else{
-                return "False";
-            }
-        }
-        return "Fucked";
+         }else {
+             return "False";
+         }
     }
 
 
     @GetMapping("/admin/actLog")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<LogEintrag> orderNew(){
-        return repo.actLog();
+        return logic.actLog();
     }
 
     @GetMapping("/admin/seitenaufrufe")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getSeitenaufrufe(){
-        return repo.getSeitenAufrufe();
+        return logic.getSeitenAufrufe();
     }
 
     @GetMapping("/admin/getDurchgefuehrte")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getDurchgefuehrte(){
-        return repo.getDurchgefuehrte();
+        return logic.getDurchgefuehrte();
     }
 
     @GetMapping("/admin/getTestErg")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<User> getTestErg(){
-        return repo.getTestErg();
+        return logic.getTestErg();
     }
 
     @GetMapping("/admin/getVPI")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<VerlassenPerItem> getVPI(){
-        return repo.getVPI();
+        return logic.getVPI();
+    }
+    
+    @GetMapping("/admin/getAVGTesterg")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public double getAvgTestErg(){
+        return logic.getAvgTestErg();
     }
 }

@@ -227,17 +227,6 @@ span {
   cursor: pointer;
 }
 
-/*
-Alternativer effect bei hover
-transition:transform 300ms;
-&:hover {
-    transform: scale(1.02);
-}
-transition: 300ms;
-                &:hover {
-                    box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, .5);
-                }
-*/
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -426,5 +415,81 @@ transition: 300ms;
 .content .plate .contentInfo2 .vpi:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.testResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testResults .plate {
+  border-radius: 10px;
+  background-color: #F2F5FA;
+  width: 80%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.3);
+}
+
+.testResults .plate * {
+  margin: 5px;
+}
+
+.testResults .plate .title {
+  width: auto;
+}
+
+.testResults .plate .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.testResults .plate .content .left .avg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  background-color: #F2F5FA;
+  width: auto;
+  height: 25vh;
+  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+.testResults .plate .content .left .avg * {
+  margin: 5px;
+}
+
+.testResults .plate .content .right {
+  background-color: orange;
 }
 /*# sourceMappingURL=Admin.css.map */
