@@ -11,14 +11,12 @@ import java.util.ArrayList;
 public class AdminController {
     private Logic logic = Logic.getInstance();
 
-    @GetMapping("/addUser")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/addUser")
     public int getNextUser(){
         return logic.nextUser();
     }
 
-    @PostMapping("/logActivity")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/api/logActivity")    
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
          if(logic.logActivity(id,url)){
                 return "Ok";
@@ -28,38 +26,32 @@ public class AdminController {
     }
 
 
-    @GetMapping("/admin/actLog")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/actLog")
     public ArrayList<LogEintrag> orderNew(){
         return logic.actLog();
     }
 
-    @GetMapping("/admin/seitenaufrufe")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/seitenaufrufe")
     public int getSeitenaufrufe(){
         return logic.getSeitenAufrufe();
     }
 
-    @GetMapping("/admin/getDurchgefuehrte")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getDurchgefuehrte")
     public int getDurchgefuehrte(){
         return logic.getDurchgefuehrte();
     }
 
-    @GetMapping("/admin/getTestErg")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getTestErg")
     public ArrayList<User> getTestErg(){
         return logic.getTestErg();
     }
 
-    @GetMapping("/admin/getVPI")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getVPI")
     public ArrayList<VerlassenPerItem> getVPI(){
         return logic.getVPI();
     }
     
-    @GetMapping("/admin/getAVGTesterg")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/api/admin/getAVGTesterg")
     public double getAvgTestErg(){
         return logic.getAvgTestErg();
     }

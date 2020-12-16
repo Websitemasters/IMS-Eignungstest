@@ -10,7 +10,7 @@ function TestResults() {
         getTestErg();
     }, [])
     const getAvg = async () => {
-        axios.get("http://localhost:8080/admin/getAVGTesterg")
+        axios.get("/api/admin/getAVGTesterg")
             .then((res) => {
                 setAvg(parseFloat(res.data).toFixed(2));
             })
@@ -19,7 +19,7 @@ function TestResults() {
             })
     }
     const getTestErg = async () => {
-        axios.get("http://localhost:8080/admin/getTestErg")
+        axios.get("/api/admin/getTestErg")
             .then((res) => {
                 setTestErg(res.data);
             })

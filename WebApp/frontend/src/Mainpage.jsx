@@ -19,9 +19,13 @@ import {
 import Axios from "axios";
 import { BeatLoader } from "react-spinners";
 
+import Admin from "./admin/Admin";
+import Login from "./auth/LoginPage";
+import PrivateRoute from "./auth/PrivateRoute";
+
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
-        Axios.post(`http://localhost:8080/logActivity?id=${id}&url=${url}`)
+        Axios.post(`/api/logActivity?id=${id}&url=${url}`)
             .catch((error) => {
                 console.log(error);
             })
@@ -35,19 +39,38 @@ function MainPage() {
 
     const getIdFunction = async () => {
         try {
-            await Axios
-                .get(`http://localhost:8080/addUser`)
-                .then((res) => {
-                    setID(res.data);
-                });
-            setLoading(true);
+            const cookies = document.cookie;
+            const cookieArray = cookies.split('; ')
+            let eignungstestLocation = -1;
+            for (let i = 0; i < cookieArray.length; i++) {
+                if (cookieArray[i].includes("imseignunstest")) {
+                    eignungstestLocation = i;
+                }
+            }
+            if (eignungstestLocation === -1) {
+                console.log("You got no ID");
+                await Axios
+                    .get(`/api/addUser`)
+                    .then((res) => {
+                        let date = new Date();
+                        const minutes = 30;
+                        date.setTime(date.getTime() + (minutes * 60 * 1000));
+                        document.cookie = "imseignunstest=" + res.data + "; expires=" + date
+                        setID(res.data);
+                        setLoading(true);
+                    });
+            } else {
+                console.log("You got ID");
+                setID(cookieArray[eignungstestLocation].substring(15, cookieArray[eignungstestLocation].length));
+                setLoading(true);
+            }
         } catch (e) {
             console.log(e);
         }
     };
 
     const fetchData = async () => {
-        Axios.get("http://localhost:8080/getAllItems")
+        Axios.get("/api/getAllItems")
             .then((res) => {
                 setItems(res.data);
             })
@@ -68,7 +91,7 @@ function MainPage() {
                 {loading ? (
                     <Switch>
                         <Route exact path="/">
-                            <StartTest sendeAktivitaet={sendeAktivitaet} userID={userID} />
+                            <StartTest sendeAktivitaet={sendeAktivitaet} userID={userID} getIdFunction={getIdFunction} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
@@ -131,6 +154,12 @@ function MainPage() {
                                 </div>
                             )
                         })}
+                        <PrivateRoute exact path="/admin">
+                            <Admin />
+                        </PrivateRoute>
+                        <Route path="/Login">
+                            <Login />
+                        </Route>
                         <Redirect to="/" />
                     </Switch>
                 ) :

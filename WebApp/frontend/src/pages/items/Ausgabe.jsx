@@ -3,14 +3,14 @@ import axios from "axios";
 import Axios from "axios";
 
 function Ausgabe({ items, sendeAktivitaet, userID }) {
-  const[ausgabe,setAusgabe]=React.useState("");
+  const [ausgabe, setAusgabe] = React.useState("");
   useEffect(() => {
     console.log(items);
     sendeAktivitaet.sendeAktivitaet("/Ausgabe", userID);
     getEignung();
   }, []);
   const getEignung = async () => {
-    Axios.post("http://localhost:8080/rechneEignung", items)
+    Axios.post("/api/rechneEignung", items)
       .then((res) => {
         console.log(res.data);
         setAusgabe(res.data);
@@ -28,8 +28,8 @@ function Ausgabe({ items, sendeAktivitaet, userID }) {
           </div>
           <div className="erklaerung">
             <p>
-            {ausgabe}
-          </p>
+              {ausgabe}
+            </p>
           </div>
         </div>
       </div>
