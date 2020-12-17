@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import Axios from "axios";
 
 function Ausgabe({ items, sendeAktivitaet, userID, setTestDone }) {
