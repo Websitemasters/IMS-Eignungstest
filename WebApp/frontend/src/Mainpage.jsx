@@ -26,14 +26,8 @@ import PrivateRoute from "./auth/PrivateRoute";
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
         Axios.post(`/api/logActivity?id=${id}&url=${url}`)
-            .then((res) => {
-                if (res != null) {
-                    return true;
-                }
-            })
             .catch((error) => {
                 console.log(error);
-                return false;
             })
     }
 };
