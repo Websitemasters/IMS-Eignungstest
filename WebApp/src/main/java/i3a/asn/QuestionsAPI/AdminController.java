@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class AdminController {
     private Logic logic = Logic.getInstance();
 
-    @GetMapping("/api/addUser")
+    @GetMapping("/api/addBesucher")
     public int getNextUser(){
         return logic.nextUser();
     }
@@ -24,14 +24,13 @@ public class AdminController {
              return "False";
          }
     }
-
-
+    
     @GetMapping("/api/admin/actLog")
     public ArrayList<LogEintrag> orderNew(){
         return logic.actLog();
     }
 
-    @GetMapping("/api/admin/seitenaufrufe")
+    @GetMapping("/api/admin/anzahlBesucher")
     public int getSeitenaufrufe(){
         return logic.getSeitenAufrufe();
     }

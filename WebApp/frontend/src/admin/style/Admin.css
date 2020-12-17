@@ -271,7 +271,7 @@ span {
           flex-direction: row;
 }
 
-.content .plate .contentInfo1 .seitenAufrufe {
+.content .plate .contentInfo1 .besucher {
   border-radius: 10px;
   background-color: #F2F5FA;
   width: 20%;
@@ -295,11 +295,11 @@ span {
   transition: transform 300ms, -webkit-transform 300ms;
 }
 
-.content .plate .contentInfo1 .seitenAufrufe * {
+.content .plate .contentInfo1 .besucher * {
   margin: 5px;
 }
 
-.content .plate .contentInfo1 .seitenAufrufe:hover {
+.content .plate .contentInfo1 .besucher:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
@@ -337,11 +337,11 @@ span {
           transform: scale(1.05);
 }
 
-.content .plate .contentInfo1 .letzteAkt {
+.content .plate .contentInfo1 .seitenAufrufe {
   border-radius: 10px;
   background-color: #F2F5FA;
-  width: 60%;
-  height: 30vh;
+  width: 20%;
+  height: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,6 +349,10 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
   -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: -webkit-transform 300ms;
@@ -357,19 +361,13 @@ span {
   transition: transform 300ms, -webkit-transform 300ms;
 }
 
-.content .plate .contentInfo1 .letzteAkt .aktTablePlaceHolder {
-  overflow: auto;
+.content .plate .contentInfo1 .seitenAufrufe * {
+  margin: 5px;
 }
 
-.content .plate .contentInfo1 .letzteAkt .aktTablePlaceHolder .aktTable {
-  border-collapse: separate;
-  border-spacing: 0 15px;
-  width: 90%;
-}
-
-.content .plate .contentInfo1 .letzteAkt:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+.content .plate .contentInfo1 .seitenAufrufe:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .content .plate .contentInfo2 {

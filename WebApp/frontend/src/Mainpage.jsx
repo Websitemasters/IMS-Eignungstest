@@ -49,7 +49,7 @@ function MainPage() {
                 }
             }
             if (eignungstestLocation === -1) {
-                Axios.get("/api/addUser")
+                Axios.get("/api/addBesucher")
                     .then((res) => {
                         let date = new Date();
                         const minutes = 30;
@@ -101,7 +101,7 @@ function MainPage() {
                             />
                         </Route>
                         <Route exact path="/Code">
-                            <TextEditor sendeAktivitaet={sendeAktivitaet} userID={userID} />
+                            <TextEditor />
                         </Route>
                         {items.map((item) => {
                             if (item.kategorie === "5choice") {

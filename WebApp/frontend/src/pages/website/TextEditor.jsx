@@ -3,10 +3,7 @@ import axios from "axios";
 import * as VSCIcons from "react-icons/vsc";
 import * as IoIosIcons from "react-icons/io";
 
-export default function TextEditor({ sendeAktivitaet, userID }) {
-    React.useEffect(() => {
-        sendeAktivitaet.sendeAktivitaet("/Code", userID);
-    }, []);
+export default function TextEditor() {
     const [inputCode, setInputCode] = useState("");
     const [outPut, setCode] = useState("");
     const [help, setHelp] = useState("");

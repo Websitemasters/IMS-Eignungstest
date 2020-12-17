@@ -17,7 +17,7 @@
         .contentInfo1 {
             display: flex;
             flex-direction: row;
-            .seitenAufrufe {
+            .besucher {
                 border-radius: 10px;
                 background-color: #F2F5FA;
                 width: 20%;
@@ -53,25 +53,22 @@
                     transform: scale(1.05);
                 }
             }
-            .letzteAkt {
+            .seitenAufrufe {
                 border-radius: 10px;
                 background-color: #F2F5FA;
-                width: 60%;
-                height: 30vh;
+                width: 20%;
+                height: 20vh;
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                padding: 10px;
                 box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, .2);
-                .aktTablePlaceHolder {
-                    overflow: auto;
-                    .aktTable {
-                        border-collapse: separate;
-                        border-spacing: 0 15px;
-                        width: 90%;
-                    }
+                * {
+                    margin: 5px;
                 }
                 transition:transform 300ms;
                 &:hover {
-                    transform: scale(1.02);
+                    transform: scale(1.05);
                 }
             }
         }

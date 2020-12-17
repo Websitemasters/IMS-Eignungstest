@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import * as RiIcons from "react-icons/ri";
+import * as AIIcons from "react-icons/ai";
 
 function Dashboard() {
-    const [aufrufe, setAufrufe] = useState();
+    const [besucherAnzahl, setBesucherAnzahl] = useState();
     const [durchgefuehrte, setDurchgefuehrte] = useState();
-    const [eintrage, setEintrage] = useState([]);
     const [vpi, setVpi] = useState([]);
     useEffect(() => {
         getData();
     }, []);
     const getData = async () => {
         //Get Seitenaufrufe
-        axios.get("/api/admin/seitenaufrufe")
+        axios.get("/api/admin/anzahlBesucher")
             .then((res) => {
-                setAufrufe(res.data - 1);
+                setBesucherAnzahl(res.data - 1);
             })
             .catch((error) => {
                 console.log(error);
@@ -28,22 +28,14 @@ function Dashboard() {
                 console.log(error);
             })
         //Get Aktivitäts Log
-        axios.get("/api/admin/actLog")
-            .then((response) => {
-                setEintrage(response.data);
-
-                //To Avoid Problems
-                axios.get("/api/admin/getVPI")
-                    .then((res) => {
-                        setVpi(res.data);
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    })
+        axios.get("/api/admin/getVPI")
+            .then((res) => {
+                setVpi(res.data);
             })
             .catch((error) => {
                 console.log(error);
             })
+
     }
     return (
         <div className="content">
@@ -54,38 +46,20 @@ function Dashboard() {
                     </div>
                 </div>
                 <div className="contentInfo1">
-                    <div className="seitenAufrufe">
+                    <div className="besucher">
                         <RiIcons.RiUserSearchFill size={70} />
-                        <h4>Seiten Aufrufe</h4>
-                        <p>{aufrufe}</p>
+                        <h4>Anzahl Besucher</h4>
+                        <p>{besucherAnzahl}</p>
                     </div>
                     <div className="durchgefuehrt">
                         <RiIcons.RiSurveyLine size={70} />
                         <h4>Durchgeführte Test</h4>
                         <p>{durchgefuehrte}</p>
                     </div>
-                    <div className="letzteAkt">
-                        <h3>Aktivitäten</h3>
-                        <div className="aktTablePlaceHolder">
-                            <table className="aktTable">
-                                <thead>
-                                    <tr>
-                                        <th align="left">URL</th>
-                                        <th align="left">Datum und Uhrzeit</th>
-                                        <th align="left">User</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {eintrage.map((item) => (
-                                        <tr key={item.id}>
-                                            <td>{item.vistedPage}</td>
-                                            <td>{item.activityTime}</td>
-                                            <td>{item.userId}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                    <div className="seitenAufrufe">
+                        <AIIcons.AiFillEye size={70} />
+                        <h4>Anzahl Seiten aufrufe</h4>
+                        <p>{0}</p>
                     </div>
                 </div>
                 <div className="contentInfo2">
