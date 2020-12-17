@@ -7,6 +7,8 @@ function Dashboard() {
     const [besucherAnzahl, setBesucherAnzahl] = useState();
     const [durchgefuehrte, setDurchgefuehrte] = useState();
     const [vpi, setVpi] = useState([]);
+    const [testErg, setTestErg] = React.useState([]);
+    const [seitenAufrufe, setSeitenAufrufe] = React.useState([]);
     useEffect(() => {
         getData();
     }, []);
@@ -35,7 +37,20 @@ function Dashboard() {
             .catch((error) => {
                 console.log(error);
             })
-
+        axios.get("http://localhost:8080/api/admin/getTestErg")
+            .then((res) => {
+                setTestErg(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        axios.get("http://localhost:8080/api/admin/getSeitenAufrufe")
+            .then((res) => {
+                setSeitenAufrufe(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
     return (
         <div className="content">
@@ -59,7 +74,28 @@ function Dashboard() {
                     <div className="seitenAufrufe">
                         <AIIcons.AiFillEye size={70} />
                         <h4>Anzahl Seiten aufrufe</h4>
-                        <p>{0}</p>
+                        <p>{seitenAufrufe}</p>
+                    </div>
+                    <div className="testErgebnisse">
+                        <div className="tableHold">
+                            <h4>Test Ergbisse</h4>
+                            <table className="testErg">
+                                <thead>
+                                    <tr>
+                                        <th align="left">User</th>
+                                        <th align="left">Test Ergebnis</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {testErg.map((item) => (
+                                        <tr key={item.id}>
+                                            <td>{item.id}</td>
+                                            <td>{item.testresults} %</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div className="contentInfo2">

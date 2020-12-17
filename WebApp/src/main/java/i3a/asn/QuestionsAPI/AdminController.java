@@ -36,7 +36,7 @@ public class AdminController {
     @GetMapping("/api/admin/anzahlBesucher")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getSeitenaufrufe(){
-        return logic.getSeitenAufrufe();
+        return logic.getBesucher();
     }
 
     @GetMapping("/api/admin/getDurchgefuehrte")
@@ -58,7 +58,15 @@ public class AdminController {
     }
     
     @GetMapping("/api/admin/getAVGTesterg")
+    @CrossOrigin(origins = "http://localhost:3000")
     public double getAvgTestErg(){
         return logic.getAvgTestErg();
     }
+
+    @GetMapping("/api/admin/getSeitenAufrufe")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public long getSeitenAufrufe(){
+        return logic.getSeitenAufrufe();
+    }
+
 }

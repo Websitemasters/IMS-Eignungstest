@@ -43,25 +43,34 @@ public class Logic {
     public int nextUser(){
         return sql.addVisitor();
     }
+
     public boolean logActivity(int id,String url){
         return sql.logActivity(id,url);
     }
+
     public ArrayList<LogEintrag> actLog() {
         return sql.actLog();
     }
-    public int getSeitenAufrufe(){
-        return sql.getSeitenAufrufe();
+
+    public int getBesucher(){
+        return sql.getBesucher();
     }
+
     public int getDurchgefuehrte(){
         return sql.getAnzahlDurchgefuerteTest();
     }
+
     public ArrayList<User> getTestErg(){
         return sql.getAllTestErgebniss();
     }
     public ArrayList<VerlassenPerItem> getVPI (){
         return sql.getVPI();
     }
+    
     public double getAvgTestErg() {
         return sql.getTestErgDurchschnitt();
+    }
+    public long getSeitenAufrufe(){
+        return sql.anzahlSeitenAufrufe();
     }
 }

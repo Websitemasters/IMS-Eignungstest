@@ -37,7 +37,7 @@ function TestResults() {
                     <div className="avg">
                         <BiIcons.BiStats size={50} />
                         <h3>Test Durchschnitt</h3>
-                        <p>{avg}</p>
+                        <p>{avg} %</p>
                     </div>
                     <div className="contentInfo2">
                         <div className="tableHold">
@@ -52,7 +52,7 @@ function TestResults() {
                                     {testErg.map((item) => (
                                         <tr key={item.id}>
                                             <td>{item.id}</td>
-                                            <td>{item.testresults}</td>
+                                            <td>{item.testresults} %</td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -96,7 +96,7 @@ public class Database {
     }
 
     //Get Seitenaufrufe
-    public int getSeitenAufrufe(){
+    public int getBesucher(){
         try {
             Statement st = conn.createStatement();
             String sql = "select count(*) from user;";
@@ -229,5 +229,22 @@ public class Database {
         } catch (SQLException  throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public long anzahlSeitenAufrufe(){
+        try{
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("select count(*) from activity;");
+            long anzahl = 0;
+            while(rs.next()){
+                anzahl= rs.getLong(1);
+            }
+            rs.close();
+            rs.close();
+            return anzahl;
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+        return 0;
     }
 }
