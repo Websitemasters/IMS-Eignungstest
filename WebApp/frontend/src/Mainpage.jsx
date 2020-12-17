@@ -26,8 +26,14 @@ import PrivateRoute from "./auth/PrivateRoute";
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
         Axios.post(`/api/logActivity?id=${id}&url=${url}`)
+            .then((res) => {
+                if (res != null) {
+                    return true;
+                }
+            })
             .catch((error) => {
                 console.log(error);
+                return false;
             })
     }
 };
@@ -35,10 +41,11 @@ const sendeAktivitaet = {
 function MainPage() {
     const [items, setItems] = useState([]);
     const [userID, setID] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const getIdFunction = async () => {
         try {
+            setLoading(false);
             const cookies = document.cookie;
             const cookieArray = cookies.split('; ')
             let eignungstestLocation = -1;
@@ -48,9 +55,7 @@ function MainPage() {
                 }
             }
             if (eignungstestLocation === -1) {
-                console.log("You got no ID");
-                await Axios
-                    .get(`/api/addUser`)
+                Axios.get("/api/addUser")
                     .then((res) => {
                         let date = new Date();
                         const minutes = 30;
@@ -58,9 +63,11 @@ function MainPage() {
                         document.cookie = "imseignunstest=" + res.data + "; expires=" + date
                         setID(res.data);
                         setLoading(true);
-                    });
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
             } else {
-                console.log("You got ID");
                 setID(cookieArray[eignungstestLocation].substring(15, cookieArray[eignungstestLocation].length));
                 setLoading(true);
             }
@@ -81,7 +88,6 @@ function MainPage() {
 
     useEffect(() => {
         fetchData();
-        getIdFunction();
     }, []);
     return (
         <Router>
@@ -91,7 +97,7 @@ function MainPage() {
                 {loading ? (
                     <Switch>
                         <Route exact path="/">
-                            <StartTest sendeAktivitaet={sendeAktivitaet} userID={userID} getIdFunction={getIdFunction} />
+                            <StartTest getIdFunction={getIdFunction} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
