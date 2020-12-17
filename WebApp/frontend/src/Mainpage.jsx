@@ -92,7 +92,7 @@ function MainPage() {
                     <NavBar />
                 ) : (
                         <NoFunctionNavBar />
-                    )};
+                    )}
                 <br />
                 {loading ? (
                     <Switch>
