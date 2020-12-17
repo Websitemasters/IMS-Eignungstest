@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import Axios from "axios";
 
-function Ausgabe({ items, sendeAktivitaet, userID }) {
+function Ausgabe({ items, sendeAktivitaet, userID, setTestDone }) {
   const [ausgabe, setAusgabe] = React.useState("");
   useEffect(() => {
     console.log(items);
     sendeAktivitaet.sendeAktivitaet("/Ausgabe", userID);
     getEignung();
+    setTestDone(true);
   }, []);
   const getEignung = async () => {
     Axios.post("http://localhost:8080/api/rechneEignung", items)

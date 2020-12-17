@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./pages/styles/styles.css";
 //Components Imports
 import NavBar from "./pages/components/Navbar";
+import NoFunctionNavBar from "./pages/components/NoFunctionNavBar";
 import StartTest from "./pages/website/StartTest";
 import Ausgabe from "./pages/items/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
@@ -36,6 +37,7 @@ function MainPage() {
     const [items, setItems] = useState([]);
     const [userID, setID] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [testDone, setTestDone] = useState(false);
 
     const getIdFunction = async () => {
         try {
@@ -86,7 +88,11 @@ function MainPage() {
     return (
         <Router>
             <div className="parent">
-                <NavBar />
+                {testDone ? (
+                    <NavBar />
+                ) : (
+                        <NoFunctionNavBar />
+                    )};
                 <br />
                 {loading ? (
                     <Switch>
@@ -98,6 +104,7 @@ function MainPage() {
                                 items={items}
                                 sendeAktivitaet={sendeAktivitaet}
                                 userID={userID}
+                                setTestDone={setTestDone}
                             />
                         </Route>
                         <Route exact path="/Code">
