@@ -35,7 +35,6 @@ public class Database {
             System.out.println(nextId);
             ps.execute();
 
-            ps.close();
             st.close();
             rs.close();
             ps.close();
@@ -213,5 +212,22 @@ public class Database {
             throwables.printStackTrace();
         }
         return null;
+    }
+
+    public void addTestErg(long id, double prozent) {
+        try {
+            String queryCreateUser = "update user set resultat=? where id=?";
+            PreparedStatement ps = conn.prepareStatement(queryCreateUser);
+
+            Statement st = conn.createStatement();
+            ps.setDouble(1, prozent);
+            ps.setLong(2,id);
+            ps.execute();
+
+            ps.close();
+            st.close();
+        } catch (SQLException  throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

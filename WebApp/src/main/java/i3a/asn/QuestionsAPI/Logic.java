@@ -36,8 +36,9 @@ public class Logic {
         return instance;
     }
 
-    //Todo
-    public void auswertung(){}
+    public void auswertung(double prozent,long id){
+        sql.addTestErg(id,prozent);
+    }
 
     public int nextUser(){
         return sql.addVisitor();

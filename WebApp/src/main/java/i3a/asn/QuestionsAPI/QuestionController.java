@@ -13,11 +13,7 @@ import i3a.asn.parser.StartParser;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -51,11 +47,11 @@ public class QuestionController {
 
 	@PostMapping("/api/rechneEignung")
 	@CrossOrigin(origins = "http://localhost:3000")
-	public String rechneEignung(@RequestBody ArrayList<Items> items) {
-		return returnAnswer(items);
+	public String rechneEignung(@RequestBody ArrayList<Items> items, @RequestParam(value = "id", defaultValue = "0") long id) {
+		return returnAnswer(items,id);
 	}
 
-	private String returnAnswer(ArrayList<Items> itemList) {
+	private String returnAnswer(ArrayList<Items> itemList,long id) {
 		//maximale punktzahn ist 70
 		String retStr = "";
 		//Iteriert über Items und erstellt bei spezialfällen spezifische nachricht
@@ -75,7 +71,7 @@ public class QuestionController {
 		}
 		double percentAnswer = (eignung * 100) / maxAnswers;
 		percentAnswer=Math.ceil(percentAnswer);
-
+		logic.auswertung(percentAnswer,id);
 		return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n"+retStr;
 
 	}
