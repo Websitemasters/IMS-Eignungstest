@@ -30,6 +30,7 @@ public class QuestionController {
 	private StartParser pc;
 
 	@PostMapping("/api/useParser")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public String parseInput(@RequestBody ParseModel code) {
 		pc = new StartParser();
 		String lines[] = code.getText().split("\\r?\\n");
@@ -43,11 +44,13 @@ public class QuestionController {
 	}
 
 	@GetMapping("/api/getAllItems")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public ArrayList<Items> getAllItems() {
 		return logic.getAllItems();
 	}
 
-	@PostMapping("/api/rechneEignung")	
+	@PostMapping("/api/rechneEignung")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public String rechneEignung(@RequestBody ArrayList<Items> items) {
 		return returnAnswer(items);
 	}

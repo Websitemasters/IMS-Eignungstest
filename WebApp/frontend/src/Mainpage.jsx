@@ -25,7 +25,7 @@ import PrivateRoute from "./auth/PrivateRoute";
 
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
-        Axios.post(`/api/logActivity?id=${id}&url=${url}`)
+        Axios.post(`http://localhost:8080/api/logActivity?id=${id}&url=${url}`)
             .catch((error) => {
                 console.log(error);
             })
@@ -49,7 +49,7 @@ function MainPage() {
                 }
             }
             if (eignungstestLocation === -1) {
-                Axios.get("/api/addBesucher")
+                Axios.get("http://localhost:8080/api/addBesucher")
                     .then((res) => {
                         let date = new Date();
                         const minutes = 30;
@@ -71,7 +71,7 @@ function MainPage() {
     };
 
     const fetchData = async () => {
-        Axios.get("/api/getAllItems")
+        Axios.get("http://localhost:8080/api/getAllItems")
             .then((res) => {
                 setItems(res.data);
             })

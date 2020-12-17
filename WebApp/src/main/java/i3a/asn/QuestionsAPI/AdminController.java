@@ -12,11 +12,13 @@ public class AdminController {
     private Logic logic = Logic.getInstance();
 
     @GetMapping("/api/addBesucher")
+    @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){
         return logic.nextUser();
     }
 
-    @PostMapping("/api/logActivity")    
+    @PostMapping("/api/logActivity")
+    @CrossOrigin(origins = "http://localhost:3000")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
          if(logic.logActivity(id,url)){
                 return "Ok";
@@ -24,28 +26,33 @@ public class AdminController {
              return "False";
          }
     }
-    
+
     @GetMapping("/api/admin/actLog")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<LogEintrag> orderNew(){
         return logic.actLog();
     }
 
     @GetMapping("/api/admin/anzahlBesucher")
+    @CrossOrigin(origins = "http://localhost:3000")
     public int getSeitenaufrufe(){
         return logic.getSeitenAufrufe();
     }
 
     @GetMapping("/api/admin/getDurchgefuehrte")
+    @CrossOrigin(origins = "http://localhost:3000")
     public int getDurchgefuehrte(){
         return logic.getDurchgefuehrte();
     }
 
     @GetMapping("/api/admin/getTestErg")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<User> getTestErg(){
         return logic.getTestErg();
     }
 
     @GetMapping("/api/admin/getVPI")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<VerlassenPerItem> getVPI(){
         return logic.getVPI();
     }
