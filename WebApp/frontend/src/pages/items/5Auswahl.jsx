@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import ProgressBar from "../components/Progressionbar";
 
 export default function Question({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID }) {
   React.useEffect(() => {
@@ -47,6 +48,15 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
               <button id="1" onClick={add}>Nie</button>
             </Link>
+          </div>
+          <div className="holderProgressBar">
+            <div className="progressBar">
+            </div>
+            <div className="progress">
+            </div>
+            <div className="prozent">
+              <span>70%</span>
+            </div>
           </div>
         </div>
       </div>

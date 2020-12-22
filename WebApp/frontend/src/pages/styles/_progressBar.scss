@@ -1,4 +1,6 @@
 .progressBar{
+    display: flex;
+    flex-direction: column;
     background-color: grey;
     height:10vh;
     width: 100%;
