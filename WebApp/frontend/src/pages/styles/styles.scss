@@ -1,19 +1,20 @@
 $font: "Montserrat",
 sans-serif;
-$bgColor: #223955;
+$bgColor: #000000;
 $hoverColor: #000000;
 $textColor: #ffffff;
-$buttonColor:#005AC7;
-$plateColor: #0F1F33;
+$plateColor: #0f0d0d;
+$boxShadow: rgba(255, 255, 255, 0.116);
+$acent1:#5da3f8;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import "./navbar";
-@import "./coding";
+@import "./textEditor";
 @import "./startingPoint";
 @import "./oneToTen";
 @import "./5choices";
 @import "./ausgabe";
-@import "./centerContent";
 @import "./code";
+@import "./progressBar";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,35 +35,3 @@ $plateColor: #0F1F33;
     width: 100%;
 }
 
-.progressBar{
-    height: 3vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #a8a8a8;
-    font-size: medium;
-    border-radius: 0px 0px 10px 10px;
-    .progress{
-        height: 3vh;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(255, 255, 255);
-        align-items: center;
-        justify-content: center;
-        font-size: medium;
-        border-radius: 0px 10px 10px 10px;
-        color: black;
-        font-weight: bold;
-    }
-    .ausgabeProgress{
-        height: 3vh;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(255, 255, 255);
-        align-items: center;
-        justify-content: center;
-        font-size: medium;
-        border-radius: 0px 0px 10px 10px;
-        color: black;
-        font-weight: bold;
-    }
-}

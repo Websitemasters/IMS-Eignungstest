@@ -16,7 +16,7 @@ header {
 header .nav__links .link {
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #223955;
+  border: solid 1px #000000;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -42,7 +42,7 @@ header .nav__links .link:hover {
 header .nav__links .linkHighLighted {
   cursor: pointer;
   padding: 2px;
-  border-left: solid 3px #0F1F33;
+  border-left: solid 3px #5da3f8;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -104,7 +104,7 @@ header button:hover {
 }
 
 .codingTest .plate {
-  background-color: #0F1F33;
+  background-color: #0f0d0d;
   border-radius: 10px;
   width: 80%;
   height: 80vh;
@@ -118,8 +118,8 @@ header button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
+          box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
 }
 
 .codingTest .plate .content1 {
@@ -199,7 +199,7 @@ header button:hover {
 }
 
 .codingTest .plate .content4 .run:hover {
-  background-color: rgba(93, 163, 248, 0.329);
+  background-color: #ffffff56;
 }
 
 .codingTest .plate .content4 .info {
@@ -251,7 +251,7 @@ header button:hover {
 
 .home .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #0f0d0d;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -261,8 +261,8 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
+          box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -334,7 +334,7 @@ header button:hover {
 
 .item .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #0f0d0d;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -347,8 +347,8 @@ header button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
+          box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
   color: white;
 }
 
@@ -367,7 +367,7 @@ header button:hover {
 
 .choices5 .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #0f0d0d;
   color: #ffffff;
   width: 80%;
   height: 80vh;
@@ -381,8 +381,8 @@ header button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
+          box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
 }
 
 .choices5 .plate .contentInfo1 {
@@ -418,7 +418,6 @@ header button:hover {
 }
 
 .choices5 .plate .contentInfo1 .auswahl {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -439,7 +438,7 @@ header button:hover {
 
 .choices5 .plate .contentInfo1 .auswahl .linkbutton {
   padding: 5px;
-  border-bottom: 1px solid white;
+  margin-top: 15px;
 }
 
 .choices5 .plate .contentInfo1 .auswahl .linkbutton button {
@@ -474,7 +473,7 @@ header button:hover {
 
 .ausgabe .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #0f0d0d;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -487,8 +486,8 @@ header button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
+          box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
 }
 
 .ausgabe .plate .contentInfo1 {
@@ -525,20 +524,6 @@ header button:hover {
   color: #ffffff;
 }
 
-.centerContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #ffffff;
-}
-
 .coding {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -553,7 +538,7 @@ header button:hover {
 }
 
 .coding .plate {
-  background-color: #0F1F33;
+  background-color: #0f0d0d;
   border-radius: 10px;
   width: 80%;
   height: 80vh;
@@ -564,8 +549,8 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
+          box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 0.116);
   padding: 20px;
 }
 
@@ -684,31 +669,8 @@ header button:hover {
   background-color: rgba(241, 245, 250, 0.356);
 }
 
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-*:focus {
-  outline: none;
-}
-
-.parent {
-  background-color: #223955;
-  font-family: "Montserrat", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
 .progressBar {
-  height: 3vh;
+  height: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -716,13 +678,13 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #a8a8a8;
+  background-color: #ffffffc7;
   font-size: medium;
   border-radius: 0px 0px 10px 10px;
 }
 
 .progressBar .progress {
-  height: 3vh;
+  height: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -730,7 +692,7 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
+  background-color: #5da3f8;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -744,7 +706,7 @@ header button:hover {
 }
 
 .progressBar .ausgabeProgress {
-  height: 3vh;
+  height: 2vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -752,7 +714,7 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
+  background-color: #5da3f8;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -763,5 +725,28 @@ header button:hover {
   border-radius: 0px 0px 10px 10px;
   color: black;
   font-weight: bold;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+.parent {
+  background-color: #000000;
+  font-family: "Montserrat", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */

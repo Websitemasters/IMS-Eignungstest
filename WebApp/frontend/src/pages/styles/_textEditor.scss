@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+        box-shadow: 0px 0px 30px 0 $boxShadow;
         .content1 {
             display: flex;
             flex-direction: column;
@@ -32,7 +32,7 @@
                 color: white;
                 border: 0px;
                 font-size: 25px;
-                box-shadow: -5px 0px 0px 0 rgba(93, 163, 248, 1);
+                box-shadow: -5px 0px 0px 0 $acent1;
             }
             .out {
                 padding: 10px;
@@ -55,7 +55,7 @@
             height: 5vh;
             margin-top: 20px;
             .run {
-                background-color: rgba(93, 163, 248, 1);
+                background-color: $acent1;
                 border: 0px;
                 color: $textColor;
                 width: 10%;
@@ -63,7 +63,7 @@
                 border-radius: 20px;
                 transition: 300ms;
                 &:hover {
-                    background-color: rgba(93, 163, 248, 0.329);
+                    background-color: #ffffff56;
                 }
             }
             .info {

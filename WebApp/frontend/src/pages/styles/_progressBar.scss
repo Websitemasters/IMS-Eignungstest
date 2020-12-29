@@ -1,0 +1,32 @@
+.progressBar{
+    height: 2vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffffc7;
+    font-size: medium;
+    border-radius: 0px 0px 10px 10px;
+    .progress{
+        height: 2vh;
+        display: flex;
+        flex-direction: column;
+        background-color: $acent1;
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+        border-radius: 0px 10px 10px 10px;
+        color: black;
+        font-weight: bold;
+    }
+    .ausgabeProgress{
+        height: 2vh;
+        display: flex;
+        flex-direction: column;
+        background-color: $acent1;;
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+        border-radius: 0px 0px 10px 10px;
+        color: black;
+        font-weight: bold;
+    }
+}
