@@ -1,10 +1,9 @@
 import React from 'react'
 
-function Progressionbar() {
+function Progressionbar({ progress, style }) {
     return (
         <div className="progressBar">
-            <div className="progress">
-                Hey
+            <div className={style} style={{ width: progress + "%" }} >
             </div>
         </div>
     )

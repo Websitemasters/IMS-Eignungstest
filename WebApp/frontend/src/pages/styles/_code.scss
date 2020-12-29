@@ -1,4 +1,4 @@
-.codingTest {
+.coding {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,12 +9,13 @@
         height: 80vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+        padding: 20px;
         .content1 {
             display: flex;
             flex-direction: column;
             color: white;
+            margin: 20px;
         }
         .content2 {
             display: flex;

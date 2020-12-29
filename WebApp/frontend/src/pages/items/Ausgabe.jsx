@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import Axios from "axios";
+import Progressionbar from "../components/Progressionbar";
 
-function Ausgabe({ items, sendeAktivitaet, userID, setTestDone }) {
+function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setProgress }) {
   const [ausgabe, setAusgabe] = React.useState("");
+  const [styleProg, setStyleProg] = React.useState("");
   useEffect(() => {
-    console.log(items);
+    setStyleProg("ausgabeProgress");
+    setProgress(100);
     sendeAktivitaet.sendeAktivitaet("/Ausgabe", userID);
     getEignung();
     setTestDone(true);
@@ -12,7 +15,6 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone }) {
   const getEignung = async () => {
     Axios.post(`http://localhost:8080/api/rechneEignung?id=${userID}`, items)
       .then((res) => {
-        console.log(res.data);
         setAusgabe(res.data);
       })
       .catch((error) => {
@@ -32,6 +34,7 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone }) {
             </p>
           </div>
         </div>
+        <Progressionbar progress={progress} style={styleProg} />
       </div>
     </div>
   );

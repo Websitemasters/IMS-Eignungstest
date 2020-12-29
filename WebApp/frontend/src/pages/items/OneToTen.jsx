@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link, useLocation } from "react-router-dom";
+import Progressionbar from "../components/Progressionbar";
 
-function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID }) {
+function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
+    const [styleProg, setStyleProg] = React.useState("");
     React.useEffect(() => {
+        setStyleProg("progress");
+        setProgress((nextPage - 2) * 10);
         sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
     }, []);
 
@@ -45,8 +49,9 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                         <button>Ja</button>
                     </Link>
                 </div>
+                <Progressionbar progress={progress} style={styleProg} />
             </div>
-        </div>
+        </div >
     )
 }
 

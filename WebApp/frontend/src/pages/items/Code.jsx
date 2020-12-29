@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import * as VSCIcons from "react-icons/vsc";
-import * as IoIosIcons from "react-icons/io";
+import Progressionbar from "../components/Progressionbar";
 
-export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet, userID }) {
+export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet, userID, progress, setProgress }) {
+    const [styleProg, setStyleProg] = useState("");
     React.useEffect(() => {
+        setStyleProg("progress");
+        setProgress((nextPage - 2) * 10);
         sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
     }, []);
     const [inputCode, setInputCode] = useState("");
@@ -28,7 +31,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
             })
     }
     return (
-        <div className="coding">
+        <div className="codingTest">
             <div className="plate">
                 <div className="content1">
                     <h1>Code Editor</h1>
@@ -46,6 +49,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                         <p>Next Page</p>
                     </Link>
                 </div>
+                <Progressionbar progress={progress} style={styleProg} />
             </div>
         </div >
     )

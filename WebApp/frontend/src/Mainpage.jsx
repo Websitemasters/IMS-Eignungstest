@@ -38,6 +38,7 @@ function MainPage() {
     const [userID, setID] = useState(null);
     const [loading, setLoading] = useState(true);
     const [testDone, setTestDone] = useState(false);
+    const [progress, setProgress] = useState(10);
 
     const getIdFunction = async () => {
         try {
@@ -105,6 +106,8 @@ function MainPage() {
                                 sendeAktivitaet={sendeAktivitaet}
                                 userID={userID}
                                 setTestDone={setTestDone}
+                                progress={progress}
+                                setProgress={setProgress}
                             />
                         </Route>
                         <Route exact path="/Code">
@@ -122,6 +125,8 @@ function MainPage() {
                                             setItems={setItems}
                                             sendeAktivitaet={sendeAktivitaet}
                                             userID={userID}
+                                            progress={progress}
+                                            setProgress={setProgress}
                                         />
                                     </Route>
                                 )
@@ -137,6 +142,8 @@ function MainPage() {
                                             setItems={setItems}
                                             sendeAktivitaet={sendeAktivitaet}
                                             userID={userID}
+                                            progress={progress}
+                                            setProgress={setProgress}
                                         />
                                     </Route>
                                 )
@@ -151,6 +158,8 @@ function MainPage() {
                                             items={items}
                                             sendeAktivitaet={sendeAktivitaet}
                                             userID={userID}
+                                            progress={progress}
+                                            setProgress={setProgress}
                                         />
                                     </Route>
                                 )

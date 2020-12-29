@@ -1,16 +1,18 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import ProgressBar from "../components/Progressionbar";
+import Progressionbar from "../components/Progressionbar";
 
-export default function Question({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID }) {
+export default function Question({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
+  const [styleProg, setStyleProg] = React.useState("");
   React.useEffect(() => {
+    setStyleProg("progress");
+    setProgress((nextPage - 2) * 10);
     sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
   }, []);
 
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(7, location.pathname.length);
   var intId = parseInt(idOfQuestion);
-
   //Fix needed here
   const add = (e) => {
     setItems(
@@ -49,16 +51,8 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
               <button id="1" onClick={add}>Nie</button>
             </Link>
           </div>
-          <div className="holderProgressBar">
-            <div className="progressBar">
-            </div>
-            <div className="progress">
-            </div>
-            <div className="prozent">
-              <span>70%</span>
-            </div>
-          </div>
         </div>
+        <Progressionbar progress={progress} style={styleProg} />
       </div>
     </div>
   );

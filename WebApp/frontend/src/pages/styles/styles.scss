@@ -1,6 +1,6 @@
 $font: "Montserrat",
 sans-serif;
-$bgColor: #274c75;
+$bgColor: #223955;
 $hoverColor: #000000;
 $textColor: #ffffff;
 $buttonColor:#005AC7;
@@ -13,6 +13,7 @@ $plateColor: #0F1F33;
 @import "./5choices";
 @import "./ausgabe";
 @import "./centerContent";
+@import "./code";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,4 +32,37 @@ $plateColor: #0F1F33;
     left: 0;
     height: 100%;
     width: 100%;
+}
+
+.progressBar{
+    height: 3vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #a8a8a8;
+    font-size: medium;
+    border-radius: 0px 0px 10px 10px;
+    .progress{
+        height: 3vh;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+        border-radius: 0px 10px 10px 10px;
+        color: black;
+        font-weight: bold;
+    }
+    .ausgabeProgress{
+        height: 3vh;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+        align-items: center;
+        justify-content: center;
+        font-size: medium;
+        border-radius: 0px 0px 10px 10px;
+        color: black;
+        font-weight: bold;
+    }
 }
