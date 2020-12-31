@@ -33,6 +33,9 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
         <div className="contentInfo1">
           <div className="question">
             <p>{frage}</p>
+            <Link to={`/Items/${nextPage - 2}`}>
+              Zurück
+            </Link>
           </div>
           <div className="auswahl">
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>

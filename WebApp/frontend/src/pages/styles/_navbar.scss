@@ -10,10 +10,9 @@ header {
             border-radius: 5px;
             border: solid 1px $bgColor;
             display: inline-block;
-            a,
-            h1 {
+            a {
                 font-weight: bold;
-                font-size: 18px;
+                font-size: 20px;
                 color: $textColor;
                 text-decoration: none;
                 margin: 10px;
@@ -21,7 +20,7 @@ header {
             }
             transition:transform ease 300ms;
             &:hover {
-                transform: scale(1.2);
+                transform: scale(1.1);
             }
         }
         .linkHighLighted {
@@ -29,10 +28,9 @@ header {
             padding: 2px;
             border-left: solid 3px $acent1;
             display: inline-block;
-            a,
-            h1 {
+            a {
                 font-weight: bold;
-                font-size: 18px;
+                font-size: 20px;
                 color: $textColor;
                 text-decoration: none;
                 margin: 10px;
@@ -40,7 +38,7 @@ header {
             }
             transition:transform ease 300ms;
             &:hover {
-                transform: scale(1.2);
+                transform: scale(1.1);
             }
         }
     }
@@ -52,7 +50,7 @@ header {
         font-size: 18px;
         text-decoration: none;
         padding: 9px 25px;
-        background-color: #ffffff;
+        background-color: white;
         border: none;
         border-radius: 50px;
         cursor: pointer;

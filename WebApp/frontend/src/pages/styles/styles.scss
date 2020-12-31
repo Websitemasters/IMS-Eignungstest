@@ -1,11 +1,11 @@
 $font: "Montserrat",
 sans-serif;
-$bgColor: #000000;
+$bgColor: #141620;
 $hoverColor: #000000;
 $textColor: #ffffff;
-$plateColor: #0f0d0d;
-$boxShadow: rgba(255, 255, 255, 0.116);
-$acent1:#5da3f8;
+$plateColor: #202129;
+$boxShadow:  0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+$acent1:#2545fa;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import "./navbar";
 @import "./textEditor";

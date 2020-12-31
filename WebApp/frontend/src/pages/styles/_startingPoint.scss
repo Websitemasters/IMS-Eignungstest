@@ -9,7 +9,7 @@
         height: 80vh;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 0px 30px 0 $boxShadow;
+        box-shadow:  $boxShadow;
         align-items: center;
         justify-content: center;
         * {

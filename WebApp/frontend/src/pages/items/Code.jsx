@@ -34,19 +34,24 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
         <div className="codingTest">
             <div className="plate">
                 <div className="content1">
-                    <h1>Code Editor</h1>
-                    <p>{frage}</p>
+                    <div>
+                        <h1>Code Editor</h1>
+                        <p>{frage}</p>
+                    </div>
+                    <Link to={`/Items/${nextPage - 2}`}>
+                        Zurück
+                    </Link>
                 </div>
                 <div className="content2">
                     <textarea defaultValue={items[nextPage - 2].code} onChange={setInput} className="in" />
                     <textarea defaultValue={outPut} className="out" />
                 </div>
-                <div className="content4">
+                <div className="content3">
                     <button onClick={runCode} className="run">
                         <VSCIcons.VscDebugStart size={25} />
                     </button>
                     <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                        <p>Next Page</p>
+                        Next Page
                     </Link>
                 </div>
                 <Progressionbar progress={progress} style={styleProg} />
