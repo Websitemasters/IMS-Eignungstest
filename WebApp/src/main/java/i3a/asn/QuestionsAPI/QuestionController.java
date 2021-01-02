@@ -56,7 +56,7 @@ public class QuestionController {
 	}
 
 	private String returnAnswer(ArrayList<Items> itemList) {
-		//maximale punktzahn ist 70
+		//maximale Punktzahl ist 70
 		String retStr = "Vielen Dank für deine Teilnahme \n";
 		//Iteriert über Items und erstellt bei spezialfällen spezifische nachricht
 		if (itemList.get(0).getAntwort() > 7) {
@@ -91,7 +91,7 @@ public class QuestionController {
 		}else if(percentAnswer<50){
 		return retStr+"\n Laut deiner Antworten könntest du für die IMS geeignet sein, jedoch ist dies nicht sicher. Um eine bessere Entscheidung fällen zu können, besuche doch einen Infoanlass oder vereinbare einen Schnuppertermin";}
 		else if(percentAnswer>80){
-			return retStr+"\n Laut unserer Auswertung passt du besonders gut in die IMS! Jedoch wurde dies nur anhand von ein paar wenigen Fragen entschieden. Um sicher zu sein, inwiefern die IMSzu dir passt, macht es Sinn einen Schnuppertermin zu vereinbaren oder an einem Infoabend teilzunehmen";
+			return retStr+"\n Laut unserer Auswertung passt du besonders gut in die IMS! Jedoch wurde dies nur anhand von ein paar wenigen Fragen entschieden. Um sicher zu sein, inwiefern die IMS zu dir passt, macht es Sinn einen Schnuppertermin zu vereinbaren oder an einem Infoabend teilzunehmen";
 			}else{
 			return retStr+"\n Du könntest dich in der IMS zuhause fühlen! Jedoch ist dies keine definitive Antwort. Um einen genaueren Blick in den Alltag eines IMS-Schülers zu bekommen, nimm doch an einem Infoabend teil oder melde dich für einen Schnuppertermin an";
 		}

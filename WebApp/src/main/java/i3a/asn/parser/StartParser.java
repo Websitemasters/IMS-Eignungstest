@@ -18,7 +18,9 @@ import java.util.Map;
 public class StartParser {
 
 	/**
-	 * @param args the command line arguments
+	 * 
+	 * @param befehle
+	 * @return String der Angezeigt werden soll
 	 */
 	public String startParser(List<String> befehle) {
 		ArrayList<String> befehle2 = new ArrayList();
@@ -78,13 +80,13 @@ public class StartParser {
 	}
 
 	private static double doParsing(List<String> befehle, Map<String, Double> variablen) {
-		if (befehle.size() == 1) {
+		if (befehle.size() == 1) {									  	// der letzte Befehl sollte zurückgegeben werden
 			return (double) (Parser.eval(befehle.get(0), variablen)[0]);
 		}
 		else {
-			Map<String, Double> retMap = (Map<String, Double>) Parser.eval(befehle.get(0), variablen)[1];
-			befehle.remove(0);
-			return doParsing(befehle, retMap);
+			Map<String, Double> retMap = (Map<String, Double>) Parser.eval(befehle.get(0), variablen)[1]; 	// der parser wird aufgerufen und die variablen werden aktualisiert
+			befehle.remove(0);										
+			return doParsing(befehle, retMap);								// rekursives wiederholen
 		}
 	}
 

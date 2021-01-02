@@ -35,7 +35,6 @@ public class Database {
             System.out.println(nextId);
             ps.execute();
 
-            ps.close();
             st.close();
             rs.close();
             ps.close();
