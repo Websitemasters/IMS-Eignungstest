@@ -34,7 +34,9 @@ export default function NavBar() {
   }, [location])
   return (
     <header>
-      <img src={image} className="websiteName" height="40" width="70" alt="Kanti Logo" />
+      <Link to="/admin">
+        <img src={image} className="websiteName" height="40" width="70" alt="Kanti Logo" />
+      </Link>
       <nav>
         <ul className="nav__links">
           <li className={sec1}>

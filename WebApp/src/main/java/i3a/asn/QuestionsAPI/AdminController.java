@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class AdminController {
     private Logic logic = Logic.getInstance();
 
-    @GetMapping("/addUser")
+    @GetMapping("/api/addBesucher")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){
 	    //if no cookie
@@ -22,7 +22,7 @@ public class AdminController {
 	
     }
 
-    @PostMapping("/logActivity")
+    @PostMapping("/api/logActivity")
     @CrossOrigin(origins = "http://localhost:3000")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
          if(logic.logActivity(id,url)){
@@ -32,40 +32,46 @@ public class AdminController {
          }
     }
 
-
-    @GetMapping("/admin/actLog")
+    @GetMapping("/api/admin/actLog")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<LogEintrag> orderNew(){
         return logic.actLog();
     }
 
-    @GetMapping("/admin/seitenaufrufe")
+    @GetMapping("/api/admin/anzahlBesucher")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getSeitenaufrufe(){
-        return logic.getSeitenAufrufe();
+        return logic.getBesucher();
     }
 
-    @GetMapping("/admin/getDurchgefuehrte")
+    @GetMapping("/api/admin/getDurchgefuehrte")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getDurchgefuehrte(){
         return logic.getDurchgefuehrte();
     }
 
-    @GetMapping("/admin/getTestErg")
+    @GetMapping("/api/admin/getTestErg")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<User> getTestErg(){
         return logic.getTestErg();
     }
 
-    @GetMapping("/admin/getVPI")
+    @GetMapping("/api/admin/getVPI")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<VerlassenPerItem> getVPI(){
         return logic.getVPI();
     }
     
-    @GetMapping("/admin/getAVGTesterg")
+    @GetMapping("/api/admin/getAVGTesterg")
     @CrossOrigin(origins = "http://localhost:3000")
     public double getAvgTestErg(){
         return logic.getAvgTestErg();
     }
+
+    @GetMapping("/api/admin/getSeitenAufrufe")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public long getSeitenAufrufe(){
+        return logic.getSeitenAufrufe();
+    }
+
 }

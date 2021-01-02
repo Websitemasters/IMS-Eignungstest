@@ -16,7 +16,7 @@ header {
 header .nav__links .link {
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #274c75;
+  border: solid 1px #141620;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -24,10 +24,9 @@ header .nav__links .link {
   transition: transform ease 300ms, -webkit-transform ease 300ms;
 }
 
-header .nav__links .link a,
-header .nav__links .link h1 {
+header .nav__links .link a {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   text-decoration: none;
   margin: 10px;
@@ -35,14 +34,14 @@ header .nav__links .link h1 {
 }
 
 header .nav__links .link:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 header .nav__links .linkHighLighted {
   cursor: pointer;
   padding: 2px;
-  border-left: solid 3px #0F1F33;
+  border-left: solid 3px #2545fa;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -50,10 +49,9 @@ header .nav__links .linkHighLighted {
   transition: transform ease 300ms, -webkit-transform ease 300ms;
 }
 
-header .nav__links .linkHighLighted a,
-header .nav__links .linkHighLighted h1 {
+header .nav__links .linkHighLighted a {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   text-decoration: none;
   margin: 10px;
@@ -61,8 +59,8 @@ header .nav__links .linkHighLighted h1 {
 }
 
 header .nav__links .linkHighLighted:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 header .websiteName {
@@ -74,13 +72,13 @@ header button {
   font-size: 18px;
   text-decoration: none;
   padding: 9px 25px;
-  background-color: #0F1F33;
+  background-color: white;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  color: #ffffff;
+  color: black;
   -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -104,7 +102,7 @@ header button:hover {
 }
 
 .coding .plate {
-  background-color: #0F1F33;
+  background-color: #202129;
   border-radius: 10px;
   width: 80%;
   height: 80vh;
@@ -115,8 +113,8 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 30px 0 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+          box-shadow: 0px 0px 30px 0 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
   padding: 20px;
 }
 
@@ -155,8 +153,8 @@ header button:hover {
   color: white;
   border: 0px;
   font-size: 25px;
-  -webkit-box-shadow: -5px 0px 0px 0 #5da3f8;
-          box-shadow: -5px 0px 0px 0 #5da3f8;
+  -webkit-box-shadow: -5px 0px 0px 0 #2545fa;
+          box-shadow: -5px 0px 0px 0 #2545fa;
 }
 
 .coding .plate .content2 .out {
@@ -187,7 +185,7 @@ header button:hover {
 }
 
 .coding .plate .content4 .run {
-  background-color: #5da3f8;
+  background-color: #2545fa;
   border: 0px;
   color: #ffffff;
   width: 10%;
@@ -198,7 +196,7 @@ header button:hover {
 }
 
 .coding .plate .content4 .run:hover {
-  background-color: rgba(93, 163, 248, 0.329);
+  background-color: #2545fa7e;
 }
 
 .coding .plate .content4 .info {
@@ -250,7 +248,7 @@ header button:hover {
 
 .home .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #202129;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -260,8 +258,8 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -333,7 +331,7 @@ header button:hover {
 
 .item .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #202129;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -343,14 +341,12 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 20px;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
   color: white;
-}
-
-.item .plate * {
-  margin: 10px;
 }
 
 .choices5 {
@@ -368,7 +364,7 @@ header button:hover {
 
 .choices5 .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #202129;
   color: #ffffff;
   width: 80%;
   height: 80vh;
@@ -379,13 +375,11 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 20px;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-}
-
-.choices5 .plate * {
-  margin: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
 }
 
 .choices5 .plate .contentInfo1 {
@@ -396,32 +390,54 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 20px;
 }
 
 .choices5 .plate .contentInfo1 .question {
   width: 100%;
-  height: 10vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 10px;
+}
+
+.choices5 .plate .contentInfo1 .question p {
   font-size: 30px;
 }
 
-.choices5 .plate .contentInfo1 .question * {
-  margin: 5px;
+.choices5 .plate .contentInfo1 .question a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 9px 25px;
+  background-color: #2545fa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: whitesmoke;
+  height: 5vh;
+  width: 8%;
+}
+
+.choices5 .plate .contentInfo1 .question a:hover {
+  background-color: #2545fa7e;
 }
 
 .choices5 .plate .contentInfo1 .auswahl {
-  width: 100%;
-  height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -433,15 +449,20 @@ header button:hover {
       -ms-flex-align: left;
           align-items: left;
   padding: 10px;
+  margin-top: 20px;
 }
 
 .choices5 .plate .contentInfo1 .auswahl * {
   margin: 5px;
 }
 
+.choices5 .plate .contentInfo1 .auswahl .linkbutton {
+  padding: 5px;
+  margin-top: 15px;
+}
+
 .choices5 .plate .contentInfo1 .auswahl .linkbutton button {
   background-color: transparent;
-  border: none;
   font-size: 25px;
   cursor: pointer;
   color: #ffffff;
@@ -449,11 +470,12 @@ header button:hover {
   transition: -webkit-transform ease 300ms;
   transition: transform ease 300ms;
   transition: transform ease 300ms, -webkit-transform ease 300ms;
+  border: none;
 }
 
 .choices5 .plate .contentInfo1 .auswahl .linkbutton button:hover {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .ausgabe {
@@ -471,7 +493,7 @@ header button:hover {
 
 .ausgabe .plate {
   border-radius: 10px;
-  background-color: #0F1F33;
+  background-color: #202129;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -481,16 +503,11 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 20px;
-  -webkit-box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 5px 5px 25px 0 rgba(0, 0, 0, 0.6);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.ausgabe .plate * {
-  margin: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
 }
 
 .ausgabe .plate .contentInfo1 {
@@ -502,7 +519,7 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 10px;
-  background-color: #5da3f8;
+  background-color: #2545fa;
   width: 60%;
   height: auto;
   display: flex;
@@ -527,6 +544,228 @@ header button:hover {
   color: #ffffff;
 }
 
+.codingTest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.codingTest .plate {
+  background-color: #202129;
+  border-radius: 10px;
+  width: 80%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 30px 0 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+          box-shadow: 0px 0px 30px 0 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+}
+
+.codingTest .plate .content1 {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.codingTest .plate .content1 a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 9px 25px;
+  background-color: #2545fa;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: whitesmoke;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+  height: 5vh;
+  width: 8%;
+}
+
+.codingTest .plate .content1 a:hover {
+  background-color: #2545fa7e;
+}
+
+.codingTest .plate .content2 {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  border-radius: 10px;
+}
+
+.codingTest .plate .content2 .in {
+  padding: 10px;
+  resize: none;
+  width: 100%;
+  height: 40vh;
+  border-radius: 10px 10px 0px 10px;
+  background-color: black;
+  color: white;
+  border: 0px;
+  font-size: 25px;
+  -webkit-box-shadow: -5px 0px 0px 0 #2545fa;
+          box-shadow: -5px 0px 0px 0 #2545fa;
+}
+
+.codingTest .plate .content2 .out {
+  padding: 10px;
+  resize: none;
+  width: 100%;
+  height: 10vh;
+  border-radius: 10px 0px 10px 10px;
+  background-color: black;
+  color: white;
+  border: 0px;
+  font-size: 25px;
+  -webkit-box-shadow: -5px 0px 0px 0 #ffffff;
+          box-shadow: -5px 0px 0px 0 #ffffff;
+}
+
+.codingTest .plate .content3 {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 5vh;
+  margin-top: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.codingTest .plate .content3 .run {
+  background-color: #2545fa;
+  border: 0px;
+  color: #ffffff;
+  width: 10%;
+  height: 5vh;
+  border-radius: 20px;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.codingTest .plate .content3 .run:hover {
+  background-color: #2545fa7e;
+}
+
+.codingTest .plate .content3 a {
+  text-decoration: none;
+  padding: 9px 25px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: black;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+  width: 11%;
+  height: 5vh;
+}
+
+.codingTest .plate .content3 a:hover {
+  background-color: #b3b3b3;
+}
+
+.progressBar {
+  height: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffffc7;
+  font-size: medium;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.progressBar .progress {
+  height: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #2545fa;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: medium;
+  border-radius: 0px 10px 10px 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.progressBar .ausgabeProgress {
+  height: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #2545fa;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: medium;
+  border-radius: 0px 0px 10px 10px;
+  color: black;
+  font-weight: bold;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -539,7 +778,7 @@ header button:hover {
 }
 
 .parent {
-  background-color: #274c75;
+  background-color: #141620;
   font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

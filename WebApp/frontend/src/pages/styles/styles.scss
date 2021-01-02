@@ -1,17 +1,20 @@
 $font: "Montserrat",
 sans-serif;
-$bgColor: #274c75;
+$bgColor: #141620;
 $hoverColor: #000000;
 $textColor: #ffffff;
-$buttonColor:#005AC7;
-$plateColor: #0F1F33;
+$plateColor: #202129;
+$boxShadow:  0px 0px 10px 0 rgba(0, 0, 0, 0.205);
+$acent1:#2545fa;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import "./navbar";
-@import "./coding";
+@import "./textEditor";
 @import "./startingPoint";
 @import "./oneToTen";
 @import "./5choices";
 @import "./ausgabe";
+@import "./code";
+@import "./progressBar";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,3 +34,4 @@ $plateColor: #0F1F33;
     height: 100%;
     width: 100%;
 }
+

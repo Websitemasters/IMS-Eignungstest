@@ -1,15 +1,18 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import Progressionbar from "../components/Progressionbar";
 
-export default function Question({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID }) {
+export default function Question({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
+  const [styleProg, setStyleProg] = React.useState("");
   React.useEffect(() => {
+    setStyleProg("progress");
+    setProgress((nextPage - 2) * 10);
     sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
   }, []);
 
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(7, location.pathname.length);
   var intId = parseInt(idOfQuestion);
-
   //Fix needed here
   const add = (e) => {
     setItems(
@@ -30,6 +33,9 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
         <div className="contentInfo1">
           <div className="question">
             <p>{frage}</p>
+            <Link to={`/Items/${nextPage - 2}`}>
+              Zurück
+            </Link>
           </div>
           <div className="auswahl">
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
@@ -49,6 +55,7 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
             </Link>
           </div>
         </div>
+        <Progressionbar progress={progress} style={styleProg} />
       </div>
     </div>
   );

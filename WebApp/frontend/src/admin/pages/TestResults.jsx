@@ -10,7 +10,7 @@ function TestResults() {
         getTestErg();
     }, [])
     const getAvg = async () => {
-        axios.get("http://localhost:8080/admin/getAVGTesterg")
+        axios.get("http://localhost:8080/api/admin/getAVGTesterg")
             .then((res) => {
                 setAvg(parseFloat(res.data).toFixed(2));
             })
@@ -19,7 +19,7 @@ function TestResults() {
             })
     }
     const getTestErg = async () => {
-        axios.get("http://localhost:8080/admin/getTestErg")
+        axios.get("http://localhost:8080/api/admin/getTestErg")
             .then((res) => {
                 setTestErg(res.data);
             })
@@ -37,7 +37,7 @@ function TestResults() {
                     <div className="avg">
                         <BiIcons.BiStats size={50} />
                         <h3>Test Durchschnitt</h3>
-                        <p>{avg}</p>
+                        <p>{avg} %</p>
                     </div>
                     <div className="contentInfo2">
                         <div className="tableHold">
@@ -52,7 +52,7 @@ function TestResults() {
                                     {testErg.map((item) => (
                                         <tr key={item.id}>
                                             <td>{item.id}</td>
-                                            <td>{item.testresults}</td>
+                                            <td>{item.testresults} %</td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./pages/styles/styles.css";
 //Components Imports
 import NavBar from "./pages/components/Navbar";
+import NoFunctionNavBar from "./pages/components/NoFunctionNavBar";
 import StartTest from "./pages/website/StartTest";
 import Ausgabe from "./pages/items/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
@@ -19,9 +20,13 @@ import {
 import Axios from "axios";
 import { BeatLoader } from "react-spinners";
 
+import Admin from "./admin/Admin";
+import Login from "./auth/LoginPage";
+import PrivateRoute from "./auth/PrivateRoute";
+
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
-        Axios.post(`http://localhost:8080/logActivity?id=${id}&url=${url}`)
+        Axios.post(`http://localhost:8080/api/logActivity?id=${id}&url=${url}`)
             .catch((error) => {
                 console.log(error);
             })
@@ -31,23 +36,45 @@ const sendeAktivitaet = {
 function MainPage() {
     const [items, setItems] = useState([]);
     const [userID, setID] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [testDone, setTestDone] = useState(false);
+    const [progress, setProgress] = useState(10);
 
     const getIdFunction = async () => {
         try {
-            await Axios
-                .get(`http://localhost:8080/addUser`)
-                .then((res) => {
-                    setID(res.data);
-                });
-            setLoading(true);
+            setLoading(false);
+            const cookies = document.cookie;
+            const cookieArray = cookies.split('; ')
+            let eignungstestLocation = -1;
+            for (let i = 0; i < cookieArray.length; i++) {
+                if (cookieArray[i].includes("imseignunstest")) {
+                    eignungstestLocation = i;
+                }
+            }
+            if (eignungstestLocation === -1) {
+                Axios.get("http://localhost:8080/api/addBesucher")
+                    .then((res) => {
+                        let date = new Date();
+                        const minutes = 30;
+                        date.setTime(date.getTime() + (minutes * 60 * 1000));
+                        document.cookie = "imseignunstest=" + res.data + "; expires=" + date
+                        setID(res.data);
+                        setLoading(true);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+            } else {
+                setID(cookieArray[eignungstestLocation].substring(15, cookieArray[eignungstestLocation].length));
+                setLoading(true);
+            }
         } catch (e) {
             console.log(e);
         }
     };
 
     const fetchData = async () => {
-        Axios.get("http://localhost:8080/getAllItems")
+        Axios.get("http://localhost:8080/api/getAllItems")
             .then((res) => {
                 setItems(res.data);
             })
@@ -58,27 +85,33 @@ function MainPage() {
 
     useEffect(() => {
         fetchData();
-        getIdFunction();
     }, []);
     return (
         <Router>
             <div className="parent">
-                <NavBar />
+                {testDone ? (
+                    <NavBar />
+                ) : (
+                        <NoFunctionNavBar />
+                    )}
                 <br />
                 {loading ? (
                     <Switch>
                         <Route exact path="/">
-                            <StartTest sendeAktivitaet={sendeAktivitaet} userID={userID} />
+                            <StartTest getIdFunction={getIdFunction} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
                                 items={items}
                                 sendeAktivitaet={sendeAktivitaet}
                                 userID={userID}
+                                setTestDone={setTestDone}
+                                progress={progress}
+                                setProgress={setProgress}
                             />
                         </Route>
                         <Route exact path="/Code">
-                            <TextEditor sendeAktivitaet={sendeAktivitaet} userID={userID} />
+                            <TextEditor />
                         </Route>
                         {items.map((item) => {
                             if (item.kategorie === "5choice") {
@@ -92,6 +125,8 @@ function MainPage() {
                                             setItems={setItems}
                                             sendeAktivitaet={sendeAktivitaet}
                                             userID={userID}
+                                            progress={progress}
+                                            setProgress={setProgress}
                                         />
                                     </Route>
                                 )
@@ -107,6 +142,8 @@ function MainPage() {
                                             setItems={setItems}
                                             sendeAktivitaet={sendeAktivitaet}
                                             userID={userID}
+                                            progress={progress}
+                                            setProgress={setProgress}
                                         />
                                     </Route>
                                 )
@@ -121,6 +158,8 @@ function MainPage() {
                                             items={items}
                                             sendeAktivitaet={sendeAktivitaet}
                                             userID={userID}
+                                            progress={progress}
+                                            setProgress={setProgress}
                                         />
                                     </Route>
                                 )
@@ -131,6 +170,12 @@ function MainPage() {
                                 </div>
                             )
                         })}
+                        <PrivateRoute exact path="/admin">
+                            <Admin />
+                        </PrivateRoute>
+                        <Route path="/Login">
+                            <Login />
+                        </Route>
                         <Redirect to="/" />
                     </Switch>
                 ) :

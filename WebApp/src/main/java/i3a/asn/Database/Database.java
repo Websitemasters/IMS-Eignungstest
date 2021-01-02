@@ -96,7 +96,7 @@ public class Database {
     }
 
     //Get Seitenaufrufe
-    public int getSeitenAufrufe(){
+    public int getBesucher(){
         try {
             Statement st = conn.createStatement();
             String sql = "select count(*) from user;";
@@ -212,5 +212,39 @@ public class Database {
             throwables.printStackTrace();
         }
         return null;
+    }
+
+    public void addTestErg(long id, double prozent) {
+        try {
+            String queryCreateUser = "update user set resultat=? where id=?";
+            PreparedStatement ps = conn.prepareStatement(queryCreateUser);
+
+            Statement st = conn.createStatement();
+            ps.setDouble(1, prozent);
+            ps.setLong(2,id);
+            ps.execute();
+
+            ps.close();
+            st.close();
+        } catch (SQLException  throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public long anzahlSeitenAufrufe(){
+        try{
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("select count(*) from activity;");
+            long anzahl = 0;
+            while(rs.next()){
+                anzahl= rs.getLong(1);
+            }
+            rs.close();
+            rs.close();
+            return anzahl;
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+        return 0;
     }
 }
