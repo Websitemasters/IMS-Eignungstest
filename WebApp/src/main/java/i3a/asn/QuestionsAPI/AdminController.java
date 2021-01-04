@@ -14,7 +14,12 @@ public class AdminController {
     @GetMapping("/api/addBesucher")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){
+	    //if no cookie
+	    //add a cookie
         return logic.nextUser();
+	//else 
+	//return 0;
+	
     }
 
     @PostMapping("/api/logActivity")
