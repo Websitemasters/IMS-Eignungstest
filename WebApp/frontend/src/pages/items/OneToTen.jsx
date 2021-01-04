@@ -51,13 +51,11 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                                 <option value="10">10</option>
                             </select>
                         </form>
-                        <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                            <button>Ja</button>
-                        </Link>
                     </div>
                     <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
                         <button>Ja</button>
                     </Link>
+                    <input type="range" min={0} max={10} step="1" />
                 </div>
                 <Progressionbar progress={progress} style={styleProg} />
             </div>
