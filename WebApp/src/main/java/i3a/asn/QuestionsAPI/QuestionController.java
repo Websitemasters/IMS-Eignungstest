@@ -51,9 +51,11 @@ public class QuestionController {
 		return returnAnswer(items,id);
 	}
 
-	private String returnAnswer(ArrayList<Items> itemList, long id) {
-		//maximale Punktzahl ist 70
-		String retStr = "Vielen Dank für deine Teilnahme \n";
+
+	private String returnAnswer(ArrayList<Items> itemList,long id) {
+		//maximale punktzahn ist 70
+		String retStr = "";
+
 		//Iteriert über Items und erstellt bei spezialfällen spezifische nachricht
 		if (itemList.get(0).getAntwort() > 7) {
 			retStr += "Du hast bereits Kentnisse in der Applikationsentwicklung, du wirst sehr warscheinlich Vorteile haben.\n";
@@ -89,9 +91,14 @@ public class QuestionController {
 			logic.auswertung(percentAnswer,id);
 			return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n"+retStr+"\n Laut deiner Antworten könntest du für die IMS geeignet sein, jedoch ist dies nicht sicher. Um eine bessere Entscheidung fällen zu können, besuche doch einen Infoanlass oder vereinbare einen Schnuppertermin";
 		}
-//		percentAnswer=Math.ceil(percentAnswer);
-//		logic.auswertung(percentAnswer,id);
-		return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n"+retStr;
+		else if(percentAnswer>80){
+			logic.auswertung(percentAnswer,id);
+			return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n"+retStr+"\n Laut unserer Auswertung passt du besonders gut in die IMS! Jedoch wurde dies nur anhand von ein paar wenigen Fragen entschieden. Um sicher zu sein, inwiefern die IMS zu dir passt, macht es Sinn einen Schnuppertermin zu vereinbaren oder an einem Infoabend teilzunehmen";
+		}
+		else {
+			logic.auswertung(percentAnswer, id);
+			return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n" + retStr + "\n Du könntest dich in der IMS zuhause fühlen! Jedoch ist dies keine definitive Antwort. Um einen genaueren Blick in den Alltag eines IMS-Schülers zu bekommen, nimm doch an einem Infoabend teil oder melde dich für einen Schnuppertermin an";
+		}
 
 	}
 }
