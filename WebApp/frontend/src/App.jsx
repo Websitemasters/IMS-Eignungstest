@@ -10,6 +10,7 @@ import MainPage from "./Mainpage";
 import Admin from "./admin/Admin";
 import NotFoundPage from "./error/404"
 import Login from "./auth/LoginPage";
+import PrivateRoute from "./auth/PrivateRoute";
 export default function App() {
   return (
     <Router>
@@ -17,9 +18,9 @@ export default function App() {
         <Route exact path="/">
           <MainPage />
         </Route>
-        <Route exact path="/admin">
+        <PrivateRoute exact path="/admin">
           <Admin />
-        </Route>
+        </PrivateRoute>
         <Route path="/Login">
           <Login />
         </Route>
