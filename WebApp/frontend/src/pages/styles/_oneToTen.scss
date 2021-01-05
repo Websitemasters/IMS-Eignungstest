@@ -12,5 +12,60 @@
         justify-content: space-between;
         box-shadow:  $boxShadow;
         color: white;
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            .top{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                height: 20vh;
+                a{
+                    text-decoration: none;
+                    font-weight: 400;
+                        font-size: 14px;
+                        text-decoration: none;
+                        padding: 9px 25px;
+                        background-color: $acent1;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: all 0.3s ease 0s;
+                        color: whitesmoke;
+                        height: 5vh;
+                        width: 8%;
+                        &:hover {
+                            background-color: #2545fa7e;
+                        }
+                }
+            }
+            .inputs{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                .range{
+                    width: 100%;
+                }
+                a{
+                    text-decoration: none;
+                    color:black;
+                    background-color: white;
+                    height: 5vh;
+                    width: 8%;
+                    border: none;
+                    border-radius: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+            } 
+        }
     }
 }
