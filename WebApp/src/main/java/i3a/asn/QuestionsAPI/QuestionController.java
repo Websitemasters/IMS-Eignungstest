@@ -51,15 +51,9 @@ public class QuestionController {
 		return returnAnswer(items,id);
 	}
 
-<<<<<<< HEAD
-	private String returnAnswer(ArrayList<Items> itemList) {
+	private String returnAnswer(ArrayList<Items> itemList, double id) {
 		//maximale Punktzahl ist 70
 		String retStr = "Vielen Dank für deine Teilnahme \n";
-=======
-	private String returnAnswer(ArrayList<Items> itemList,long id) {
-		//maximale punktzahn ist 70
-		String retStr = "";
->>>>>>> 7352e4eb4dfeb42cd5d57d764b00a8600f6cd4a8
 		//Iteriert über Items und erstellt bei spezialfällen spezifische nachricht
 		if (itemList.get(0).getAntwort() > 7) {
 			retStr += "Du hast bereits Kentnisse in der Applikationsentwicklung, du wirst sehr warscheinlich Vorteile haben.\n";
@@ -86,7 +80,6 @@ public class QuestionController {
 			eignung += (i.getGewichtung() * i.getAntwort());
 		}
 		double percentAnswer = (eignung * 100) / maxAnswers;
-<<<<<<< HEAD
 		percentAnswer = Math.ceil(percentAnswer);
 		if (percentAnswer < 50 && (itemList.get(2).getAntwort() > 6 || itemList.get(4).getAntwort() > 6)) {
 			retStr += "\nInfolge deiner Antworten, wurde berechnet, dass du in einer anderen Schule oder Lehre warscheinlich besser aufgehoben wärst. Dies heisst jedoch nicht, dass du die Option IMS streichen solltest! Nimm doch an einem Infoabend teil oder vereinbare einen Schnuppertermin bei der IMS um einen genaueren Einblick zu bekommen. ";
@@ -98,11 +91,9 @@ public class QuestionController {
 			}else{
 			return retStr+"\n Du könntest dich in der IMS zuhause fühlen! Jedoch ist dies keine definitive Antwort. Um einen genaueren Blick in den Alltag eines IMS-Schülers zu bekommen, nimm doch an einem Infoabend teil oder melde dich für einen Schnuppertermin an";
 		}
-=======
-		percentAnswer=Math.ceil(percentAnswer);
-		logic.auswertung(percentAnswer,id);
-		return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n"+retStr;
->>>>>>> 7352e4eb4dfeb42cd5d57d764b00a8600f6cd4a8
+//		percentAnswer=Math.ceil(percentAnswer);
+//		logic.auswertung(percentAnswer,id);
+//		return "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern\n"+retStr;
 
 	}
 }

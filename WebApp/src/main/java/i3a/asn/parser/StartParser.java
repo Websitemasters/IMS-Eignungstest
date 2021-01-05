@@ -84,6 +84,7 @@ public class StartParser {
 			return (double) (Parser.eval(befehle.get(0), variablen)[0]);
 		}
 		else {
+			if(befehle.get(0).isEmpty()){befehle.remove(0);}
 			Map<String, Double> retMap = (Map<String, Double>) Parser.eval(befehle.get(0), variablen)[1]; 	// der parser wird aufgerufen und die variablen werden aktualisiert
 			befehle.remove(0);										
 			return doParsing(befehle, retMap);								// rekursives wiederholen

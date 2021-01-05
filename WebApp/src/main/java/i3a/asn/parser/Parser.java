@@ -112,7 +112,7 @@ public class Parser {
 		else if(func.equals("while")){
 			if(!eat('(')) throw new RuntimeException("Wrong Syntax at: "+str);
 			else{
-
+				
 			x=parseExpression();
 
 			pos-=3;		
@@ -168,3 +168,11 @@ public class Parser {
 		}
 	}
 }
+
+
+
+
+
+
+
+
