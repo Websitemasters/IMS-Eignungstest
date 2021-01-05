@@ -4,6 +4,7 @@ import Progressionbar from "../components/Progressionbar";
 
 function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
     const [styleProg, setStyleProg] = React.useState("");
+    const [value, setValue] = React.useState(0);
     React.useEffect(() => {
         setStyleProg("progress");
         setProgress((nextPage - 2) * 10);
@@ -13,7 +14,8 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
     const location = useLocation();
     var idOfQuestion = location.pathname.substring(7, location.pathname.length);
     var intId = parseInt(idOfQuestion);
-    const add = (e) => {
+    const showMe = (e) => {
+        setValue(e.target.value);
         setItems(
             items.map((item) => {
                 if (item.id === intId) {
@@ -29,35 +31,28 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
     return (
         <div className="item">
             <div className="plate">
-                <div className="contentInfo1">
-                    <div className="question">
-                        <h1>{frage}</h1>
+                <div className="content">
+                    <div className="top">
+                        <div className="question">
+                            <h1>{frage}</h1>
+                        </div>
                         <Link to={`/Items/${nextPage - 2}`}>
                             Zurück
-                    </Link>
-                    </div>
-                    <div className="form">
-                        <form>
-                            <select id="items" onChange={add}>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </form>
-                        <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                            <button>Ja</button>
                         </Link>
                     </div>
-                    <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                        <button>Ja</button>
-                    </Link>
+                    <div className="inputs">
+                        <div className="range">
+                            <input type="range" min={0} max={10} step="1" defaultValue={0} onChange={showMe} style={{ background: `linear-gradient(90deg, blue ${value*10}%,white ${value*10}%)` }} />
+                            <div className="maxmin">
+                                <p>0 (min)</p>
+                                <p>10 (max)</p>
+                            </div>
+                            <p>Wert: {value}</p>
+                        </div>
+                        <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
+                            Weiter
+                        </Link>
+                    </div>
                 </div>
                 <Progressionbar progress={progress} style={styleProg} />
             </div>
