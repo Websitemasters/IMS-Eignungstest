@@ -51,7 +51,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                         <VSCIcons.VscDebugStart size={25} />
                     </button>
                     <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                        Next Page
+                        Weiter
                     </Link>
                 </div>
                 <Progressionbar progress={progress} style={styleProg} />

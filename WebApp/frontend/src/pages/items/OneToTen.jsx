@@ -4,6 +4,7 @@ import Progressionbar from "../components/Progressionbar";
 
 function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
     const [styleProg, setStyleProg] = React.useState("");
+    const [value, setValue] = React.useState(0);
     React.useEffect(() => {
         setStyleProg("progress");
         setProgress((nextPage - 2) * 10);
@@ -14,6 +15,7 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
     var idOfQuestion = location.pathname.substring(7, location.pathname.length);
     var intId = parseInt(idOfQuestion);
     const showMe = (e) => {
+        setValue(e.target.value);
         setItems(
             items.map((item) => {
                 if (item.id === intId) {
@@ -40,10 +42,15 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                     </div>
                     <div className="inputs">
                         <div className="range">
-                            <input type="range" min={0} max={10} step="1" defaultValue={0} onChange={showMe} />
+                            <input type="range" min={0} max={10} step="1" defaultValue={0} onChange={showMe} style={{ background: `linear-gradient(90deg, blue ${value*10}%,white ${value*10}%)` }} />
+                            <div className="maxmin">
+                                <p>0 (min)</p>
+                                <p>10 (max)</p>
+                            </div>
+                            <p>Wert: {value}</p>
                         </div>
                         <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-                            Ja
+                            Weiter
                         </Link>
                     </div>
                 </div>
