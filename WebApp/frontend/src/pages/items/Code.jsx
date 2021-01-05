@@ -11,12 +11,13 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
         setProgress((nextPage - 2) * 10);
         sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
     }, []);
-    const [inputCode, setInputCode] = useState("");
+    const [inputCode, setInputCode] = useState(items[nextPage - 2].code);
     const [outPut, setCode] = useState("");
     const setInput = (e) => {
         setInputCode(e.target.value);
     }
     const runCode = async () => {
+        console.log(inputCode);
         axios.post(`http://localhost:8080/api/useParser`, {
             id: 1,
             text: inputCode,

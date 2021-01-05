@@ -76,6 +76,7 @@ function MainPage() {
     const fetchData = async () => {
         Axios.get("http://localhost:8080/api/getAllItems")
             .then((res) => {
+                console.log(res.data);
                 setItems(res.data);
             })
             .catch((error) => {
