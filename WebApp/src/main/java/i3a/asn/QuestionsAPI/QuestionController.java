@@ -83,7 +83,7 @@ public class QuestionController {
 		}
 		double percentAnswer = (eignung * 100) / maxAnswers;
 		percentAnswer = Math.ceil(percentAnswer);
-		if (percentAnswer < 50 && (itemList.get(2).getAntwort() > 6 || itemList.get(4).getAntwort() > 6)) {
+		if (percentAnswer < 50 && (itemList.get(2).getAntwort() > 6 || itemList.get(4).getAntwort() > 6)||percentAnswer<20) {
 			logic.auswertung(percentAnswer,id);
 			retList.add(0,"Infolge deiner Antworten, wurde berechnet, dass du in einer anderen Schule oder Lehre warscheinlich besser aufgehoben wärst. Dies heisst jedoch nicht, dass du die Option IMS streichen solltest! Nimm doch an einem Infoabend teil oder vereinbare einen Schnuppertermin bei der IMS um einen genaueren Einblick zu bekommen. ");
 			retList.add(0, "Deine Antworten decken sich zu: " + Double.toString(percentAnswer) + "% mit den Antworten von IMS Schülern");
