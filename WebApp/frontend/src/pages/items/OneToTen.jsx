@@ -35,6 +35,7 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                     <div className="top">
                         <div className="question">
                             <h1>{frage}</h1>
+                            <p>10 ist trifft komplett zu und 0 ist trifft gar nicht zu</p>
                         </div>
                         <Link to={`/Items/${nextPage - 2}`}>
                             Zurück
@@ -42,12 +43,12 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                     </div>
                     <div className="inputs">
                         <div className="range">
-                            <input type="range" min={0} max={10} step="1" defaultValue={0} onChange={showMe} style={{ background: `linear-gradient(90deg, blue ${value*10}%,white ${value*10}%)` }} />
+                            <h2>Wert: {value}</h2>
+                            <input type="range" min={0} max={10} step="1" defaultValue={0} onChange={showMe} style={{ background: `linear-gradient(90deg, blue ${value * 10}%,white ${value * 10}%)` }} />
                             <div className="maxmin">
                                 <p>0 (min)</p>
                                 <p>10 (max)</p>
                             </div>
-                            <p>Wert: {value}</p>
                         </div>
                         <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
                             Weiter

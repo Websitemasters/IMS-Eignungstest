@@ -39,19 +39,19 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
           </div>
           <div className="auswahl">
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="5" onClick={add}>Immer</button>
+              <button id="5" onClick={add}>1. Trifft zu</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="4" onClick={add}>Oft</button>
+              <button id="4" onClick={add}>2. Ziemlich</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="3" onClick={add}>Manchmal</button>
+              <button id="3" onClick={add}>3. Ein bisschen</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="2" onClick={add}>Selten</button>
+              <button id="2" onClick={add}>4. Wenig</button>
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="1" onClick={add}>Nie</button>
+              <button id="1" onClick={add}>5. Gar nicht</button>
             </Link>
           </div>
         </div>

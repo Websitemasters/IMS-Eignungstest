@@ -17,7 +17,6 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
         setInputCode(e.target.value);
     }
     const runCode = async () => {
-        console.log(inputCode);
         axios.post(`http://localhost:8080/api/useParser`, {
             id: 1,
             text: inputCode,
@@ -44,7 +43,9 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                     </Link>
                 </div>
                 <div className="content2">
+                    <p>Code Eingabe</p>
                     <textarea defaultValue={items[nextPage - 2].code} onChange={setInput} className="in" />
+                    <p>Ausgabe</p>
                     <textarea defaultValue={outPut} className="out" />
                 </div>
                 <div className="content3">

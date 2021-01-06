@@ -6,12 +6,8 @@ import * as IoIosIcons from "react-icons/io";
 export default function TextEditor() {
     const [inputCode, setInputCode] = useState("");
     const [outPut, setCode] = useState("");
-    const [help, setHelp] = useState("");
     const setInput = (e) => {
         setInputCode(e.target.value);
-    }
-    const showHelp = () => {
-        setHelp("x=55 \n return x");
     }
     const runCode = async () => {
         axios.post(`http://localhost:8080/api/useParser`, {
@@ -32,19 +28,17 @@ export default function TextEditor() {
             <div className="plate">
                 <div className="content1">
                     <h1>Code Editor</h1>
-                    <p>{help}</p>
                     <p>Ändern sie den Code so das die Ausgabe von 55 entsteht</p>
                 </div>
                 <div className="content2">
+                    <p>Code Eingabe</p>
                     <textarea defaultValue={inputCode} onChange={setInput} className="in" />
+                    <p>Ausgabe</p>
                     <textarea defaultValue={outPut} className="out" />
                 </div>
                 <div className="content4">
                     <button onClick={runCode} className="run">
                         <VSCIcons.VscDebugStart size={25} />
-                    </button>
-                    <button onClick={showHelp} className="info">
-                        <IoIosIcons.IoIosHelpCircle size={25} color="black" />
                     </button>
                 </div>
             </div>
