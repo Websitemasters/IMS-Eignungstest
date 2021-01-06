@@ -34,8 +34,9 @@
                 background-color: black;
                 color: white;
                 border: 0px;
-                font-size: 25px;
+                font-size: 23px;
                 box-shadow: -5px 0px 0px 0 $acent1;
+                font-family: $codeFont;
             }
             .out {
                 padding: 10px;
@@ -46,12 +47,14 @@
                 background-color: black;
                 color: white;
                 border: 0px;
-                font-size: 25px;
+                font-size: 23px;
                 box-shadow: -5px 0px 0px 0 #ffffff;
+                font-family: $codeFont;
             }
             p{
                 color:$textColor;
-                margin-bottom: auto;
+                margin-bottom: 1vh;
+                margin-top: 1vh;
                 font-size: large;
             }
         }

@@ -7,8 +7,7 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
     React.useEffect(() => {
         setStyleProg("progress");
         setProgress((nextPage - 2) * 10);
-        sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
-        console.log(items);
+        sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID)
     }, []);
 
     const location = useLocation();

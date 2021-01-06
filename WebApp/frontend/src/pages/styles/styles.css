@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 header {
   display: -webkit-box;
@@ -153,9 +154,10 @@ header button:hover {
   background-color: black;
   color: white;
   border: 0px;
-  font-size: 25px;
+  font-size: 23px;
   -webkit-box-shadow: -5px 0px 0px 0 #2545fa;
           box-shadow: -5px 0px 0px 0 #2545fa;
+  font-family: "Source Code Pro", monospace;
 }
 
 .coding .plate .content2 .out {
@@ -167,14 +169,16 @@ header button:hover {
   background-color: black;
   color: white;
   border: 0px;
-  font-size: 25px;
+  font-size: 23px;
   -webkit-box-shadow: -5px 0px 0px 0 #ffffff;
           box-shadow: -5px 0px 0px 0 #ffffff;
+  font-family: "Source Code Pro", monospace;
 }
 
 .coding .plate .content2 p {
   color: #ffffff;
-  margin-bottom: auto;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   font-size: large;
 }
 
@@ -805,6 +809,10 @@ header button:hover {
   background-color: #2545fa7e;
 }
 
+.codingTest .plate .content1 h3 {
+  margin: 0.5vh;
+}
+
 .codingTest .plate .content2 {
   padding: 10px;
   display: -webkit-box;
@@ -828,9 +836,10 @@ header button:hover {
   background-color: black;
   color: white;
   border: 0px;
-  font-size: 25px;
+  font-size: 23px;
   -webkit-box-shadow: -5px 0px 0px 0 #2545fa;
           box-shadow: -5px 0px 0px 0 #2545fa;
+  font-family: "Source Code Pro", monospace;
 }
 
 .codingTest .plate .content2 .out {
@@ -842,14 +851,15 @@ header button:hover {
   background-color: black;
   color: white;
   border: 0px;
-  font-size: 25px;
+  font-size: 23px;
   -webkit-box-shadow: -5px 0px 0px 0 #ffffff;
           box-shadow: -5px 0px 0px 0 #ffffff;
+  font-family: "Source Code Pro", monospace;
 }
 
 .codingTest .plate .content2 p {
   color: #ffffff;
-  margin-bottom: auto;
+  margin-bottom: 1vh;
   font-size: large;
 }
 
@@ -864,7 +874,6 @@ header button:hover {
           flex-direction: row;
   width: 100%;
   height: 5vh;
-  margin-top: 5px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

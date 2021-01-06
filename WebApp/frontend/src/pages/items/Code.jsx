@@ -22,7 +22,6 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
             text: inputCode,
         })
             .then((response) => {
-                console.log(response);
                 setCode(response.data);
             })
             .catch((error) => {
@@ -46,7 +45,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                     <p>Code Eingabe</p>
                     <textarea defaultValue={items[nextPage - 2].code} onChange={setInput} className="in" />
                     <p>Ausgabe</p>
-                    <textarea defaultValue={outPut} className="out" />
+                    <div className="out">{outPut}</div>
                 </div>
                 <div className="content3">
                     <button onClick={runCode} className="run">

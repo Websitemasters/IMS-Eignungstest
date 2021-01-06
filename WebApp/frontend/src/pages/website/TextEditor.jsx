@@ -34,7 +34,7 @@ export default function TextEditor() {
                     <p>Code Eingabe</p>
                     <textarea defaultValue={inputCode} onChange={setInput} className="in" />
                     <p>Ausgabe</p>
-                    <textarea defaultValue={outPut} className="out" />
+                    <div className="out">{outPut}</div>
                 </div>
                 <div className="content4">
                     <button onClick={runCode} className="run">
