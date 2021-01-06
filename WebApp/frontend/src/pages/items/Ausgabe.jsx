@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import Axios from "axios";
 import Progressionbar from "../components/Progressionbar";
+import * as FaIcons from "react-icons/fa";
 
 function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setProgress }) {
-  const [ausgabe, setAusgabe] = React.useState("");
+  const [ausgabe, setAusgabe] = React.useState([]);
   const [styleProg, setStyleProg] = React.useState("");
   useEffect(() => {
     setStyleProg("ausgabeProgress");
@@ -15,7 +16,6 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setPro
   const getEignung = async () => {
     Axios.post(`http://localhost:8080/api/rechneEignung?id=${userID}`, items)
       .then((res) => {
-        console.log(res.data);
         setAusgabe(res.data);
       })
       .catch((error) => {
@@ -25,14 +25,25 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setPro
   return (
     <div className="ausgabe">
       <div className="plate">
-        <div className="contentInfo1">
+        <div className="contentInfo">
           <div className="title">
-            <h1>Ausgabe</h1>
+            <p>Ausgabe</p>
           </div>
-          <div className="erklaerung">
-            <p>
-              {ausgabe}
-            </p>
+          <div className="bulletPoints">
+            <div className="prozentPoint">
+              <FaIcons.FaPercentage color="white" size={55} />
+              <p>{ausgabe[0]}</p>
+            </div>
+            {ausgabe.map((items, index) => {
+              if (index !== 0) {
+                return (
+                  <div className="point" key={index}>
+                    <h4>{`Punkt ${index}`}</h4>
+                    <p>{items}</p>
+                  </div>
+                )
+              }
+            })}
           </div>
         </div>
         <Progressionbar progress={progress} style={styleProg} />

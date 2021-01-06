@@ -695,7 +695,8 @@ header button:hover {
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
 }
 
-.ausgabe .plate .contentInfo1 {
+.ausgabe .plate .contentInfo {
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -704,29 +705,86 @@ header button:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 10px;
-  background-color: #2545fa;
-  width: 60%;
-  height: auto;
+  width: 100%;
+  height: 78vh;
   display: flex;
-  flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 10px;
-  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.ausgabe .plate .contentInfo1 * {
+.ausgabe .plate .contentInfo * {
   margin: 5px;
 }
 
-.ausgabe .plate .contentInfo1 .title {
-  color: #ffffff;
+.ausgabe .plate .contentInfo .title {
+  font-weight: bold;
+  font-size: 7vh;
 }
 
-.ausgabe .plate .contentInfo1 .erklaerung {
-  color: #ffffff;
+.ausgabe .plate .contentInfo .bulletPoints {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ausgabe .plate .contentInfo .bulletPoints .prozentPoint {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #148dff;
+  border-radius: 10px;
+  height: auto;
+  width: 35%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  font-size: 2vh;
+  padding: 4vh;
+}
+
+.ausgabe .plate .contentInfo .bulletPoints .point {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #2545fa;
+  border-radius: 10px;
+  height: auto;
+  width: 19%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  font-size: 1.75vh;
+  padding: 2vh;
 }
 
 .codingTest {
