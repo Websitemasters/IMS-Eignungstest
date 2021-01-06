@@ -4,18 +4,17 @@ import Progressionbar from "../components/Progressionbar";
 
 function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
     const [styleProg, setStyleProg] = React.useState("");
-    const [value, setValue] = React.useState(0);
     React.useEffect(() => {
         setStyleProg("progress");
         setProgress((nextPage - 2) * 10);
         sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
+        console.log(items);
     }, []);
 
     const location = useLocation();
     var idOfQuestion = location.pathname.substring(7, location.pathname.length);
     var intId = parseInt(idOfQuestion);
     const showMe = (e) => {
-        setValue(e.target.value);
         setItems(
             items.map((item) => {
                 if (item.id === intId) {
@@ -35,6 +34,7 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                     <div className="top">
                         <div className="question">
                             <h1>{frage}</h1>
+                            <p>10 ist trifft komplett zu und 0 ist trifft gar nicht zu</p>
                         </div>
                         <Link to={`/Items/${nextPage - 2}`}>
                             Zurück
@@ -42,12 +42,12 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                     </div>
                     <div className="inputs">
                         <div className="range">
-                            <input type="range" min={0} max={10} step="1" defaultValue={0} onChange={showMe} style={{ background: `linear-gradient(90deg, blue ${value*10}%,white ${value*10}%)` }} />
+                            <h2>Wert: {items[intId - 1].antwort}</h2>
+                            <input type="range" min={0} max={10} step="1" defaultValue={items[intId - 1].antwort} onChange={showMe} style={{ background: `linear-gradient(90deg, blue ${items[intId - 1].antwort * 10}%,white ${items[intId - 1].antwort * 10}%)` }} />
                             <div className="maxmin">
                                 <p>0 (min)</p>
                                 <p>10 (max)</p>
                             </div>
-                            <p>Wert: {value}</p>
                         </div>
                         <Link to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
                             Weiter
