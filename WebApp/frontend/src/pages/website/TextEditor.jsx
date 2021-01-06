@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import * as VSCIcons from "react-icons/vsc";
-import * as IoIosIcons from "react-icons/io";
 
 export default function TextEditor() {
     const [inputCode, setInputCode] = useState("");
@@ -15,7 +14,6 @@ export default function TextEditor() {
             text: inputCode,
         })
             .then((response) => {
-                console.log(response);
                 setCode(response.data);
             })
             .catch((error) => {
