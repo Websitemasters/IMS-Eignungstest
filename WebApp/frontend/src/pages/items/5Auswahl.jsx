@@ -13,7 +13,6 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(7, location.pathname.length);
   var intId = parseInt(idOfQuestion);
-  //Fix needed here
   const add = (e) => {
     setItems(
       items.map((item) => {
@@ -38,20 +37,20 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
             </Link>
           </div>
           <div className="auswahl">
-            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="5" onClick={add}>1. Trifft zu</button>
+            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="5" onClick={add}>
+              1. Trifft zu
             </Link>
-            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="4" onClick={add}>2. Ziemlich</button>
+            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="4" onClick={add}>
+              2. Ziemlich
             </Link>
-            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="3" onClick={add}>3. Ein bisschen</button>
+            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="3" onClick={add}>
+              3. Ein bisschen
             </Link>
-            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="2" onClick={add}>4. Wenig</button>
+            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="2" onClick={add}>
+              4. Wenig
             </Link>
-            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
-              <button id="1" onClick={add}>5. Gar nicht</button>
+            <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="1" onClick={add}>
+              5. Gar nicht
             </Link>
           </div>
         </div>

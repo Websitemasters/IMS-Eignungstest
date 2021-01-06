@@ -630,6 +630,7 @@ header button:hover {
           align-items: left;
   padding: 10px;
   margin-top: 20px;
+  width: 100%;
 }
 
 .choices5 .plate .contentInfo1 .auswahl * {
@@ -637,11 +638,7 @@ header button:hover {
 }
 
 .choices5 .plate .contentInfo1 .auswahl .linkbutton {
-  padding: 5px;
-  margin-top: 15px;
-}
-
-.choices5 .plate .contentInfo1 .auswahl .linkbutton button {
+  width: 20%;
   background-color: transparent;
   font-size: 25px;
   cursor: pointer;
@@ -651,9 +648,12 @@ header button:hover {
   transition: transform ease 300ms;
   transition: transform ease 300ms, -webkit-transform ease 300ms;
   border: none;
+  padding: 5px;
+  margin-top: 15px;
+  text-decoration: none;
 }
 
-.choices5 .plate .contentInfo1 .auswahl .linkbutton button:hover {
+.choices5 .plate .contentInfo1 .auswahl .linkbutton:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }

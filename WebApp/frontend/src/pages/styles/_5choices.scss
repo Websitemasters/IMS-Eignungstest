@@ -58,20 +58,21 @@
                 * {
                     margin: 5px;
                 }
+                width: 100%;
                 .linkbutton {
-                    button {
-                        background-color: transparent;
-                        font-size: 25px;
-                        cursor: pointer;
-                        color: $textColor;
-                        transition: transform ease 300ms;
-                        &:hover {
-                            transform: scale(1.2);
-                        }
-                        border: none;
+                    width: 20%;
+                    background-color: transparent;
+                    font-size: 25px;
+                    cursor: pointer;
+                    color: $textColor;
+                    transition: transform ease 300ms;
+                    &:hover {
+                        transform: scale(1.2);
                     }
+                    border: none;
                     padding: 5px;
                     margin-top: 15px;
+                    text-decoration: none;
                 }
             }
         }
