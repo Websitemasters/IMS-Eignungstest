@@ -17,6 +17,7 @@ $acent2:rgb(20, 141, 255);
 @import "./ausgabe";
 @import "./code";
 @import "./progressBar";
+@import "./cookie";
 * {
     box-sizing: border-box;
     margin: 0;
@@ -36,4 +37,3 @@ $acent2:rgb(20, 141, 255);
     height: 100%;
     width: 100%;
 }
-

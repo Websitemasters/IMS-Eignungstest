@@ -23,6 +23,7 @@ import { BeatLoader } from "react-spinners";
 import Admin from "./admin/Admin";
 import Login from "./auth/LoginPage";
 import PrivateRoute from "./auth/PrivateRoute";
+import Cookie from "./pages/components/Cookie";
 
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
@@ -39,6 +40,8 @@ function MainPage() {
     const [loading, setLoading] = useState(true);
     const [testDone, setTestDone] = useState(false);
     const [progress, setProgress] = useState(10);
+    const [cookieAccept, setCookieAccept] = useState(false);
+    const [cookieMessage, setCookieMessage] = useState(null);
 
     const getIdFunction = async () => {
         try {
@@ -55,7 +58,7 @@ function MainPage() {
                 Axios.get("http://localhost:8080/api/addBesucher")
                     .then((res) => {
                         let date = new Date();
-                        const minutes = 30;
+                        const minutes = 120;
                         date.setTime(date.getTime() + (minutes * 60 * 1000));
                         document.cookie = "imseignunstest=" + res.data + "; expires=" + date
                         setID(res.data);
@@ -85,10 +88,24 @@ function MainPage() {
 
     useEffect(() => {
         fetchData();
+        const cookies = document.cookie;
+        const cookieArray = cookies.split('; ')
+        let accepted = false;
+        for (let i = 0; i < cookieArray.length; i++) {
+            if (cookieArray[i].includes("imseignunstest")) {
+                setCookieMessage(null);
+                setCookieAccept(true);
+                accepted = true;
+            }
+        }
+        if (!accepted) {
+            setCookieMessage(<Cookie setCookieAccept={setCookieAccept} setCookieMessage={setCookieMessage} />)
+        }
     }, []);
     return (
         <Router>
             <div className="parent">
+                {cookieMessage}
                 {testDone ? (
                     <NavBar />
                 ) : (
@@ -98,7 +115,7 @@ function MainPage() {
                 {loading ? (
                     <Switch>
                         <Route exact path="/">
-                            <StartTest getIdFunction={getIdFunction} />
+                            <StartTest getIdFunction={getIdFunction} cookieAccept={cookieAccept} />
                         </Route>
                         <Route exact path="/Ausgabe">
                             <Ausgabe
@@ -188,7 +205,7 @@ function MainPage() {
                         </div>
                     )}
             </div>
-        </Router>
+        </Router >
     );
 }
 

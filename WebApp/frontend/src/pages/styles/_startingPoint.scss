@@ -42,6 +42,26 @@
                     transform: scale(1.5);
                 }
             }
+            .titleCookieNotAccepted{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .titleNoFunc{
+                    border: 0px;
+                    background-color: transparent;
+                    color: $textColor;
+                    font-size: 10vh;
+                    opacity: 0.5;
+                }
+                .info{
+                    border: 0px;
+                    background-color: transparent;
+                    color: $textColor;
+                    font-size: 2vh;
+                    opacity: 0.5;
+                }
+            }
         }
     }
 }
