@@ -1081,10 +1081,9 @@ header button:hover {
   bottom: 0;
   background-color: white;
   width: 25%;
-  height: 30vh;
+  height: auto;
   border: 4px dotted black;
   padding: 2vh;
-  border-radius: 5px;
 }
 
 .cookie * {
