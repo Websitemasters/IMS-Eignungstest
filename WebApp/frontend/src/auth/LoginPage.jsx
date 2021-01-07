@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
-import "./style/style.css";
+import "./style/style.css"
+import Logo from "./res/LogoSchwarz.png";
 
 function LoginPage() {
   let history = useHistory();
   let location = useLocation();
-  const [name, setName] = useState("");
-  const [vorname, setVorname] = useState("");
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
 
-  const changeName = (e) => {
-    setName(e.target.value);
+  const changeusername = (e) => {
+    setusername(e.target.value);
   };
-  const changeVorname = (e) => {
-    setVorname(e.target.value);
+  const changepassword = (e) => {
+    setpassword(e.target.value);
   };
   let { from } = location.state || { from: { pathname: "/" } };
   let login = () => {
@@ -21,35 +22,40 @@ function LoginPage() {
       () => {
         history.replace(from);
       },
-      name,
-      vorname
+      username,
+      password
     );
   };
 
   return (
     <div className="loginAdmin">
-      <p>
-        Geben sie bitte Ihre Benutzerdaten ein um den EignungsTest durch zu
-        führen
-      </p>
-      <br />
-      <input
-        type="text"
-        placeholder="Nachname"
-        required
-        autoComplete="off"
-        onChange={changeName}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="Vorname"
-        required
-        autoComplete="off"
-        onChange={changeVorname}
-      />
-      <br />
-      <button onClick={login}>Test Starten</button>
+      <div className="holder">
+        <div className="login">
+          <h1>Admin Login</h1>
+          <p>
+            Geben sie bitte Ihre Benutzerdaten ein um den EignungsTest durch zu
+            führen
+          </p>
+          <br />
+          <input
+            type="text"
+            placeholder="benutzername"
+            required
+            autoComplete="off"
+            onChange={changeusername}
+          />
+          <br />
+          <input
+            type="password"
+            placeholder="password"
+            required
+            autoComplete="off"
+            onChange={changepassword}
+          />
+          <br />
+          <button onClick={login}>Einloggen</button>
+        </div>
+      </div>
     </div>
   );
 }

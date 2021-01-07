@@ -2,21 +2,20 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import Auth from "./auth";
 
-function PrivateRoute({ children, ...rest }) {
+function PrivateRoute({ children }) {
   return (
     <Route
-      {...rest}
       render={({ location }) =>
         Auth.isAuthenticated ? (
           children
         ) : (
-          <Redirect
-            to={{
-              pathname: "/Login",
-              state: { from: location },
-            }}
-          />
-        )
+            <Redirect
+              to={{
+                pathname: "/Login",
+                state: { from: location },
+              }}
+            />
+          )
       }
     />
   );

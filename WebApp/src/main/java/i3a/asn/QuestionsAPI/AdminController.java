@@ -14,12 +14,7 @@ public class AdminController {
     @GetMapping("/api/addBesucher")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){
-	    //if no cookie
-	    //add a cookie
         return logic.nextUser();
-	//else 
-	//return 0;
-	
     }
 
     @PostMapping("/api/logActivity")
@@ -32,6 +27,14 @@ public class AdminController {
          }
     }
 
+    @GetMapping("/api/admin/login")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean login(@RequestParam(value = "username", defaultValue = "0") String username,@RequestParam(value = "password", defaultValue = "0") String password){
+        if(username.equals("admin")&&password.equals("12345")){
+            return true;
+        }
+        return false;
+    }
     @GetMapping("/api/admin/actLog")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<LogEintrag> orderNew(){
