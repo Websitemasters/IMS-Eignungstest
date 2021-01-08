@@ -33,13 +33,12 @@ function LoginPage() {
         <div className="login">
           <h1>Admin Login</h1>
           <p>
-            Geben sie bitte Ihre Benutzerdaten ein um den EignungsTest durch zu
-            führen
+            Geben Sie bitte Ihre Benutzerdaten ein um den EignungsTest durchzuführen
           </p>
           <br />
           <input
             type="text"
-            placeholder="benutzername"
+            placeholder="Benutzername"
             required
             autoComplete="off"
             onChange={changeusername}
@@ -47,7 +46,7 @@ function LoginPage() {
           <br />
           <input
             type="password"
-            placeholder="password"
+            placeholder="Password"
             required
             autoComplete="off"
             onChange={changepassword}
