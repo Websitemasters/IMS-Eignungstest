@@ -26,7 +26,7 @@ export default function TextEditor() {
             <div className="plate">
                 <div className="content1">
                     <h1>Code Editor</h1>
-                    <p>Ändern sie den Code so das die Ausgabe von 55 entsteht</p>
+                    <p>Dies ist ein Code Editor wo Sie versuchen können eigenen Code zu schreiben</p>
                 </div>
                 <div className="content2">
                     <p>Code Eingabe</p>

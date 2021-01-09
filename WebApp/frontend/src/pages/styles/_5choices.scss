@@ -12,21 +12,14 @@
         flex-direction: column;
         justify-content: space-between;
         box-shadow: $boxShadow;
-        .contentInfo1 {
+        .contentInfo {
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            .question {
-                width: 100%;
-                height: auto;
+            .back{
                 display: flex;
-                flex-direction: row;
-                align-items: left;
-                justify-content: space-between;
-                padding: 10px;
-                p{
-                    font-size: 30px;
-                }
+                flex-direction: column;
+                align-items:flex-end ;
+                padding: 2vh;
                 a{
                     text-decoration: none;
                     font-weight: 400;
@@ -42,17 +35,29 @@
                     cursor: pointer;
                     transition: all 0.3s ease 0s;
                     color: whitesmoke;
-                    height: 5vh;
+                    height: 4.5vh;
                     width: 8%;
                     &:hover {
                         background-color: #2545fa7e;
                     }
                 }
             }
+            .question {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                p{
+                    font-size: 4vh;
+                    width: 60%;
+                }
+            }
             .auswahl {
                 display: flex;
                 flex-direction: column;
-                align-items: left;
+                align-items: center;
                 padding: 10px;
                 margin-top: 20px;
                 * {
@@ -61,13 +66,14 @@
                 width: 100%;
                 .linkbutton {
                     width: 20%;
-                    background-color: transparent;
+                    background-color: $acent2;
+                    border-radius: 10px;
                     font-size: 25px;
                     cursor: pointer;
                     color: $textColor;
-                    transition: transform ease 300ms;
+                    transition: all 0.3s ease 0s;
                     &:hover {
-                        transform: scale(1.2);
+                        background-color: rgba(20, 141, 255, 0.788);
                     }
                     border: none;
                     padding: 5px;

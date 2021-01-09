@@ -432,7 +432,7 @@ header button:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   color: whitesmoke;
-  height: 5vh;
+  height: 4.5vh;
   width: 8%;
 }
 
@@ -587,7 +587,7 @@ header button:hover {
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.205);
 }
 
-.choices5 .plate .contentInfo1 {
+.choices5 .plate .contentInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -595,33 +595,23 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 20px;
 }
 
-.choices5 .plate .contentInfo1 .question {
-  width: 100%;
-  height: auto;
+.choices5 .plate .contentInfo .back {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 10px;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 2vh;
 }
 
-.choices5 .plate .contentInfo1 .question p {
-  font-size: 30px;
-}
-
-.choices5 .plate .contentInfo1 .question a {
+.choices5 .plate .contentInfo .back a {
   text-decoration: none;
   font-weight: 400;
   font-size: 15px;
@@ -646,15 +636,17 @@ header button:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   color: whitesmoke;
-  height: 5vh;
+  height: 4.5vh;
   width: 8%;
 }
 
-.choices5 .plate .contentInfo1 .question a:hover {
+.choices5 .plate .contentInfo .back a:hover {
   background-color: #2545fa7e;
 }
 
-.choices5 .plate .contentInfo1 .auswahl {
+.choices5 .plate .contentInfo .question {
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -662,37 +654,54 @@ header button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.choices5 .plate .contentInfo .question p {
+  font-size: 4vh;
+  width: 60%;
+}
+
+.choices5 .plate .contentInfo .auswahl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   margin-top: 20px;
   width: 100%;
 }
 
-.choices5 .plate .contentInfo1 .auswahl * {
+.choices5 .plate .contentInfo .auswahl * {
   margin: 5px;
 }
 
-.choices5 .plate .contentInfo1 .auswahl .linkbutton {
+.choices5 .plate .contentInfo .auswahl .linkbutton {
   width: 20%;
-  background-color: transparent;
+  background-color: #148dff;
+  border-radius: 10px;
   font-size: 25px;
   cursor: pointer;
   color: #ffffff;
-  -webkit-transition: -webkit-transform ease 300ms;
-  transition: -webkit-transform ease 300ms;
-  transition: transform ease 300ms;
-  transition: transform ease 300ms, -webkit-transform ease 300ms;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   border: none;
   padding: 5px;
   margin-top: 15px;
   text-decoration: none;
 }
 
-.choices5 .plate .contentInfo1 .auswahl .linkbutton:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.choices5 .plate .contentInfo .auswahl .linkbutton:hover {
+  background-color: rgba(20, 141, 255, 0.788);
 }
 
 .ausgabe {
@@ -891,7 +900,7 @@ header button:hover {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   color: whitesmoke;
-  height: 5vh;
+  height: 4.5vh;
   width: 8%;
 }
 

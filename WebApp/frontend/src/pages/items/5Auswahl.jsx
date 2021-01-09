@@ -29,28 +29,30 @@ export default function Question({ frage, nextPage, lastPage, items, setItems, s
   return (
     <div className="choices5">
       <div className="plate">
-        <div className="contentInfo1">
-          <div className="question">
-            <p>{frage}</p>
+        <div className="contentInfo">
+          <div className="back">
             <Link to={`/Items/${nextPage - 2}`}>
               Zurück
             </Link>
           </div>
+          <div className="question">
+            <p>{frage}</p>
+          </div>
           <div className="auswahl">
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="5" onClick={add}>
-              1. Trifft zu
+              5. Trifft zu
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="4" onClick={add}>
-              2. Ziemlich
+              4. Ziemlich
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="3" onClick={add}>
               3. Ein bisschen
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="2" onClick={add}>
-              4. Wenig
+              2. Wenig
             </Link>
             <Link className="linkbutton" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`} id="1" onClick={add}>
-              5. Gar nicht
+              1. Gar nicht
             </Link>
           </div>
         </div>
