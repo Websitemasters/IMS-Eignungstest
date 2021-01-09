@@ -677,7 +677,7 @@ header button:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -702,6 +702,27 @@ header button:hover {
 
 .choices5 .plate .contentInfo .auswahl .linkbutton:hover {
   background-color: rgba(20, 141, 255, 0.788);
+}
+
+.choices5 .plate .contentInfo .auswahl .colored {
+  width: 20%;
+  background-color: #2545fa;
+  border-radius: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #ffffff;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  border: none;
+  padding: 5px;
+  margin-top: 15px;
+  text-decoration: none;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.choices5 .plate .contentInfo .auswahl .colored:hover {
+  background-color: #2545fa9d;
 }
 
 .ausgabe {
