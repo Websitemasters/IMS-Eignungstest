@@ -31,7 +31,11 @@ export default function NavBar() {
       setSec2("link");
       setSec3("link");
     }
-  }, [location])
+  }, [location]);
+  const [btnorField, setBtnofField] = useState(true)
+  const changeShape = () => {
+    setBtnofField(!btnorField);
+  }
   return (
     <header>
       <Link to="/admin">
@@ -56,7 +60,15 @@ export default function NavBar() {
           </li>
         </ul>
       </nav>
-      <button><p>Contact</p></button>
+      {btnorField ? (
+        <button className="btn" onClick={changeShape}>Login</button>
+      ) : (
+          <div className="code">
+            <input type="text" />
+            <button>Bestätigen</button>
+            <button onClick={changeShape}>Abbrechen</button>
+          </div>
+        )}
     </header>
   );
 }
