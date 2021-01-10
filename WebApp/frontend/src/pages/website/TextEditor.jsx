@@ -9,7 +9,7 @@ export default function TextEditor() {
         setInputCode(e.target.value);
     }
     const runCode = async () => {
-        axios.post(`http://localhost:8080/api/public/useParser`, {
+        axios.post(`/api/public/useParser`, {
             id: 1,
             text: inputCode,
         })

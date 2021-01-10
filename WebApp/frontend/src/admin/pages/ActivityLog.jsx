@@ -7,7 +7,7 @@ function ActivityLog({ userName, password }) {
         fetchData();
     }, []);
     const fetchData = async () => {
-        axios.get("http://localhost:8080/api/admin/actLog", {
+        axios.get("/api/admin/actLog", {
             auth: {
                 username: userName,
                 password: password

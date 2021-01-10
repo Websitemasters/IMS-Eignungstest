@@ -27,7 +27,7 @@ import Cookie from "./pages/components/Cookie";
 
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
-        Axios.post(`http://localhost:8080/api/public/logActivity?id=${id}&url=${url}`)
+        Axios.post(`/api/public/logActivity?id=${id}&url=${url}`)
             .catch((error) => {
                 console.log(error);
             })
@@ -57,7 +57,7 @@ function App() {
                 }
             }
             if (eignungstestLocation === -1) {
-                Axios.get("http://localhost:8080/api/public/addBesucher")
+                Axios.get("/api/public/addBesucher")
                     .then((res) => {
                         let date = new Date();
                         const minutes = 120;
@@ -79,7 +79,7 @@ function App() {
     };
 
     const fetchData = async () => {
-        Axios.get("http://localhost:8080/api/public/getAllItems")
+        Axios.get("/api/public/getAllItems")
             .then((res) => {
                 setItems(res.data);
             })

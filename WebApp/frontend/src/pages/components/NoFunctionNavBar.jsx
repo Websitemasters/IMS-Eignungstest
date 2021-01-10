@@ -12,7 +12,7 @@ export default function NavBar() {
         setBtnofField(!btnorField);
     }
     const checkCode = async () => {
-        axios.get(`http://localhost:8080/api/public/adminAccess?code=${input}`)
+        axios.get(`/api/public/adminAccess?code=${input}`)
             .then((res) => {
                 if (res.data === true) {
                     redirect();

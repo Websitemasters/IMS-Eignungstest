@@ -14,7 +14,7 @@ function Dashboard({ userName, password }) {
     }, []);
     const getData = async () => {
         //Get Seitenaufrufe
-        axios.get("http://localhost:8080/api/admin/anzahlBesucher", {
+        axios.get("/api/admin/anzahlBesucher", {
             auth: {
                 username: userName,
                 password: password
@@ -27,7 +27,7 @@ function Dashboard({ userName, password }) {
                 console.log(error);
             })
         //Get Anzahl durchgeführte Tests
-        axios.get("http://localhost:8080/api/admin/getDurchgefuehrte", {
+        axios.get("/api/admin/getDurchgefuehrte", {
             auth: {
                 username: userName,
                 password: password
@@ -40,7 +40,7 @@ function Dashboard({ userName, password }) {
                 console.log(error);
             })
         //Get Aktivitäts Log
-        axios.get("http://localhost:8080/api/admin/getVPI", {
+        axios.get("/api/admin/getVPI", {
             auth: {
                 username: userName,
                 password: password
@@ -52,7 +52,7 @@ function Dashboard({ userName, password }) {
             .catch((error) => {
                 console.log(error);
             })
-        axios.get("http://localhost:8080/api/admin/getTestErg", {
+        axios.get("/api/admin/getTestErg", {
             auth: {
                 username: userName,
                 password: password
@@ -64,7 +64,7 @@ function Dashboard({ userName, password }) {
             .catch((error) => {
                 console.log(error);
             })
-        axios.get("http://localhost:8080/api/admin/getSeitenAufrufe", {
+        axios.get("/api/admin/getSeitenAufrufe", {
             auth: {
                 username: userName,
                 password: password
