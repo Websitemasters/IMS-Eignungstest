@@ -11,13 +11,13 @@ import java.util.ArrayList;
 public class AdminController {
     private Logic logic = Logic.getInstance();
 
-    @GetMapping("/api/addBesucher")
+    @GetMapping("/api/public/addBesucher")
     @CrossOrigin(origins = "http://localhost:3000")
     public int getNextUser(){
         return logic.nextUser();
     }
 
-    @PostMapping("/api/logActivity")
+    @PostMapping("/api/public/logActivity")
     @CrossOrigin(origins = "http://localhost:3000")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
          if(logic.logActivity(id,url)){
@@ -27,7 +27,7 @@ public class AdminController {
          }
     }
 
-    @GetMapping("/api/admin/login")
+    @GetMapping("/api/public/login")
     @CrossOrigin(origins = "http://localhost:3000")
     public boolean login(@RequestParam(value = "username", defaultValue = "0") String username,@RequestParam(value = "password", defaultValue = "0") String password){
         if(username.equals("admin")&&password.equals("12345")){

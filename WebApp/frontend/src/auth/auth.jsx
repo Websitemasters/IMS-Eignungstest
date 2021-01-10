@@ -3,7 +3,7 @@ import axios from "axios";
 const auth = {
   isAuthenticated: false,
   authenticate(cb, username, password) {
-    axios.get(`http://localhost:8080/api/admin/login?username=${username}&password=${password}`)
+    axios.get(`http://localhost:8080/api/public/login?username=${username}&password=${password}`)
       .then((res) => {
         console.log(res.data);
         if (res.data === true) {

@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
 import "./style/style.css"
-import Logo from "./res/LogoSchwarz.png";
 
-function LoginPage() {
+function LoginPage({ setUserName, setPassword }) {
   let history = useHistory();
   let location = useLocation();
   const [username, setusername] = useState("");
@@ -17,7 +16,7 @@ function LoginPage() {
     setpassword(e.target.value);
   };
   let { from } = location.state || { from: { pathname: "/" } };
-  let login = () => {
+  const login = () => {
     Auth.authenticate(
       () => {
         history.replace(from);
@@ -25,6 +24,8 @@ function LoginPage() {
       username,
       password
     );
+    setUserName(username);
+    setPassword(password);
   };
 
   return (

@@ -3,7 +3,7 @@ import axios from "axios";
 import * as RiIcons from "react-icons/ri";
 import * as AIIcons from "react-icons/ai";
 
-function Dashboard() {
+function Dashboard({ userName, password }) {
     const [besucherAnzahl, setBesucherAnzahl] = useState();
     const [durchgefuehrte, setDurchgefuehrte] = useState();
     const [vpi, setVpi] = useState([]);
@@ -14,7 +14,12 @@ function Dashboard() {
     }, []);
     const getData = async () => {
         //Get Seitenaufrufe
-        axios.get("http://localhost:8080/api/admin/anzahlBesucher")
+        axios.get("http://localhost:8080/api/admin/anzahlBesucher", {
+            auth: {
+                username: userName,
+                password: password
+            }
+        })
             .then((res) => {
                 setBesucherAnzahl(res.data - 1);
             })
@@ -22,7 +27,12 @@ function Dashboard() {
                 console.log(error);
             })
         //Get Anzahl durchgeführte Tests
-        axios.get("http://localhost:8080/api/admin/getDurchgefuehrte")
+        axios.get("http://localhost:8080/api/admin/getDurchgefuehrte", {
+            auth: {
+                username: userName,
+                password: password
+            }
+        })
             .then((res) => {
                 setDurchgefuehrte(res.data);
             })
@@ -30,21 +40,36 @@ function Dashboard() {
                 console.log(error);
             })
         //Get Aktivitäts Log
-        axios.get("http://localhost:8080/api/admin/getVPI")
+        axios.get("http://localhost:8080/api/admin/getVPI", {
+            auth: {
+                username: userName,
+                password: password
+            }
+        })
             .then((res) => {
                 setVpi(res.data);
             })
             .catch((error) => {
                 console.log(error);
             })
-        axios.get("http://localhost:8080/api/admin/getTestErg")
+        axios.get("http://localhost:8080/api/admin/getTestErg", {
+            auth: {
+                username: userName,
+                password: password
+            }
+        })
             .then((res) => {
                 setTestErg(res.data);
             })
             .catch((error) => {
                 console.log(error);
             })
-        axios.get("http://localhost:8080/api/admin/getSeitenAufrufe")
+        axios.get("http://localhost:8080/api/admin/getSeitenAufrufe", {
+            auth: {
+                username: userName,
+                password: password
+            }
+        })
             .then((res) => {
                 setSeitenAufrufe(res.data);
             })

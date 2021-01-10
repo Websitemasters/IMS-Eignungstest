@@ -26,7 +26,6 @@ function Navbar() {
                                 <AiIcons.AiOutlineClose color="black" />
                             </Link>
                         </li>
-
                         <li className="nav-text">
                             <Link to="/admin">
                                 <MdIcons.MdDashboard color="black" />
@@ -37,12 +36,6 @@ function Navbar() {
                             <Link to="/admin/log">
                                 <FiIcons.FiActivity color="black" />
                                 <span>Aktivitätslog</span>
-                            </Link>
-                        </li>
-                        <li className="nav-text">
-                            <Link to="/admin/results">
-                                <IoIcons.IoIosPaper color="black" />
-                                <span>Test Resultate</span>
                             </Link>
                         </li>
                     </ul>
