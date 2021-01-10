@@ -11,7 +11,6 @@ import TextEditor from "./pages/website/TextEditor";
 import OneToTen from "./pages/items/OneToTen";
 import FiveChoices from "./pages/items/5Auswahl";
 import Code from "./pages/items/Code";
-import NotFoundPage from "./error/404"
 import {
     BrowserRouter as Router,
     Switch,
@@ -196,10 +195,7 @@ function App() {
                         <Route path="/Login">
                             <Login setUserName={setUserName} setPassword={setPassword} />
                         </Route>
-                        <Route exact path="/404">
-                            <NotFoundPage />
-                        </Route>
-                        <Redirect to="/404" />
+                        <Redirect to="/" />
                     </Switch>
                 ) :
                     (

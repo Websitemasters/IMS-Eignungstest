@@ -5,7 +5,6 @@ const auth = {
   authenticate(cb, username, password) {
     axios.get(`http://localhost:8080/api/public/login?username=${username}&password=${password}`)
       .then((res) => {
-        console.log(res.data);
         if (res.data === true) {
           auth.isAuthenticated = true;
           setTimeout(cb, 100);

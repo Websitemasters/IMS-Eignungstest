@@ -74,12 +74,6 @@ public class AdminController {
     public ArrayList<VerlassenPerItem> getVPI(){
         return logic.getVPI();
     }
-    
-    @GetMapping("/api/admin/getAVGTesterg")
-    @CrossOrigin(origins = "http://localhost:3000")
-    public double getAvgTestErg(){
-        return logic.getAvgTestErg();
-    }
 
     @GetMapping("/api/admin/getSeitenAufrufe")
     @CrossOrigin(origins = "http://localhost:3000")

@@ -50,11 +50,6 @@ function ActivityLog({ userName, password }) {
                         </div>
                     </div>
                 </div>
-                <div className="contentInfo2">
-                    <div className="downloadAct">
-                        <button>Herunterladen</button>
-                    </div>
-                </div>
             </div>
         </div>
     )
