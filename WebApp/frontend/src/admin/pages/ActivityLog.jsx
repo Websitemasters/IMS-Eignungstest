@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-function ActivityLog() {
+function ActivityLog({ userName, password }) {
     const [eintrage, setEintrage] = useState([]);
     useEffect(() => {
         fetchData();
     }, []);
     const fetchData = async () => {
-        axios.get("http://localhost:8080/api/admin/actLog")
+        axios.get("/api/admin/actLog", {
+            auth: {
+                username: userName,
+                password: password
+            }
+        })
             .then((response) => {
                 setEintrage(response.data);
             })
@@ -43,11 +48,6 @@ function ActivityLog() {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-                <div className="contentInfo2">
-                    <div className="downloadAct">
-                        <button>Herunterladen</button>
                     </div>
                 </div>
             </div>

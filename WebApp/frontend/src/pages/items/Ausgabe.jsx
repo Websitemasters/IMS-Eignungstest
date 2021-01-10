@@ -14,7 +14,7 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setPro
     setTestDone(true);
   }, []);
   const getEignung = async () => {
-    Axios.post(`http://localhost:8080/api/rechneEignung?id=${userID}`, items)
+    Axios.post(`/api/public/rechneEignung?id=${userID}`, items)
       .then((res) => {
         setAusgabe(res.data);
       })

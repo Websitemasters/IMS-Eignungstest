@@ -64,11 +64,7 @@ header .nav__links .linkHighLighted:hover {
           transform: scale(1.1);
 }
 
-header .websiteName {
-  cursor: pointer;
-}
-
-header button {
+header .btn {
   font-weight: 400;
   font-size: 18px;
   text-decoration: none;
@@ -84,9 +80,47 @@ header button {
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-header button:hover {
+header .btn:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+header .code * {
+  margin-left: 1vh;
+}
+
+header .code input {
+  width: 50%;
+  height: 2.6vh;
+  border-radius: 15px;
+  color: black;
+  border: 0px;
+  padding: 5px;
+  outline: none;
+}
+
+header .code button {
+  text-decoration: none;
+  padding: 4px 4px;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  color: black;
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+header .code button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+header .code p {
+  color: red;
+  font-weight: bold;
 }
 
 .coding {
@@ -160,6 +194,23 @@ header button:hover {
   font-family: "Source Code Pro", monospace;
 }
 
+.coding .plate .content2 .in::-webkit-scrollbar {
+  width: 1.4vh;
+  height: 0.5vh;
+}
+
+.coding .plate .content2 .in::-webkit-scrollbar-track-piece {
+  background-color: #2545fa;
+  -webkit-border-radius: 16px;
+}
+
+.coding .plate .content2 .in::-webkit-scrollbar-thumb:vertical {
+  height: 10px;
+  background-color: #bbbbbb;
+  border: 0px;
+  -webkit-border-radius: 16px;
+}
+
 .coding .plate .content2 .out {
   padding: 10px;
   resize: none;
@@ -197,18 +248,36 @@ header button:hover {
 }
 
 .coding .plate .content4 .run {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   background-color: #2545fa;
+  padding: 2vh;
   border: 0px;
   color: #ffffff;
-  width: 10%;
+  width: 15%;
   height: 5vh;
   border-radius: 20px;
   -webkit-transition: 300ms;
   transition: 300ms;
+  cursor: pointer;
 }
 
 .coding .plate .content4 .run:hover {
   background-color: #2545fa7e;
+}
+
+.coding .plate .content4 .run p {
+  font-size: 2vh;
 }
 
 .coding .plate .content4 .nextPage {
@@ -951,7 +1020,7 @@ header button:hover {
   padding: 10px;
   resize: none;
   width: 100%;
-  height: 30vh;
+  height: 26vh;
   border-radius: 10px 10px 10px 10px;
   background-color: black;
   color: white;
@@ -960,6 +1029,23 @@ header button:hover {
   -webkit-box-shadow: -5px 0px 0px 0 #2545fa;
           box-shadow: -5px 0px 0px 0 #2545fa;
   font-family: "Source Code Pro", monospace;
+}
+
+.codingTest .plate .content2 .in::-webkit-scrollbar {
+  width: 1.4vh;
+  height: 0.5vh;
+}
+
+.codingTest .plate .content2 .in::-webkit-scrollbar-track-piece {
+  background-color: #2545fa;
+  -webkit-border-radius: 16px;
+}
+
+.codingTest .plate .content2 .in::-webkit-scrollbar-thumb:vertical {
+  height: 10px;
+  background-color: #bbbbbb;
+  border: 0px;
+  -webkit-border-radius: 16px;
 }
 
 .codingTest .plate .content2 .out {
@@ -997,21 +1083,41 @@ header button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 2.4vh;
 }
 
 .codingTest .plate .content3 .run {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #2545fa;
+  padding: 2vh;
   border: 0px;
   color: #ffffff;
-  width: 10%;
+  width: 15%;
   height: 5vh;
   border-radius: 20px;
   -webkit-transition: 300ms;
   transition: 300ms;
+  cursor: pointer;
 }
 
 .codingTest .plate .content3 .run:hover {
   background-color: #2545fa7e;
+}
+
+.codingTest .plate .content3 .run p {
+  font-size: 1.8vh;
 }
 
 .codingTest .plate .content3 a {
@@ -1157,5 +1263,21 @@ header button:hover {
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+.centerContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=styles.css.map */

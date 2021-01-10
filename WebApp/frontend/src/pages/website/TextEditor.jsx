@@ -9,7 +9,7 @@ export default function TextEditor() {
         setInputCode(e.target.value);
     }
     const runCode = async () => {
-        axios.post(`http://localhost:8080/api/useParser`, {
+        axios.post(`/api/public/useParser`, {
             id: 1,
             text: inputCode,
         })
@@ -37,6 +37,7 @@ export default function TextEditor() {
                 <div className="content4">
                     <button onClick={runCode} className="run">
                         <VSCIcons.VscDebugStart size={25} />
+                        <p>Führe Code aus</p>
                     </button>
                 </div>
             </div>

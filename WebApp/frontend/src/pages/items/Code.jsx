@@ -17,7 +17,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
         setInputCode(e.target.value);
     }
     const runCode = async () => {
-        axios.post(`http://localhost:8080/api/useParser`, {
+        axios.post(`/api/public/useParser`, {
             id: 1,
             text: inputCode,
         })
@@ -50,6 +50,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                 <div className="content3">
                     <button onClick={runCode} className="run">
                         <VSCIcons.VscDebugStart size={25} />
+                        <p>Führe Code aus</p>
                     </button>
                     <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
                         Weiter
