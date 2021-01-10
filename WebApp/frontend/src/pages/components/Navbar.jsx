@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../res/kantiBadenLogoWeiss.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
+import axios from "axios";
 
 export default function NavBar() {
   const [sec1, setSec1] = useState("linkHighLighted");
@@ -32,9 +33,33 @@ export default function NavBar() {
       setSec3("link");
     }
   }, [location]);
+
   const [btnorField, setBtnofField] = useState(true)
+  const [input, setInput] = useState("");
+  const [wrongCode, setWrongCode] = useState(false);
+  let history = useHistory();
   const changeShape = () => {
     setBtnofField(!btnorField);
+  }
+  const checkCode = async () => {
+    axios.get(`http://localhost:8080/api/public/adminAccess?code=${input}`)
+      .then((res) => {
+        if (res.data === true) {
+          redirect();
+        } else {
+          setWrongCode(true);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+  const changeInput = (e) => {
+    setInput(e.target.value);
+  }
+
+  const redirect = () => {
+    history.push('/admin')
   }
   return (
     <header>
@@ -64,8 +89,13 @@ export default function NavBar() {
         <button className="btn" onClick={changeShape}>Login</button>
       ) : (
           <div className="code">
-            <input type="text" />
-            <button>Bestätigen</button>
+            {wrongCode ? (
+              <p className="wrongCode">Falscher Code</p>
+            ) : (
+                null
+              )}
+            <input type="text" onChange={changeInput} />
+            <button onClick={checkCode}>Bestätigen</button>
             <button onClick={changeShape}>Abbrechen</button>
           </div>
         )}

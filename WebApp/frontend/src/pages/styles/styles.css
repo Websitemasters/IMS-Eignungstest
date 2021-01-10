@@ -122,6 +122,11 @@ header .code button:hover {
           transform: scale(1.1);
 }
 
+header .code p {
+  color: red;
+  font-weight: bold;
+}
+
 .coding {
   display: -webkit-box;
   display: -ms-flexbox;

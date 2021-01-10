@@ -35,6 +35,16 @@ public class AdminController {
         }
         return false;
     }
+    @GetMapping("/api/public/adminAccess")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean adminAcess(@RequestParam(value = "code", defaultValue = "0") String code){
+        if(code.equals("pafkewfaxddfasd")) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     @GetMapping("/api/admin/actLog")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<LogEintrag> orderNew(){
