@@ -37,6 +37,7 @@ export default function TextEditor() {
                 <div className="content4">
                     <button onClick={runCode} className="run">
                         <VSCIcons.VscDebugStart size={25} />
+                        <p>Führe Code aus</p>
                     </button>
                 </div>
             </div>

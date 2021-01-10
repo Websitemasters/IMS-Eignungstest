@@ -74,7 +74,7 @@ export default function NavBar() {
             </Link>
           </li>
           <li className={sec2}>
-            <Link to="/Items/1">
+            <Link to="/">
               Test
             </Link>
           </li>

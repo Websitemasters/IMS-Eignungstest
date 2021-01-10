@@ -37,6 +37,20 @@
                 font-size: 23px;
                 box-shadow: -5px 0px 0px 0 $acent1;
                 font-family: $codeFont;
+                &::-webkit-scrollbar {
+                    width: 1.4vh;
+                    height: 0.5vh;
+                }
+                &::-webkit-scrollbar-track-piece  {
+                    background-color: $acent1;
+                    -webkit-border-radius: 16px;
+                }
+                &::-webkit-scrollbar-thumb:vertical {
+                    height: 10px;
+                    background-color: rgb(187, 187, 187);
+                    border: 0px;
+                    -webkit-border-radius: 16px;
+                }
             }
             .out {
                 padding: 10px;
@@ -66,16 +80,25 @@
             height: 5vh;
             margin-top: 20px;
             .run {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
                 background-color: $acent1;
+                padding:2vh;
                 border: 0px;
                 color: $textColor;
-                width: 10%;
+                width: 15%;
                 height: 5vh;
                 border-radius: 20px;
                 transition: 300ms;
                 &:hover {
                     background-color: #2545fa7e;
                 }
+                p{
+                    font-size: 2vh
+                }
+                cursor: pointer;
             }
             .nextPage {
                 background-color: rgba(241, 245, 250, 1);

@@ -50,6 +50,7 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                 <div className="content3">
                     <button onClick={runCode} className="run">
                         <VSCIcons.VscDebugStart size={25} />
+                        <p>Führe Code aus</p>
                     </button>
                     <Link className="nextPage" to={lastPage === "true" ? "/Ausgabe" : `/Items/${nextPage}`}>
                         Weiter
