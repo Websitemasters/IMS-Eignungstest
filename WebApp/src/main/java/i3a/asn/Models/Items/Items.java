@@ -2,7 +2,7 @@ package i3a.asn.Models.Items;
 
 /**
  * Modeklasse für die Items
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 
 public class Items {

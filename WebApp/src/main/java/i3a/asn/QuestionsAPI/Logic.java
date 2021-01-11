@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 /**
  * Dient als zwischenstück zwischen der database klasse und dem restlichen code
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 public class Logic {
 

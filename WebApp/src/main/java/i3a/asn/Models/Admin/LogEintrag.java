@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 /**
  * Log Eintrag Modelklasse
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 public class LogEintrag {
     private int id;

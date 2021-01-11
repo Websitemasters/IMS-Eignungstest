@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * Klasse für die security von login
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 @Configuration
 @EnableWebSecurity

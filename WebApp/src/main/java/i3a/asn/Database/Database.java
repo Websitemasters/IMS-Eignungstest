@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Datenbankklasse
  * Hier werden alle statements auf die datenbank angewendet
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 
 public class Database {

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Modelklasse für den Code der geparst werden soll 
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 public class ParseModel {
 	int id;

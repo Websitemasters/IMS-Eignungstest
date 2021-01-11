@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 /**
  * Singleton Klasse für die Datenbankverbindung
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 
 public class DatabaseCon {

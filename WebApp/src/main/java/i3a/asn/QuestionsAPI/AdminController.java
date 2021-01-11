@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * aktivitäten loggen
  * login prüfen
  *  und getter von logic klasse
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 @RestController
 public class AdminController {

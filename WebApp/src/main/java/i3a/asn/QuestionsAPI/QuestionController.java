@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Klasse für den Parser und für die Berechnung der Eignung
- * @author 1810g
+ * @author 1810g, Andrei Oleniuc
  */
 @RestController
 public class QuestionController {
