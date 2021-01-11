@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
+ * Hilfsklasse für "Parser.java"
+ * Bereiten Eingaben in der richtigen Form auf
  * @author 1810g
  */
 public class StartParser {
@@ -78,7 +79,14 @@ public class StartParser {
 		return retStr;
 
 	}
+	
 
+	/**
+	 * Rekursives Parsen der Eingaben
+	 * @param befehle
+	 * @param variablen
+	 * @return 
+	 */
 	private static double doParsing(List<String> befehle, Map<String, Double> variablen) {
 		if (befehle.size() == 1) {									  	// der letzte Befehl sollte zurückgegeben werden
 			return (double) (Parser.eval(befehle.get(0), variablen)[0]);

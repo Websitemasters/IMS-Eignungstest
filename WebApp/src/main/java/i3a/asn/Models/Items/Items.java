@@ -1,5 +1,10 @@
 package i3a.asn.Models.Items;
 
+/**
+ * Modeklasse für die Items
+ * @author 1810g
+ */
+
 public class Items {
     private int id;
     private String frage;

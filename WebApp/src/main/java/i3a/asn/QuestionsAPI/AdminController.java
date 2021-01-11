@@ -6,7 +6,14 @@ import i3a.asn.Models.Admin.VerlassenPerItem;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-
+/**
+ * Klasse für:
+ * neuen besucher registrieren
+ * aktivitäten loggen
+ * login prüfen
+ *  und getter von logic klasse
+ * @author 1810g
+ */
 @RestController
 public class AdminController {
     private Logic logic = Logic.getInstance();

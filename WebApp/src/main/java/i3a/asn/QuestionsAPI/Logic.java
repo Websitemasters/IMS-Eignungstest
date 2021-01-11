@@ -8,7 +8,10 @@ import i3a.asn.Models.Items.Items;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+/**
+ * Dient als zwischenstück zwischen der database klasse und dem restlichen code
+ * @author 1810g
+ */
 public class Logic {
 
     private static Logic instance = null;

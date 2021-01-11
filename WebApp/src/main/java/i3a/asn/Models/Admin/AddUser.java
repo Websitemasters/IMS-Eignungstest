@@ -1,5 +1,10 @@
 package i3a.asn.Models.Admin;
 
+/**
+ * 
+ * @author 1810g
+ */
+
 public class AddUser {
     private int id;
     private int add;

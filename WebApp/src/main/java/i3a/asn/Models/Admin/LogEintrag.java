@@ -3,6 +3,10 @@ package i3a.asn.Models.Admin;
 import java.util.Date;
 import java.sql.Timestamp;
 
+/**
+ * Log Eintrag Modelklasse
+ * @author 1810g
+ */
 public class LogEintrag {
     private int id;
     private int userId;

@@ -8,7 +8,7 @@ package i3a.asn.Models.Parser;
 import java.util.ArrayList;
 
 /**
- *
+ * Modelklasse für den Code der geparst werden soll 
  * @author 1810g
  */
 public class ParseModel {

@@ -3,12 +3,11 @@ package i3a.asn.parser;
 import java.util.Map;
 
 /**
- *
+ * Parserklasse, benutzt um eingaben zu parsen
  * @author 1810g
  */
 public class Parser {
 	/**
-	 * 
 	 * @param str
 	 * @param variables
 	 * @return Object(string, variables)
@@ -16,11 +15,19 @@ public class Parser {
 	public static Object[] eval(final String str, Map<String,Double> variables) {
     return new Object() {
         int pos = -1, ch;
+	
+
 
         void nextChar() {
             ch = (++pos < str.length()) ? str.charAt(pos) : -1;
         }
+	
 
+	/**
+	 * 
+	 * @param charToEat
+	 * @return 
+	 */
         boolean eat(int charToEat) {
             while (ch == ' ') nextChar();
             if (ch == charToEat) {
@@ -29,6 +36,7 @@ public class Parser {
             }
             return false;
         }
+	
 
         Object[] parse() {
             nextChar();
@@ -156,6 +164,15 @@ public class Parser {
         }
     }.parse();
 }
+
+
+	/**
+	 * berechnet ob ein vergleich wahr oder falsch ist
+	 * @param c1
+	 * @param check
+	 * @param c2
+	 * @return 
+	 */
 	private static boolean condition(double c1, String check, double c2){
 		switch(check){
 			case ">":return (c1>c2);

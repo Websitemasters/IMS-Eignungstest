@@ -3,6 +3,11 @@ package i3a.asn.Database;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Singleton Klasse für die Datenbankverbindung
+ * @author 1810g
+ */
+
 public class DatabaseCon {
     private static DatabaseCon instance = null;
     private final String USERNAME = "root";

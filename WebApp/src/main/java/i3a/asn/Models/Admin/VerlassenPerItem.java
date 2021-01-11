@@ -1,5 +1,10 @@
 package i3a.asn.Models.Admin;
 
+/**
+ * Modelklasse um die anzahl verlassenen versuche pro item
+ * @author 1810g
+ */
+
 public class VerlassenPerItem {
     private String url;
     private int anzahl;

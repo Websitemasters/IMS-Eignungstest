@@ -8,6 +8,12 @@ import i3a.asn.Models.Items.Items;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Datenbankklasse
+ * Hier werden alle statements auf die datenbank angewendet
+ * @author 1810g
+ */
+
 public class Database {
 
     private final DatabaseCon jdbc;
