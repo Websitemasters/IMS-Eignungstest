@@ -1,30 +1,38 @@
 //React Imports
 import React, { useState, useEffect } from "react";
-//Styles 
+
+//Styling Klasse
 import "./pages/styles/styles.css";
-//Components Imports
+
+//Webseite Komponente
 import NavBar from "./pages/components/Navbar";
 import NoFunctionNavBar from "./pages/components/NoFunctionNavBar";
+
+//Verschiedene Seiten
 import StartTest from "./pages/website/StartTest";
 import Ausgabe from "./pages/items/Ausgabe";
 import TextEditor from "./pages/website/TextEditor";
 import OneToTen from "./pages/items/OneToTen";
 import FiveChoices from "./pages/items/5Auswahl";
 import Code from "./pages/items/Code";
+import Admin from "./admin/Admin";
+import Login from "./auth/LoginPage";
+import PrivateRoute from "./auth/PrivateRoute";
+import Cookie from "./pages/components/Cookie";
+
+//React Router imports welche uns erlauben je nach URL verschiedene Seiten anzuzeigen
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect,
 } from "react-router-dom";
+//Axios Bibliothek welche wir gebrauchen um Daten von der Rest Api zu fetchen oder an sie zu schicken
 import Axios from "axios";
+//Lade Zeichen von React Spinners
 import { BeatLoader } from "react-spinners";
 
-import Admin from "./admin/Admin";
-import Login from "./auth/LoginPage";
-import PrivateRoute from "./auth/PrivateRoute";
-import Cookie from "./pages/components/Cookie";
-
+//Funktion welche den Standort des Besuchers an die Rest API schickt
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
         Axios.post(`/api/public/logActivity?id=${id}&url=${url}`)
@@ -35,18 +43,25 @@ const sendeAktivitaet = {
 };
 
 function App() {
+    //Alle Items
     const [items, setItems] = useState([]);
+    //Die User ID des Beuschers
     const [userID, setID] = useState(null);
+    //Lade Screen Boolean, Test abgeschlossen Boolean und den Fortschritt des Testes je nach Besuchers
     const [loading, setLoading] = useState(true);
     const [testDone, setTestDone] = useState(false);
     const [progress, setProgress] = useState(10);
+    //Cookie annahme und eigentliches Cookie als UseState gespeichert
     const [cookieAccept, setCookieAccept] = useState(false);
     const [cookieMessage, setCookieMessage] = useState(null);
+    //UserName und Password des Admin Users
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
+    //Asynchrone Funktion welche die ID des Benutzers speichern soll
     const getIdFunction = async () => {
         try {
+            //Zuerst schauen hat der Benutzer in seinem Localen Speicher schon ein Cookie von uns
             setLoading(false);
             const cookies = document.cookie;
             const cookieArray = cookies.split('; ')
@@ -56,6 +71,7 @@ function App() {
                     eignungstestLocation = i;
                 }
             }
+            //Wenn er keinen hat dann holen wir uns einen von der Api und Speichern in ihm Localen Speicher
             if (eignungstestLocation === -1) {
                 Axios.get("/api/public/addBesucher")
                     .then((res) => {
@@ -70,6 +86,7 @@ function App() {
                         console.log(error);
                     })
             } else {
+                //Sonst holen wir uns denn heraus
                 setID(cookieArray[eignungstestLocation].substring(15, cookieArray[eignungstestLocation].length));
                 setLoading(true);
             }
@@ -77,7 +94,7 @@ function App() {
             console.log(e);
         }
     };
-
+    //Asynchrone Mehtode welche die Items von der Rest API Fetched um alle Fragen im Frontend zu haben
     const fetchData = async () => {
         Axios.get("/api/public/getAllItems")
             .then((res) => {
@@ -87,9 +104,11 @@ function App() {
                 console.log(err);
             })
     };
-
+    //Methode welche am Anfang einmal läuft und dann nicht mehr
     useEffect(() => {
         fetchData();
+        //Checken ob Cookie besteht wenn ja darf er Test starten wenn nein muss er die Cookie 
+        //Meldung annehmen um zugriff auf die Applikation zu bekommen
         const cookies = document.cookie;
         const cookieArray = cookies.split('; ')
         let accepted = false;
@@ -105,7 +124,8 @@ function App() {
         }
     }, []);
     return (
-        <Router>
+        //Router welche für verschiedene URLS verschiedenen Content ausgibt
+        <Router Router >
             <div className="parent">
                 {cookieMessage}
                 {testDone ? (
