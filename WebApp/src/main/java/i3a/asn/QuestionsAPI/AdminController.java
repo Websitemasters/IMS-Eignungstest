@@ -16,15 +16,18 @@ public class AdminController {
         return logic.nextUser();
     }
 
+    //Loggt aktivität
     @PostMapping("/api/public/logActivity")
     public String logIt(@RequestParam(value = "id", defaultValue = "0") int id,@RequestParam(value = "url", defaultValue = "1") String url){
+	    if(!url.startsWith("/")||url.contains("("))return "False";
          if(logic.logActivity(id,url)){
                 return "Ok";
          }else {
              return "False";
          }
     }
-
+	
+    //prüft ob login erflogreich ist
     @GetMapping("/api/public/login")
     public boolean login(@RequestParam(value = "username", defaultValue = "0") String username,@RequestParam(value = "password", defaultValue = "0") String password){
         if(username.equals("admin")&&password.equals("12345")){
@@ -32,6 +35,9 @@ public class AdminController {
         }
         return false;
     }
+
+
+    //prüft schlüssel auf der normalen seite um auf login seite zu kommen
     @GetMapping("/api/public/adminAccess")
     public boolean adminAcess(@RequestParam(value = "code", defaultValue = "0") String code){
         if(code.equals("pafkewfaxddfasd")) {

@@ -83,7 +83,7 @@ public class Parser {
 
 			//if true
 			x=parseExpression();
-			pos-=3;							// evil magic which goes back exactly the amount of characters for the program to work						
+			pos-=3;							// evil magic which goes back exactly the amount of characters needed for the program to work						
 			nextChar();
 			while((ch>='0'&&ch<='9')||(ch>='a'&&ch<='z')||ch=='('){
 					nextChar();	
@@ -163,7 +163,6 @@ public class Parser {
 			case "!=":return (c1!=c2);
 			case "==":return (c1==c2);
 			default: throw new RuntimeException("No condition: "+check);
-			
 			
 		}
 	}

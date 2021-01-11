@@ -24,14 +24,15 @@ public class QuestionController {
 
 	private Logic logic = Logic.getInstance();
 	private StartParser pc;
+	
 
+	//formatiert eingaben so dass sie der parser verarbeiten kann und parst die eingaben
 	@PostMapping("/api/public/useParser")
 	public String parseInput(@RequestBody ParseModel code) {
 		pc = new StartParser();
 		String lines[] = code.getText().split("\\r?\\n");
 		List<String> inputCode = new ArrayList<>();
 		for (String s : lines) {
-			System.out.println(s);
 			inputCode.add(s);
 		}
 
@@ -48,9 +49,16 @@ public class QuestionController {
 		return returnAnswer(items,id);
 	}
 
+	
 
+	/**
+	 * Berechnet Ausgabe für den Benutzer 
+	 * @param itemList
+	 * @param id
+	 * @return  liste mit allen ausgaben
+	 */
 	private ArrayList<String> returnAnswer(ArrayList<Items> itemList,long id) {
-		//maximale punktzahn ist 70
+		//maximale punktzahl ist 70
 		ArrayList<String> retList=new ArrayList();
 
 		//Iteriert über Items und erstellt bei spezialfällen spezifische nachricht
@@ -69,6 +77,10 @@ public class QuestionController {
 		if (itemList.get(5).getAntwort() > 7) {
 			retList.add("Grosser Wissensdurst und Interesse für der Materie sind Indikatoren, dass du dich in der IMS am richtigen Platz fühlen wirst.");
 		}
+
+
+
+		//Berechnung der prozentualen eignung
 		double eignung = 0.0;
 		double maxAnswers = 0.0;
 		for (Items is : itemList) {
@@ -80,6 +92,9 @@ public class QuestionController {
 		}
 		double percentAnswer = (eignung * 100) / maxAnswers;
 		percentAnswer = Math.ceil(percentAnswer);
+
+
+		//finale ausgabe, besteht aus prozentualer eignung, individuelle nachrichten und einer nachricht basierend auf der eignung
 		if (percentAnswer < 50 && (itemList.get(2).getAntwort() > 6 || itemList.get(4).getAntwort() > 6)||percentAnswer<20) {
 			logic.auswertung(percentAnswer,id);
 			retList.add(0,"Infolge deiner Antworten, wurde berechnet, dass du in einer anderen Schule oder Lehre warscheinlich besser aufgehoben wärst. Dies heisst jedoch nicht, dass du die Option IMS streichen solltest! Nimm doch an einem Infoabend teil oder vereinbare einen Schnuppertermin bei der IMS um einen genaueren Einblick zu bekommen. ");

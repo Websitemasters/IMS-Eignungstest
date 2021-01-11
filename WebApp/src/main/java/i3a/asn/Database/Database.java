@@ -32,7 +32,6 @@ public class Database {
             }
             ps.setInt(1, nextId+1);
             ps.setDouble(2, 0);
-            System.out.println(nextId);
             ps.execute();
 
             st.close();
