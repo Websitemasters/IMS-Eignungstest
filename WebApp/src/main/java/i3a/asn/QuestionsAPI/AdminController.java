@@ -47,7 +47,7 @@ public class AdminController {
     //prüft schlüssel auf der normalen seite um auf login seite zu kommen
     @GetMapping("/api/public/adminAccess")
     public boolean adminAcess(@RequestParam(value = "code", defaultValue = "0") String code){
-        if(code.equals("pafkewfaxddfasd")) {
+        if(code.equals("'98'")) {
             return true;
         }else{
             return false;
