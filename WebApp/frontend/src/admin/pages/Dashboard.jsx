@@ -106,7 +106,7 @@ export default function Dashboard({ userName, password }) {
                             </div>
                             <div className="seitenAufrufe">
                                 <AIIcons.AiFillEye size={70} />
-                                <h4>Anzahl Seiten aufrufe</h4>
+                                <h4>Anzahl Seitenaufrufe</h4>
                                 <p>{seitenAufrufe}</p>
                             </div>
                         </div>
@@ -135,7 +135,7 @@ export default function Dashboard({ userName, password }) {
                     <div className="contentInfo2">
                         <div className="testErgebnisse">
                             <div className="tableHold">
-                                <h2>Test Ergbisse</h2>
+                                <h2>Test Ergebisse</h2>
                                 <table className="testErg">
                                     <thead>
                                         <tr>
