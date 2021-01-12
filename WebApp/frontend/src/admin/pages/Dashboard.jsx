@@ -111,7 +111,7 @@ export default function Dashboard({ userName, password }) {
                             </div>
                         </div>
                         <div className="vpi">
-                            <h2>Anzahl abbrüchen der Testdurchführung pro URL</h2>
+                            <h2>Anzahl Abbrüche der Testdurchführung pro URL</h2>
                             <div className="vpiTablePlaceHolder">
                                 <table className="vpiTable">
                                     <thead>
