@@ -52,7 +52,7 @@ export default function OneToTen({ frage, nextPage, lastPage, items, setItems, s
                     <div className="top">
                         <div className="question">
                             <h1>{frage}</h1>
-                            <p>10 ist trifft komplett zu und 0 ist trifft gar nicht zu</p>
+                            <p>10 ist trifft zu und 0 ist trifft gar nicht zu</p>
                         </div>
                         <Link to={`/Items/${nextPage - 2}`}>
                             Zurück
