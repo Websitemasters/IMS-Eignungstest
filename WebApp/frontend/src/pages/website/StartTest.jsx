@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 //Start Page
 export default function StartTest({ getIdFunction, cookieAccept }) {
+  //Anzeige der Title Seite
   return (
     <div className="home">
       <div className="plate">

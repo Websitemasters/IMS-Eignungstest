@@ -35,7 +35,7 @@ import { BeatLoader } from "react-spinners";
 //Funktion welche den Standort des Besuchers an die Rest API schickt
 const sendeAktivitaet = {
     sendeAktivitaet(url, id) {
-        Axios.post(`/api/public/logActivity?id=${id}&url=${url}`)
+        Axios.post(`http://localhost:8080/api/public/logActivity?id=${id}&url=${url}`)
             .catch((error) => {
                 console.log(error);
             })
@@ -73,7 +73,7 @@ function App() {
             }
             //Wenn er keinen hat dann holen wir uns einen von der Api und Speichern in ihm Localen Speicher
             if (eignungstestLocation === -1) {
-                Axios.get("/api/public/addBesucher")
+                Axios.get("http://localhost:8080/api/public/addBesucher")
                     .then((res) => {
                         let date = new Date();
                         const minutes = 120;
@@ -96,7 +96,7 @@ function App() {
     };
     //Asynchrone Mehtode welche die Items von der Rest API Fetched um alle Fragen im Frontend zu haben
     const fetchData = async () => {
-        Axios.get("/api/public/getAllItems")
+        Axios.get("http://localhost:8080/api/public/getAllItems")
             .then((res) => {
                 setItems(res.data);
             })
@@ -123,6 +123,7 @@ function App() {
             setCookieMessage(<Cookie setCookieAccept={setCookieAccept} setCookieMessage={setCookieMessage} />)
         }
     }, []);
+    // Ansicht welche je nach URL Content ändert.
     return (
         <Router Router >
             <div className="parent">
