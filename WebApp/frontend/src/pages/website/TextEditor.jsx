@@ -1,13 +1,18 @@
+//Imports
 import React, { useState } from "react";
 import axios from "axios";
 import * as VSCIcons from "react-icons/vsc";
 
+//Der Playground Code Editor welcher man benutzen kann nachdem der Test fertig ist
 export default function TextEditor() {
+    //Input und Output Code
     const [inputCode, setInputCode] = useState("");
     const [outPut, setCode] = useState("");
+    //Verändere den Input Code
     const setInput = (e) => {
         setInputCode(e.target.value);
     }
+    //Führe Code aus
     const runCode = async () => {
         axios.post(`/api/public/useParser`, {
             id: 1,
@@ -22,6 +27,7 @@ export default function TextEditor() {
             })
     }
     return (
+        //Ansicht mit Eingabe Feld und ausgabe Feld
         <div className="coding">
             <div className="plate">
                 <div className="content1">

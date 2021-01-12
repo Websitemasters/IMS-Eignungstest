@@ -1,7 +1,9 @@
+//Imports
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Progressionbar from "../components/Progressionbar";
 
+//Das Styling der Buttons
 var linkButtonStyles = [
   {
     antwort: 10,
@@ -24,7 +26,8 @@ var linkButtonStyles = [
     style: "linkbutton"
   }
 ]
-export default function Question({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
+//Die 
+export default function Auswahl5({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
   const [styleProg, setStyleProg] = useState("");
   const [styleButtons, setStyleButtons] = useState(linkButtonStyles);
   useEffect(() => {

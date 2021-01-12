@@ -124,7 +124,15 @@ function App() {
         }
     }, []);
     return (
-        //Router welche für verschiedene URLS verschiedenen Content ausgibt
+        /*
+        1. Router welche für verschiedene URLS verschiedenen Content ausgibt.
+        2. Cookie Message falls nicht angenommen.
+        3. Falls Test fertig ist zeigt man die Funktionierende Navbar angenommen
+        4. Switch welcher je nach URL verschiedenen Content anzeigt. 
+        5. Jeder Component bekommt Daten mitgeschickt welcher er braucht
+        6. Für jedes Item wird ein Component erstellen und je nach Kategorie wird eine andere Frage erstellt
+        7. Falls Daten von der Rest API noch nicht da sind wird ein Lade Screen gezeigt.
+        */
         <Router Router >
             <div className="parent">
                 {cookieMessage}
@@ -230,5 +238,5 @@ function App() {
         </Router >
     );
 }
-
+//Gib die Ganze Applikation zurück
 export default App;
