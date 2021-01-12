@@ -1,17 +1,20 @@
+//Imports mit Icons
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import * as RiIcons from "react-icons/ri";
 import * as AIIcons from "react-icons/ai";
 
-function Dashboard({ userName, password }) {
+export default function Dashboard({ userName, password }) {
+    //Daten für das Dashboard Variablen
     const [besucherAnzahl, setBesucherAnzahl] = useState();
     const [durchgefuehrte, setDurchgefuehrte] = useState();
     const [vpi, setVpi] = useState([]);
-    const [testErg, setTestErg] = React.useState([]);
-    const [seitenAufrufe, setSeitenAufrufe] = React.useState([]);
+    const [testErg, setTestErg] = useState([]);
+    const [seitenAufrufe, setSeitenAufrufe] = useState([]);
     useEffect(() => {
         getData();
     }, []);
+    //Hole alle Daten m,it Authentication    
     const getData = async () => {
         //Get Seitenaufrufe
         axios.get("http://localhost:8080/api/admin/anzahlBesucher", {
@@ -52,6 +55,7 @@ function Dashboard({ userName, password }) {
             .catch((error) => {
                 console.log(error);
             })
+        //Hole die Test Ergebnisse
         axios.get("http://localhost:8080/api/admin/getTestErg", {
             auth: {
                 username: userName,
@@ -64,6 +68,7 @@ function Dashboard({ userName, password }) {
             .catch((error) => {
                 console.log(error);
             })
+        //Hole die Seiten aufrufe insgesamt
         axios.get("http://localhost:8080/api/admin/getSeitenAufrufe", {
             auth: {
                 username: userName,
@@ -77,6 +82,7 @@ function Dashboard({ userName, password }) {
                 console.log(error);
             })
     }
+    //Anzeige
     return (
         <div className="content">
             <div className="plate">
@@ -154,5 +160,3 @@ function Dashboard({ userName, password }) {
         </div>
     )
 }
-
-export default Dashboard

@@ -1,11 +1,14 @@
+//Imports der Login Page
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import Auth from "./auth";
 import "./style/style.css"
 
-function LoginPage({ setUserName, setPassword }) {
+export default function LoginPage({ setUserName, setPassword }) {
+  //URL History und URL momentan
   let history = useHistory();
   let location = useLocation();
+  //Username und Password und setter
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
 
@@ -15,7 +18,9 @@ function LoginPage({ setUserName, setPassword }) {
   const changepassword = (e) => {
     setpassword(e.target.value);
   };
+  //Holen uns von wo der Benutzer gekommen ist
   let { from } = location.state || { from: { pathname: "/" } };
+  //Einloggen
   const login = () => {
     Auth.authenticate(
       () => {
@@ -27,7 +32,7 @@ function LoginPage({ setUserName, setPassword }) {
     setUserName(username);
     setPassword(password);
   };
-
+  //Anzeige
   return (
     <div className="loginAdmin">
       <div className="holder">
@@ -59,5 +64,3 @@ function LoginPage({ setUserName, setPassword }) {
     </div>
   );
 }
-
-export default LoginPage;

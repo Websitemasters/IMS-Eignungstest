@@ -1,3 +1,4 @@
+//Imports
 import React from 'react';
 import "./style/Admin.css";
 import Navbar from "./components/Navbar";
@@ -10,7 +11,8 @@ import {
     Redirect,
 } from "react-router-dom";
 
-function Admin({ userName, password }) {
+//Admin Page mit Router und Switch je nach dem wo der Benutzer ist
+export default function Admin({ userName, password }) {
     return (
         <div className="admin">
             <Router>
@@ -28,5 +30,3 @@ function Admin({ userName, password }) {
         </div>
     )
 }
-
-export default Admin;

@@ -1,16 +1,19 @@
+//Imports mit vielen Icons von React Icons für die Navbar
 import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
 import * as MdIcons from "react-icons/md";
 import * as FiIcons from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "../style/Admin.css";
 import { IconContext } from "react-icons";
 
-function Navbar() {
+//Navbar von Admin
+export default function Navbar() {
+    //Zeige Navbar an oder nicht
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+    //Anzeige mit Icons
     return (
         <div>
             <IconContext.Provider value={{ color: "#fff" }} >
@@ -44,5 +47,3 @@ function Navbar() {
         </div>
     )
 }
-
-export default Navbar

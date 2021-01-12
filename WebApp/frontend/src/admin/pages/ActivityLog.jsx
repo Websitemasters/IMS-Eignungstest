@@ -1,11 +1,16 @@
+//Imports
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
-function ActivityLog({ userName, password }) {
+//Aktivitäten Log Ausführlich
+export default function ActivityLog({ userName, password }) {
+    //Einträge
     const [eintrage, setEintrage] = useState([]);
+    //Funktion welche am Anfang des Renders einmal läuft
     useEffect(() => {
         fetchData();
     }, []);
+    //Hole die Daten mit Authentication
     const fetchData = async () => {
         axios.get("http://localhost:8080/api/admin/actLog", {
             auth: {
@@ -20,6 +25,7 @@ function ActivityLog({ userName, password }) {
                 console.log(error);
             })
     }
+    //Anzeige
     return (
         <div className="content">
             <div className="plate">
@@ -54,5 +60,3 @@ function ActivityLog({ userName, password }) {
         </div>
     )
 }
-
-export default ActivityLog

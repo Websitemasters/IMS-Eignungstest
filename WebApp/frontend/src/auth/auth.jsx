@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//Authentication des Admins schaut nach ob der Benutzer sich eingeloggt hat oder nicht
 const auth = {
   isAuthenticated: false,
   authenticate(cb, username, password) {
