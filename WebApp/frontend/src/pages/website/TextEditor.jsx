@@ -27,7 +27,6 @@ export default function TextEditor() {
             })
     }
     return (
-        //Ansicht mit Eingabe Feld und ausgabe Feld
         <div className="coding">
             <div className="plate">
                 <div className="content1">

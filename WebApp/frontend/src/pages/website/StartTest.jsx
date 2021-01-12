@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 //Start Page
 export default function StartTest({ getIdFunction, cookieAccept }) {
   return (
-    //Start Seite welche je nach dem ob das Cookie angenommen wurde Funkioniert oder nicht
     <div className="home">
       <div className="plate">
         <div className="contentInfo1">
