@@ -1,11 +1,18 @@
-import React, { useEffect } from "react";
+//Imports
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
+//Erfüllungsanzeige
 import Progressionbar from "../components/Progressionbar";
+//Icon von React Icon
 import * as FaIcons from "react-icons/fa";
 
-function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setProgress }) {
-  const [ausgabe, setAusgabe] = React.useState([]);
-  const [styleProg, setStyleProg] = React.useState("");
+//Component welcher die Test Ausgabe anzeigt
+export default function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setProgress }) {
+  //Text der Ausgabe als Array gespeichert
+  const [ausgabe, setAusgabe] = useState([]);
+  //Style der Erfüllungsanzeige
+  const [styleProg, setStyleProg] = useState("");
+  //Setzt den Style der Erfüllungsanzeige, setzten der Erfüllung, senden des Standorts, setzte Test Fertig, hole die Eignung
   useEffect(() => {
     setStyleProg("ausgabeProgress");
     setProgress(100);
@@ -13,6 +20,7 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setPro
     getEignung();
     setTestDone(true);
   }, []);
+  //Hole die Eignung je nach Antwort und speichere diese auch in der Datenbank an den Benutzer
   const getEignung = async () => {
     Axios.post(`http://localhost:8080/api/public/rechneEignung?id=${userID}`, items)
       .then((res) => {
@@ -22,6 +30,7 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setPro
         console.log(error);
       })
   }
+  //Anzeige
   return (
     <div className="ausgabe">
       <div className="plate">
@@ -51,5 +60,3 @@ function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, progress, setPro
     </div>
   );
 }
-
-export default Ausgabe;

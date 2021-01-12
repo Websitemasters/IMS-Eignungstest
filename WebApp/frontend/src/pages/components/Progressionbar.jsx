@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Progressionbar({ progress, style }) {
+//Erfüllungsanzeige
+export default function Progressionbar({ progress, style }) {
     return (
         <div className="progressBar">
             <div className={style} style={{ width: progress + "%" }} >
@@ -8,5 +9,3 @@ function Progressionbar({ progress, style }) {
         </div>
     )
 }
-
-export default Progressionbar

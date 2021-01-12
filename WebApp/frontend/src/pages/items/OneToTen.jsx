@@ -1,18 +1,24 @@
-import React, { useEffect } from 'react'
+//Imports
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom";
+//Erfüllungsanzeige
 import Progressionbar from "../components/Progressionbar";
 
-function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
-    const [styleProg, setStyleProg] = React.useState("");
-    React.useEffect(() => {
+//1 zu 10 Auswahl der User für eines der Items
+export default function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
+    //Style von der Progressbar
+    const [styleProg, setStyleProg] = useState("");
+    //Setzt den Style der Progressbar und die aktuelle fertigkeit. Es schickt auch an die API wo sich der Benutzer gerade befindet
+    useEffect(() => {
         setStyleProg("progress");
         setProgress((nextPage - 2) * 10);
         sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID)
     }, []);
-
+    //Holt die ID des Items in welchem wir sind um zu sehen wo wir die Anwort speichern sollen
     const location = useLocation();
     var idOfQuestion = location.pathname.substring(7, location.pathname.length);
     var intId = parseInt(idOfQuestion);
+    //Setzt die Auswahl von 0 bis 10
     const showMe = (e) => {
         setItems(
             items.map((item) => {
@@ -26,16 +32,19 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
             })
         );
     }
+    //Fragt benutzer vor dem verlassen der Webseite ob er diese verlassen will
     useEffect(() => {
         window.addEventListener('beforeunload', alertUser)
         return () => {
             window.removeEventListener('beforeunload', alertUser)
         }
     }, [])
+    //Zeigt die Nachricht an
     const alertUser = e => {
         e.preventDefault()
         e.returnValue = ''
     }
+    //Anzeige
     return (
         <div className="item">
             <div className="plate">
@@ -68,5 +77,3 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
         </div >
     )
 }
-
-export default OneToTen;

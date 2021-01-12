@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Cookie({ setCookieAccept, setCookieMessage }) {
+//Die Cookei Meldung
+export default function Cookie({ setCookieAccept, setCookieMessage }) {
+    //Methode welche Cooki1es akzeptiert
     const accept = () => {
         setCookieAccept(true);
         setCookieMessage(null);
@@ -13,5 +15,3 @@ function Cookie({ setCookieAccept, setCookieMessage }) {
         </div>
     )
 }
-
-export default Cookie

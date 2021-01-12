@@ -1,6 +1,7 @@
 //Imports
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+//Erfüllungsanzeige
 import Progressionbar from "../components/Progressionbar";
 
 //Das Styling der Buttons
@@ -26,17 +27,21 @@ var linkButtonStyles = [
     style: "linkbutton"
   }
 ]
-//Die 
+//Die 5 Auswahl Section für den Benutzer welche einer der Items sein kann
 export default function Auswahl5({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet, userID, progress, setProgress }) {
+  //Style der Erfüllungsanzeige
   const [styleProg, setStyleProg] = useState("");
+  //Style der Eingabe Buttons
   const [styleButtons, setStyleButtons] = useState(linkButtonStyles);
+  //Setzt den Style der Progressbar und die aktuelle fertigkeit. Es schickt auch an die API wo sich der Benutzer gerade befindet
+  //Setzte auch den Styler Buttons falls der Benutzer schon eine Antwort hat
   useEffect(() => {
     setStyleProg("progress");
     setProgress((nextPage - 2) * 10);
-    changeStyle();
     sendeAktivitaet.sendeAktivitaet(`/Items/${nextPage - 1}`, userID);
+    changeStyle();
   }, []);
-
+  //Setzte Style der Eimnzelne Buttons falls der Benutzer schon eine Antowrt getroffen hat und jetzt nur zurück geht
   const changeStyle = () => {
     if (items[nextPage - 2].antwort !== 0) {
       setStyleButtons(
@@ -56,9 +61,11 @@ export default function Auswahl5({ frage, nextPage, lastPage, items, setItems, s
       )
     }
   }
+  //Hole die ID der Frage in welcher wir uns befnden
   const location = useLocation();
   var idOfQuestion = location.pathname.substring(7, location.pathname.length);
   var intId = parseInt(idOfQuestion);
+  //Setzte die Antwort des Benutzers
   const add = (e) => {
     setItems(
       items.map((item) => {
@@ -72,6 +79,7 @@ export default function Auswahl5({ frage, nextPage, lastPage, items, setItems, s
       })
     );
   }
+  //Verhindere dass der Besucher denn Test stoppt ohne fertig zu sein
   useEffect(() => {
     window.addEventListener('beforeunload', alertUser)
     return () => {
@@ -82,6 +90,7 @@ export default function Auswahl5({ frage, nextPage, lastPage, items, setItems, s
     e.preventDefault()
     e.returnValue = ''
   }
+  //Anzeige des Codes
   return (
     <div className="choices5">
       <div className="plate">

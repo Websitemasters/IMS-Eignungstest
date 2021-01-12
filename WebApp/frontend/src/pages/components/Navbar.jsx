@@ -1,14 +1,18 @@
+//Import unter anderem auch dass Kanti Logo Weiss
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import image from "../res/kantiBadenLogoWeiss.png";
 import { useLocation, useHistory } from "react-router-dom";
 import axios from "axios";
 
+//Funktioniernde Navabr
 export default function NavBar() {
+  //Style der Verschieden Navbar Sektoren
   const [sec1, setSec1] = useState("linkHighLighted");
   const [sec2, setSec2] = useState("link");
   const [sec3, setSec3] = useState("link");
   let location = useLocation();
+  //Checkt wo sich der Benutzer befindet um den Style des jeweiligen Navbar Sektoren zu ändern
   useEffect(() => {
     let path = location.pathname;
     path = path.substring(0, 2);
@@ -34,13 +38,16 @@ export default function NavBar() {
     }
   }, [location]);
 
+  //Toggle zwischen dem Button oder dem Eingabe Feld
   const [btnorField, setBtnofField] = useState(true)
   const [input, setInput] = useState("");
   const [wrongCode, setWrongCode] = useState(false);
+  //URL History um zu pushen falls der Benutzer den Code richtig eingibt um zum Admin login zu kommen
   let history = useHistory();
   const changeShape = () => {
     setBtnofField(!btnorField);
   }
+  //Checkt den Code für das Admin Login
   const checkCode = async () => {
     axios.get(`http://localhost:8080/api/public/adminAccess?code=${input}`)
       .then((res) => {
@@ -54,13 +61,15 @@ export default function NavBar() {
         console.log(err);
       })
   }
+  //Verändert den Input
   const changeInput = (e) => {
     setInput(e.target.value);
   }
-
+  //Schickt im zu /Admin was einem zuerst zu /Login schickt
   const redirect = () => {
     history.push('/admin')
   }
+  //Anzeige
   return (
     <header>
       <Link to="/admin">
