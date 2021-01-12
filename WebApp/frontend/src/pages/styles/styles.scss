@@ -3,7 +3,7 @@ $codeFont: 'Source Code Pro', monospace;
 $bgColor: #141620;
 $hoverColor: #000000;
 $textColor: #ffffff;
-$plateColor: #202129;
+$plateColor: #15161b;
 $boxShadow:  0px 0px 10px 0 rgba(0, 0, 0, 0.205);
 $acent1:#2545fa;
 $acent2:rgb(20, 141, 255);
@@ -28,7 +28,8 @@ $acent2:rgb(20, 141, 255);
 }
 
 .parent {
-    background-color: $bgColor;
+    background: rgb(51,57,87);
+    background: radial-gradient(circle, rgba(51,57,87,1) 0%, rgba(20,22,32,1) 100%);
     font-family: $font;
     box-sizing: border-box;
     position: absolute;

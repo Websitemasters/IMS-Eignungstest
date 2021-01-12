@@ -17,7 +17,7 @@ header {
 header .nav__links .link {
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #141620;
+  border: 0;
   display: inline-block;
   -webkit-transition: -webkit-transform ease 300ms;
   transition: -webkit-transform ease 300ms;
@@ -137,7 +137,7 @@ header .code p {
 }
 
 .coding .plate {
-  background-color: #202129;
+  background-color: #15161b;
   border-radius: 10px;
   width: 80%;
   height: 80vh;
@@ -313,7 +313,7 @@ header .code p {
 
 .home .plate {
   border-radius: 10px;
-  background-color: #202129;
+  background-color: #15161b;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -428,7 +428,7 @@ header .code p {
 
 .item .plate {
   border-radius: 10px;
-  background-color: #202129;
+  background-color: #15161b;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -638,7 +638,7 @@ header .code p {
 
 .choices5 .plate {
   border-radius: 10px;
-  background-color: #202129;
+  background-color: #15161b;
   color: #ffffff;
   width: 80%;
   height: 80vh;
@@ -809,7 +809,7 @@ header .code p {
 
 .ausgabe .plate {
   border-radius: 10px;
-  background-color: #202129;
+  background-color: #15161b;
   width: 80%;
   height: 80vh;
   display: -webkit-box;
@@ -932,7 +932,7 @@ header .code p {
 }
 
 .codingTest .plate {
-  background-color: #202129;
+  background-color: #15161b;
   border-radius: 10px;
   width: 80%;
   height: 80vh;
@@ -1254,7 +1254,8 @@ header .code p {
 }
 
 .parent {
-  background-color: #141620;
+  background: #333957;
+  background: radial-gradient(circle, #333957 0%, #141620 100%);
   font-family: "Montserrat", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
