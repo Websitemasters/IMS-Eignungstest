@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import Progressionbar from "../components/Progressionbar";
 
@@ -25,6 +25,16 @@ function OneToTen({ frage, nextPage, lastPage, items, setItems, sendeAktivitaet,
                 return item;
             })
         );
+    }
+    useEffect(() => {
+        window.addEventListener('beforeunload', alertUser)
+        return () => {
+            window.removeEventListener('beforeunload', alertUser)
+        }
+    }, [])
+    const alertUser = e => {
+        e.preventDefault()
+        e.returnValue = ''
     }
     return (
         <div className="item">

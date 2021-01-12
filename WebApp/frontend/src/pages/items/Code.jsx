@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import * as VSCIcons from "react-icons/vsc";
@@ -28,6 +28,16 @@ export default function Code({ frage, nextPage, lastPage, items, sendeAktivitaet
                 console.log(error);
                 setCode("Error");
             })
+    }
+    useEffect(() => {
+        window.addEventListener('beforeunload', alertUser)
+        return () => {
+            window.removeEventListener('beforeunload', alertUser)
+        }
+    }, [])
+    const alertUser = e => {
+        e.preventDefault()
+        e.returnValue = ''
     }
     return (
         <div className="codingTest">

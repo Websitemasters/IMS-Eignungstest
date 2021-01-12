@@ -72,6 +72,16 @@ export default function Auswahl5({ frage, nextPage, lastPage, items, setItems, s
       })
     );
   }
+  useEffect(() => {
+    window.addEventListener('beforeunload', alertUser)
+    return () => {
+      window.removeEventListener('beforeunload', alertUser)
+    }
+  }, [])
+  const alertUser = e => {
+    e.preventDefault()
+    e.returnValue = ''
+  }
   return (
     <div className="choices5">
       <div className="plate">
