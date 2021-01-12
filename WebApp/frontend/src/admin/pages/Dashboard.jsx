@@ -135,7 +135,7 @@ export default function Dashboard({ userName, password }) {
                     <div className="contentInfo2">
                         <div className="testErgebnisse">
                             <div className="tableHold">
-                                <h2>Test Ergebisse</h2>
+                                <h2>Test Ergebnisse</h2>
                                 <table className="testErg">
                                     <thead>
                                         <tr>
