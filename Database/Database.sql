@@ -38,28 +38,10 @@ values("Hast du bereits Kenntnisse im Bereich Applikationsentwicklung?", "5choic
     ("Mich interessieren wirtschaftliche Themen, wie die aktuelle Lage auf der Welt oder die Wirtschaftliche Infrastruktur der Schweiz?", "5choice", 7, null, 0),
     ("Ich moechte studieren?", "1-10", 3, null, 0),
     ("Hast du Interesse an genereller Informatik, wie z.B. Systemtechnik oder Web-Entwicklung?", "1-10", 8, null, 0),
-    ("Hier siehst du eine Variableneklaration. Versuche den Code so zu aendern, dass 70 ausgegeben wird?", "code", 0, "x=3 \n return x", 0),
-    ("Versuche nun die Summe von x und y auszugeben?", "code", 0, "x=4 \n y=2 \n return 0", 0),
-    ("Hier siehst du ein If-Statement. Basierend darauf, ob der Vergleich in der Klammer stimmt oder nicht, wird der Code innerhalb der {} Klammern ausgefuehrt oder nicht. Versuche den Vergleich so zu formulieren,dass er wahr ist?", "code", 0, "x=4 \n if(x>100){\n x=50 \n} \nreturn x", 0),
+    ("Hier siehst du eine Variablendeklaration. Versuche den Code so zu aendern, dass 70 ausgegeben wird", "code", 0, "x=3 \n return x", 0),
+    ("Versuche nun die Summe von x und y auszugeben", "code", 0, "x=4 \n y=2 \n return 0", 0),
+    ("Hier siehst du ein If-Statement. Basierend darauf, ob der Vergleich in der Klammer stimmt oder nicht, wird der Code innerhalb der {} Klammern ausgefuehrt oder nicht. Versuche den Vergleich so zu formulieren,dass er wahr ist", "code", 0, "x=4 \n if(x>100){\n x=50 \n} \nreturn x", 0),
     ("Du hast gerade programmiert! Hat er dir Spass gemacht?", "1-10", 5 , null, 0);
 
 
 
-insert into user (resultat)
-values (12),
-(100),
-(32),
-(88),
-(94),
-(75);
-
-
-/*Queries*/
-/*Durchschnitts Eignung*/
-select AVG(resultat) from user where resultat>0;
-
-/*Alle Resultate von Benutzern die Abschlossen haben*/
-select * from user wehre resultat>0;
-
-/*NOT NEEDED Alle Resultate von Benutzer auch mit nicht abgeschlossenen*/
-select * from user;

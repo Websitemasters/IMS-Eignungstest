@@ -66,7 +66,7 @@ public class QuestionController {
 
 		//Iteriert über Items und erstellt bei spezialfällen spezifische nachricht
 		if (itemList.get(0).getAntwort() > 7) {
-			retList.add("Du hast bereits Kentnisse in der Applikationsentwicklung, du wirst sehr warscheinlich Vorteile haben.");
+			retList.add("Du hast bereits Kenntnisse in der Applikationsentwicklung, du wirst sehr warscheinlich Vorteile haben.");
 		}
 		if (itemList.get(2).getAntwort() > 7) {
 			retList.add("Wenn du ein hohes Interesse an Naturwissenschaftlichen Fächern hast und eventuell sogar planst, ein Studium in dieser Richtigung zu absolvieren, ist die Kantonsschule vielleicht besser geeignet.");
