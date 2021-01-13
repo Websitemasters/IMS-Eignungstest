@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>i3a.asn</groupId>
-	<artifactId>QuestionsAPI</artifactId>
+	<artifactId>Eignungstest</artifactId>
 	<version>1.0.0</version>
 	<name>Eignungstest</name>
 
