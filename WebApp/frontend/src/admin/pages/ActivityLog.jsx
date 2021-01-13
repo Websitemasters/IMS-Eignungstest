@@ -12,7 +12,7 @@ export default function ActivityLog({ userName, password }) {
     }, []);
     //Hole die Daten mit Authentication
     const fetchData = async () => {
-        axios.get("http://localhost:8080/api/admin/actLog", {
+        axios.get("/api/admin/actLog", {
             auth: {
                 username: userName,
                 password: password

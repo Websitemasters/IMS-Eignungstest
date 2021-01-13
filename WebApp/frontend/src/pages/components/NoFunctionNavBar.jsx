@@ -17,7 +17,7 @@ export default function NavBar() {
     }
     //Checkt den Code für das Admin Login
     const checkCode = async () => {
-        axios.get(`http://localhost:8080/api/public/adminAccess?code=${input}`)
+        axios.get(`/api/public/adminAccess?code=${input}`)
             .then((res) => {
                 if (res.data === true) {
                     redirect();

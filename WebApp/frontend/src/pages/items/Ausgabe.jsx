@@ -22,7 +22,7 @@ export default function Ausgabe({ items, sendeAktivitaet, userID, setTestDone, p
   }, []);
   //Hole die Eignung je nach Antwort und speichere diese auch in der Datenbank an den Benutzer
   const getEignung = async () => {
-    Axios.post(`http://localhost:8080/api/public/rechneEignung?id=${userID}`, items)
+    Axios.post(`/api/public/rechneEignung?id=${userID}`, items)
       .then((res) => {
         setAusgabe(res.data);
       })

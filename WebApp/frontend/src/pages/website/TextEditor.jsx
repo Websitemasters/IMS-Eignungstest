@@ -15,7 +15,7 @@ export default function TextEditor() {
     }
     //Führe Code aus
     const runCode = async () => {
-        axios.post(`http://localhost:8080/api/public/useParser`, {
+        axios.post(`/api/public/useParser`, {
             id: 1,
             text: inputCode,
         })

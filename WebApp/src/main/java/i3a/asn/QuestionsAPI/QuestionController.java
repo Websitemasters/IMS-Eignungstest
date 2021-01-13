@@ -28,7 +28,6 @@ public class QuestionController {
 
 	//formatiert eingaben so dass sie der parser verarbeiten kann und parst die eingaben
 	@PostMapping("/api/public/useParser")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public String parseInput(@RequestBody ParseModel code) {
 		pc = new StartParser();
 		String lines[] = code.getText().split("\\r?\\n");
@@ -41,13 +40,11 @@ public class QuestionController {
 	}
 
 	@GetMapping("/api/public/getAllItems")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public ArrayList<Items> getAllItems() {
 		return logic.getAllItems();
 	}
 
 	@PostMapping("/api/public/rechneEignung")
-	@CrossOrigin(origins = "http://localhost:3000")
 	public ArrayList<String> rechneEignung(@RequestBody ArrayList<Items> items, @RequestParam(value = "id", defaultValue = "0") long id) {
 		return returnAnswer(items,id);
 	}
