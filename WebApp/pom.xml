@@ -10,8 +10,8 @@
 	</parent>
 	<groupId>i3a.asn</groupId>
 	<artifactId>QuestionsAPI</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>QuestionsAPI</name>
+	<version>1.0.0</version>
+	<name>Eignungstest</name>
 
 	<properties>
 		<java.version>1.8</java.version>
